@@ -11,9 +11,28 @@
     BarBackgroundColor="{StaticResource NavbarBackground}"
     mc:Ignorable="d">
     <TabbedPage.Children>
-        <views:HomeView Title="Home" />
-        <views:StreamView Title="Stream" />
-        <views:SearchView Title="Search" />
-        <views:LibraryView Title="Library" />
+        <NavigationPage>
+            <x:Arguments>
+                <views:HomeView Title="Home" />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage>
+            <x:Arguments>
+                <views:StreamView Title="Stream" />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage>
+            <x:Arguments>
+                <views:SearchView Title="Search" />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage>
+            <x:Arguments>
+                <views:LibraryView Title="Library" />
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
 </TabbedPage>
