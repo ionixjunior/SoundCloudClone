@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SoundCloudClone.Services;
 using SoundCloudClone.Views;
 
 namespace SoundCloudClone
@@ -13,7 +12,6 @@ namespace SoundCloudClone
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
 
