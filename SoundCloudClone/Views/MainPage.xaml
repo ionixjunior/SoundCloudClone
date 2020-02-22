@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:SoundCloudClone.Views"
     android:TabbedPage.ToolbarPlacement="Bottom"
+    BarBackgroundColor="{StaticResource NavbarBackground}"
     mc:Ignorable="d">
     <TabbedPage.Children>
         <views:HomeView Title="Home" />
