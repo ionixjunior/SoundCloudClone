@@ -139,4 +139,30 @@
       <Name>SoundCloudClone</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_selected.png" />
+    <BundleResource Include="Resources\home_selected%402x.png" />
+    <BundleResource Include="Resources\home_selected%403x.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\home%402x.png" />
+    <BundleResource Include="Resources\home%403x.png" />
+    <BundleResource Include="Resources\library_selected.png" />
+    <BundleResource Include="Resources\library_selected%402x.png" />
+    <BundleResource Include="Resources\library_selected%403x.png" />
+    <BundleResource Include="Resources\library.png" />
+    <BundleResource Include="Resources\library%402x.png" />
+    <BundleResource Include="Resources\library%403x.png" />
+    <BundleResource Include="Resources\search_selected.png" />
+    <BundleResource Include="Resources\search_selected%402x.png" />
+    <BundleResource Include="Resources\search_selected%403x.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\search%402x.png" />
+    <BundleResource Include="Resources\search%403x.png" />
+    <BundleResource Include="Resources\stream_selected.png" />
+    <BundleResource Include="Resources\stream_selected%402x.png" />
+    <BundleResource Include="Resources\stream_selected%403x.png" />
+    <BundleResource Include="Resources\stream.png" />
+    <BundleResource Include="Resources\stream%402x.png" />
+    <BundleResource Include="Resources\stream%403x.png" />
+  </ItemGroup>
 </Project>
