@@ -11,6 +11,7 @@
             <OnPlatform
                 x:Key="FontLight"
                 x:TypeArguments="x:String"
+                Android="Fonts/interstate-light-cond.ttf#Interstate Light Cond"
                 iOS="Interstate Light Cond" />
 
             <Color x:Key="NavbarBackground">#111111</Color>
