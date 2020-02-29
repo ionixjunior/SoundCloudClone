@@ -165,8 +165,10 @@
     <BundleResource Include="Resources\stream.png" />
     <BundleResource Include="Resources\stream%402x.png" />
     <BundleResource Include="Resources\stream%403x.png" />
+    <BundleResource Include="Resources\Fonts\interstate-light-cond.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
+    <Folder Include="Resources\Fonts\" />
   </ItemGroup>
 </Project>
