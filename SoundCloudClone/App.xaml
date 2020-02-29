@@ -8,12 +8,21 @@
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavbarBackground">#111111</Color>
+            <OnPlatform
+                x:Key="FontLight"
+                x:TypeArguments="x:String"
+                iOS="Interstate Light Cond" />
 
+            <Color x:Key="NavbarBackground">#111111</Color>
             <Color x:Key="NavigationPrimary">#FFFFFF</Color>
+
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
