@@ -4,6 +4,28 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <Label Text="Home View" />
+        <CollectionView IsGrouped="True" ItemsSource="{Binding AlbumGroups}">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="20">
+                        <Label FontSize="30" Text="{Binding Title}" />
+                        <Label
+                            FontSize="30"
+                            Text="{Binding Description}"
+                            TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <CollectionView HeightRequest="200" ItemsSource="{Binding Albums}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                    </CollectionView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
