@@ -28,6 +28,13 @@
                 <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
                 <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
             </Style>
+
+            <Style x:Key="TitleNavigationPage" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="TextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
+                <Setter Property="HorizontalTextAlignment" Value="{OnPlatform iOS='Center', Android='Start'}" />
+                <Setter Property="FontSize" Value="Title" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
