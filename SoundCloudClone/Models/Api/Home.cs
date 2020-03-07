@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SoundCloudClone.Models
+namespace SoundCloudClone.Models.Api
 {
     public class Album
     {

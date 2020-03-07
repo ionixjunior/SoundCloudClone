@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Refit;
-using SoundCloudClone.Models;
+using SoundCloudClone.Models.Api;
 
 namespace SoundCloudClone.Interfaces
 {

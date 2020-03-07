@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Models.Api;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -8,6 +9,8 @@ namespace SoundCloudClone.ViewModels
     {
         private readonly IApi _api;
         private bool _alreadyInitialized = false;
+
+        public Home Home { get; private set; }
 
         public HomeViewModel(IApi api)
         {
@@ -19,7 +22,15 @@ namespace SoundCloudClone.ViewModels
             if (_alreadyInitialized)
                 return;
 
-            System.Diagnostics.Debug.WriteLine("DEVE INICIALIZAR A VIEWMODEL");
+            try
+            {
+                Home = await _api.GetAlbums();
+            }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Debug.WriteLine(exception.Message);
+            }
+
             _alreadyInitialized = true;
         }
     }
