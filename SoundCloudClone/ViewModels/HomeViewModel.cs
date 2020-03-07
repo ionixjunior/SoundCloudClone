@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
-using Xamarin.Forms;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -10,9 +9,9 @@ namespace SoundCloudClone.ViewModels
         private readonly IApi _api;
         private bool _alreadyInitialized = false;
 
-        public HomeViewModel()
+        public HomeViewModel(IApi api)
         {
-            _api = DependencyService.Get<IApi>();
+            _api = api;
         }
 
         public async Task InitializeAsync()

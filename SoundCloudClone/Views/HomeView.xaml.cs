@@ -12,7 +12,9 @@ namespace SoundCloudClone.Views
         public HomeView()
         {
             InitializeComponent();
-            BindingContext = new HomeViewModel();
+
+            var api = DependencyService.Get<IApi>();
+            BindingContext = new HomeViewModel(api);
         }
 
         protected override async void OnAppearing()
