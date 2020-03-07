@@ -6,4 +6,12 @@ Vou criar uma playlist em breve com todos os vídeos.
 
 ## Screenshots
 
-Em breve...
+### Android
+
+#### Tela dos álbuns
+<kbd><img width="250" src="art/android_home_1.png" /></kbd>
+
+### iOS
+
+#### Tela dos álbuns
+<kbd><img width="250" src="art/ios_home_1.png" /></kbd>
