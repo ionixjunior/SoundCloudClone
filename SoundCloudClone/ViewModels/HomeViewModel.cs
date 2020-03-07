@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using MvvmHelpers;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
+using SoundCloudClone.Extensions;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -28,34 +28,7 @@ namespace SoundCloudClone.ViewModels
             try
             {
                 var home = await _api.GetAlbums();
-                var albumGroups = new List<AlbumGroup>();
-
-                foreach (var algumGroupsCollection in home.AlgumGroupsCollection)
-                {
-                    var albumGroupApi = algumGroupsCollection.AlbumGroup;
-                    var albumGroupApp = new AlbumGroup(
-                        albumGroupApi.Title,
-                        albumGroupApi.Description
-                    );
-
-                    var albumCollection = new AlbumCollection();
-
-                    foreach (var albumsApi in algumGroupsCollection.AlbumGroup.AlbumCollection.Albums)
-                    {
-                        albumCollection.Add(
-                            new Album(
-                                albumsApi.ArtworkUrlTemplate,
-                                albumsApi.ArtworkStyle,
-                                albumsApi.Count,
-                                albumsApi.ShortTitle,
-                                albumsApi.ShortSubtitle
-                            )
-                        );
-                    }
-
-                    albumGroupApp.Add(albumCollection);
-                    albumGroups.Add(albumGroupApp);
-                }
+                var albumGroups = home.ToAlbumGroups();
 
                 AlbumGroups.AddRange(albumGroups);
             }

@@ -24,5 +24,6 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Models\Api\" />
     <Folder Include="Models\App\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>
