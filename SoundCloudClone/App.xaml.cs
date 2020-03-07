@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SoundCloudClone.Views;
+using SoundCloudClone.Interfaces;
+using SoundCloudClone.Services;
 
 namespace SoundCloudClone
 {
@@ -12,7 +14,13 @@ namespace SoundCloudClone
         {
             InitializeComponent();
 
+            RegisterDependencies();
             MainPage = new MainPage();
+        }
+
+        private void RegisterDependencies()
+        {
+            DependencyService.Register<IApi, ApiService>();
         }
 
         protected override void OnStart()
