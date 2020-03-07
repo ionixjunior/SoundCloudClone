@@ -18,6 +18,7 @@ namespace SoundCloudClone.ViewModels
         {
             _api = api;
             AlbumGroups = new ObservableRangeCollection<AlbumGroup>();
+            Title = "Home";
         }
 
         public async Task InitializeAsync()
