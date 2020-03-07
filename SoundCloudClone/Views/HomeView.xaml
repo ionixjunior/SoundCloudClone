@@ -2,28 +2,65 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.HomeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BackgroundColor="#F2F2F2">
     <ContentPage.Content>
         <CollectionView IsGrouped="True" ItemsSource="{Binding AlbumGroups}">
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="20">
-                        <Label FontSize="30" Text="{Binding Title}" />
+                    <StackLayout Padding="15" BackgroundColor="#FFFFFF">
+                        <Label FontSize="Title" Text="{Binding Title}" />
                         <Label
-                            FontSize="30"
+                            FontSize="Subtitle"
+                            LineBreakMode="TailTruncation"
                             Text="{Binding Description}"
-                            TextColor="Gray" />
+                            TextColor="{StaticResource TextSecondaryColor}" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.GroupHeaderTemplate>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <CollectionView HeightRequest="200" ItemsSource="{Binding Albums}">
-                        <CollectionView.ItemsLayout>
-                            <LinearItemsLayout Orientation="Horizontal" />
-                        </CollectionView.ItemsLayout>
-                    </CollectionView>
+                    <StackLayout HeightRequest="300">
+                        <CollectionView
+                            Margin="-1,-1,-1,0"
+                            BackgroundColor="#FFFFFF"
+                            HeightRequest="280"
+                            HorizontalScrollBarVisibility="Never"
+                            ItemsSource="{Binding Albums}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" />
+                            </CollectionView.ItemsLayout>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <FlexLayout
+                                        Padding="15,0"
+                                        Direction="Column"
+                                        HeightRequest="280"
+                                        JustifyContent="Start"
+                                        WidthRequest="180">
+                                        <ffimageloading:CachedImage
+                                            HeightRequest="180"
+                                            Source="{Binding ArtworkUrl}"
+                                            WidthRequest="180" />
+                                        <Label
+                                            Margin="0,10,0,0"
+                                            FontSize="Large"
+                                            LineBreakMode="TailTruncation"
+                                            MaxLines="2"
+                                            Text="{Binding ShortTitle}" />
+                                        <Label
+                                            Margin="0,10,0,0"
+                                            FontSize="Medium"
+                                            Text="{Binding ShortSubtitle}"
+                                            TextColor="{StaticResource TextSecondaryColor}" />
+                                    </FlexLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -16,6 +16,8 @@
 
             <Color x:Key="NavbarBackground">#111111</Color>
             <Color x:Key="NavigationPrimary">#FFFFFF</Color>
+            <Color x:Key="TextPrimaryColor">#000000</Color>
+            <Color x:Key="TextSecondaryColor">#8F8E8F</Color>
 
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
@@ -24,6 +26,7 @@
 
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

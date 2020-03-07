@@ -24,6 +24,8 @@ namespace SoundCloudClone.Models.App
             ShortTitle = shortTitle;
             ShortSubtitle = shortSubtitle;
         }
+
+        public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t200x200");
     }
 
     public class AlbumCollection
