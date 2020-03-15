@@ -9,5 +9,8 @@ namespace SoundCloudClone.Interfaces
     {
         [Get("/home")]
         Task<Home> GetAlbums();
+
+        [Get("/stream")]
+        Task<Stream> GetStreams();
     }
 }
