@@ -2,8 +2,121 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.StreamView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform
+                x:Key="MarginItem"
+                x:TypeArguments="Thickness"
+                Default="15,0" />
+
+            <OnPlatform
+                x:Key="OverlayOpacity"
+                x:TypeArguments="x:Double"
+                Default="0.9" />
+
+            <OnPlatform
+                x:Key="OverlayThickness"
+                x:TypeArguments="Thickness"
+                Default="5" />
+
+            <Style x:Key="OverlayLabel" TargetType="Label">
+                <Setter Property="Padding" Value="{StaticResource OverlayThickness}" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Opacity" Value="{StaticResource OverlayOpacity}" />
+            </Style>
+
+            <Style x:Key="OverlaySpan" TargetType="Span">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Span">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <Label Text="Stream View" />
+        <CollectionView ItemsSource="{Binding Streams}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <FlexLayout
+                        BackgroundColor="Red"
+                        Direction="Column"
+                        HeightRequest="360">
+
+                        <FlexLayout
+                            Margin="{StaticResource MarginItem}"
+                            AlignItems="Center"
+                            BackgroundColor="Green"
+                            FlexLayout.Basis="80">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="25"
+                                HeightRequest="50"
+                                IsClippedToBounds="true"
+                                WidthRequest="50">
+                                <ffimageloading:CachedImage
+                                    HeightRequest="50"
+                                    Source="{Binding AvatarUrl}"
+                                    WidthRequest="50" />
+                            </Frame>
+
+                            <StackLayout Margin="10,0,0,0">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Username}" />
+                                            <Span Text=" posted a track" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label Text="{Binding CreatedAt}" />
+                            </StackLayout>
+                        </FlexLayout>
+
+                        <Grid
+                            Margin="{StaticResource MarginItem}"
+                            BackgroundColor="Blue"
+                            FlexLayout.Basis="180">
+                            <ffimageloading:CachedImage
+                                Aspect="AspectFill"
+                                HeightRequest="180"
+                                Source="{Binding ArtworkUrl}" />
+
+                            <StackLayout Margin="15,25" VerticalOptions="End">
+                                <Label Style="{StaticResource OverlayLabel}" Text="{Binding Username}" />
+
+                                <Label Opacity="{StaticResource OverlayOpacity}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Style="{StaticResource OverlaySpan}" Text="{Binding Title}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </Grid>
+
+                        <FlexLayout
+                            Margin="{StaticResource MarginItem}"
+                            AlignItems="Center"
+                            BackgroundColor="Yellow"
+                            FlexLayout.Basis="40"
+                            JustifyContent="SpaceBetween">
+                            <Label Text="{Binding Genre, StringFormat='#{0}'}" />
+                            <Label Text="{Binding FullDurationTimeSpan}" />
+                        </FlexLayout>
+                    </FlexLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

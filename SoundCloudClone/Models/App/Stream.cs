@@ -3,7 +3,7 @@ namespace SoundCloudClone.Models.App
 {
     public class Stream
     {
-        public long FullDuration { get; private set; }
+        private long FullDuration { get; set; }
         public DateTime CreatedAt { get; private set; }
         public string Title { get; private set; }
         public int PlaybackCount { get; private set; }
@@ -13,7 +13,10 @@ namespace SoundCloudClone.Models.App
         public string Username { get; private set; }
         public string AvatarUrl { get; private set; }
         public string Genre { get; private set; }
-        public string ArtworkUrlTemplate { get; private set; }
+        private string ArtworkUrlTemplate { get; set; }
+
+        public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t250x250");
+        public TimeSpan FullDurationTimeSpan => TimeSpan.FromMilliseconds(FullDuration);
 
         public Stream(SoundCloudClone.Models.Api.Collection collection)
         {
