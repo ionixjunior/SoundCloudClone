@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.ViewModels;
 using Xamarin.Forms;
 
 namespace SoundCloudClone.Views
@@ -10,6 +11,9 @@ namespace SoundCloudClone.Views
         public StreamView()
         {
             InitializeComponent();
+
+            var api = DependencyService.Get<IApi>();
+            BindingContext = new StreamViewModel(api);
         }
 
         public string GetIcon()
