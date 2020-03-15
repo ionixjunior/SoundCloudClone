@@ -40,10 +40,10 @@ namespace SoundCloudClone.Models.Api
     public class Track
     {
         [JsonProperty("full_duration")]
-        public int FullDuration { get; set; }
+        public long FullDuration { get; set; }
 
         [JsonProperty("created_at")]
-        public string CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }
