@@ -85,12 +85,12 @@
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding Username}" />
-                                            <Span Text=" posted a track" />
+                                            <Span Text=" posted a track" TextColor="{StaticResource TextSecondaryColor}" />
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label Text="{Binding CreatedAt}" />
+                                <Label Text="{Binding CreatedAt}" TextColor="{StaticResource TextSecondaryColor}" />
                             </StackLayout>
                         </FlexLayout>
 
@@ -118,8 +118,8 @@
                             AlignItems="Center"
                             FlexLayout.Basis="40"
                             JustifyContent="SpaceBetween">
-                            <Label Text="{Binding Genre, StringFormat='#{0}'}" />
-                            <Label Text="{Binding FullDurationTimeSpan}" />
+                            <Label Text="{Binding Genre, StringFormat='#{0}'}" TextColor="{StaticResource TextSecondaryColor}" />
+                            <Label Text="{Binding FullDurationTimeSpan}" TextColor="{StaticResource TextSecondaryColor}" />
                         </FlexLayout>
 
                         <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
@@ -131,7 +131,8 @@
                                 BorderWidth="0"
                                 ImageSource="stream_playback_count"
                                 Style="{StaticResource SocialButton}"
-                                Text="{Binding PlaybackCount, StringFormat='  {0}'}" />
+                                Text="{Binding PlaybackCount, StringFormat='  {0}'}"
+                                TextColor="{StaticResource TextSecondaryColor}" />
 
                             <FlexLayout
                                 AlignItems="Center"
