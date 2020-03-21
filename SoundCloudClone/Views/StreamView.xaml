@@ -127,7 +127,7 @@
                             FlexLayout.Basis="40"
                             JustifyContent="SpaceBetween">
                             <Label Text="{Binding Genre, StringFormat='#{0}'}" TextColor="{StaticResource TextSecondaryColor}" />
-                            <Label Text="{Binding FullDurationTimeSpan}" TextColor="{StaticResource TextSecondaryColor}" />
+                            <Label Text="{Binding FullDurationTimeSpan, StringFormat='{0:mm}:{0:ss}'}" TextColor="{StaticResource TextSecondaryColor}" />
                         </FlexLayout>
 
                         <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
