@@ -44,16 +44,39 @@
 
             <Style x:Key="SocialButton" TargetType="Button">
                 <Setter Property="Margin" Value="5,0" />
-                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="Padding" Value="{OnPlatform Android=0, iOS='10,0'}" />
                 <Setter Property="BorderColor" Value="#E5E5E5" />
-                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderWidth" Value="{OnPlatform Android=0, iOS=1}" />
                 <Setter Property="TextColor" Value="#666566" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
 
             <Style
                 x:Key="LastSocialButton"
                 BasedOn="{StaticResource SocialButton}"
                 TargetType="Button">
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+
+            <Style x:Key="SocialFrame" TargetType="Frame">
+                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="BorderColor" Value="{OnPlatform Android=Transparent, iOS='#E5E5E5'}" />
+                <Setter Property="HeightRequest" Value="44" />
+                <Setter Property="Margin" Value="5,0" />
+            </Style>
+
+            <Style
+                x:Key="FirstSocialFrame"
+                BasedOn="{StaticResource SocialFrame}"
+                TargetType="Frame">
+                <Setter Property="Margin" Value="0,0,5,0" />
+            </Style>
+
+            <Style
+                x:Key="LastSocialFrame"
+                BasedOn="{StaticResource SocialFrame}"
+                TargetType="Frame">
                 <Setter Property="Margin" Value="5,0,0,0" />
             </Style>
         </ResourceDictionary>
@@ -132,32 +155,46 @@
 
                         <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
 
-                        <FlexLayout Margin="{StaticResource MarginItem}" FlexLayout.Basis="59">
-                            <Button
-                                Margin="0"
+                        <FlexLayout
+                            Margin="{StaticResource MarginItem}"
+                            AlignItems="Center"
+                            FlexLayout.Basis="59">
+                            <Frame
                                 Padding="0"
-                                BorderWidth="0"
-                                ImageSource="stream_playback_count"
-                                Style="{StaticResource SocialButton}"
-                                Text="{Binding PlaybackCount, StringFormat='  {0}'}"
-                                TextColor="{StaticResource TextSecondaryColor}" />
+                                BorderColor="Transparent"
+                                Style="{StaticResource FirstSocialFrame}">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="stream_playback_count" />
+                                    <Label
+                                        Text="{Binding PlaybackCount, Converter={converters:SocialCounterToTextConverter}}"
+                                        TextColor="{StaticResource TextSecondaryColor}"
+                                        VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </Frame>
 
                             <FlexLayout
                                 AlignItems="Center"
                                 FlexLayout.Grow="1"
                                 JustifyContent="End">
+                                <Frame Style="{StaticResource SocialFrame}">
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <Image Margin="5,0" Source="stream_repost" />
+                                        <Label Text="{Binding RepostsCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </Frame>
 
-                                <Button
-                                    ImageSource="stream_repost"
-                                    Style="{StaticResource SocialButton}"
-                                    Text="{Binding RepostsCount, Converter={converters:SocialCounterToTextConverter}}" />
+                                <Frame Style="{StaticResource SocialFrame}">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Margin="5,0" Source="stream_like" />
+                                        <Label Text="{Binding LikesCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </Frame>
 
-                                <Button
-                                    ImageSource="stream_like"
-                                    Style="{StaticResource SocialButton}"
-                                    Text="{Binding LikesCount, Converter={converters:SocialCounterToTextConverter}}" />
-
-                                <Button ImageSource="stream_more" Style="{StaticResource LastSocialButton}" />
+                                <Frame Style="{StaticResource LastSocialFrame}">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Margin="5,0" Source="stream_more" />
+                                    </StackLayout>
+                                </Frame>
                             </FlexLayout>
                         </FlexLayout>
                     </FlexLayout>

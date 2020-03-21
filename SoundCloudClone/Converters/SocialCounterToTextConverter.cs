@@ -13,7 +13,7 @@ namespace SoundCloudClone.Converters
                 if (counter is 0)
                     return string.Empty;
 
-                return $"  {counter}";
+                return counter;
             }
 
             return string.Empty;
