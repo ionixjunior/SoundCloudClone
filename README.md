@@ -11,7 +11,13 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 #### Tela dos álbuns
 <kbd><img width="250" src="art/android_home_1.png" /></kbd>
 
+#### Tela dos streamings
+<kbd><img width="250" src="art/android_stream_1.png" /></kbd>
+
 ### iOS
 
 #### Tela dos álbuns
 <kbd><img width="250" src="art/ios_home_1.png" /></kbd>
+
+#### Tela dos streamings
+<kbd><img width="250" src="art/ios_stream_1.png" /></kbd>
