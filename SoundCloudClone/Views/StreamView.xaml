@@ -59,10 +59,17 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Streams}">
+        <CollectionView BackgroundColor="#F1F1F1" ItemsSource="{Binding Streams}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="20" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <FlexLayout Direction="Column" HeightRequest="360">
+                    <FlexLayout
+                        BackgroundColor="White"
+                        Direction="Column"
+                        HeightRequest="360">
 
                         <FlexLayout
                             Margin="{StaticResource MarginItem}"
