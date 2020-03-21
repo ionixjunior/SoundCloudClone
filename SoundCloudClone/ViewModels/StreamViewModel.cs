@@ -18,6 +18,7 @@ namespace SoundCloudClone.ViewModels
         {
             _api = api;
 
+            Title = "Stream";
             Streams = new ObservableRangeCollection<Stream>();
         }
 

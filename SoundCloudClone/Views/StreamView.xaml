@@ -66,6 +66,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <NavigationPage.TitleView>
+        <Label Style="{StaticResource TitleNavigationPage}" Text="{Binding Title}" />
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <CollectionView BackgroundColor="#F1F1F1" ItemsSource="{Binding Streams}">
             <CollectionView.ItemsLayout>
