@@ -40,6 +40,21 @@
             <Style TargetType="Span">
                 <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
             </Style>
+
+            <Style x:Key="SocialButton" TargetType="Button">
+                <Setter Property="Margin" Value="5,0" />
+                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="BorderColor" Value="#E5E5E5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="TextColor" Value="#666566" />
+            </Style>
+
+            <Style
+                x:Key="LastSocialButton"
+                BasedOn="{StaticResource SocialButton}"
+                TargetType="Button">
+                <Setter Property="Margin" Value="5,0,0,0" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -109,19 +124,31 @@
 
                         <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
 
-                        <FlexLayout
-                            Margin="{StaticResource MarginItem}"
-                            AlignItems="Center"
-                            FlexLayout.Basis="59">
-                            <Label Text="{Binding PlaybackCount}" />
+                        <FlexLayout Margin="{StaticResource MarginItem}" FlexLayout.Basis="59">
+                            <Button
+                                Margin="0"
+                                Padding="0"
+                                BorderWidth="0"
+                                ImageSource="stream_playback_count"
+                                Style="{StaticResource SocialButton}"
+                                Text="{Binding PlaybackCount, StringFormat='  {0}'}" />
 
                             <FlexLayout
                                 AlignItems="Center"
                                 FlexLayout.Grow="1"
                                 JustifyContent="End">
-                                <Label Text="{Binding RepostsCount}" />
-                                <Label Text="{Binding LikesCount}" />
-                                <Label Text="more" />
+
+                                <Button
+                                    ImageSource="stream_repost"
+                                    Style="{StaticResource SocialButton}"
+                                    Text="{Binding RepostsCount, StringFormat='  {0}'}" />
+
+                                <Button
+                                    ImageSource="stream_like"
+                                    Style="{StaticResource SocialButton}"
+                                    Text="{Binding LikesCount, StringFormat='  {0}'}" />
+
+                                <Button ImageSource="stream_more" Style="{StaticResource LastSocialButton}" />
                             </FlexLayout>
                         </FlexLayout>
                     </FlexLayout>
