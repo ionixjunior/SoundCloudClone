@@ -48,7 +48,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <FlexLayout
-                        BackgroundColor="Red"
+                        BackgroundColor="Blue"
                         Direction="Column"
                         HeightRequest="360">
 
@@ -114,6 +114,8 @@
                             <Label Text="{Binding Genre, StringFormat='#{0}'}" />
                             <Label Text="{Binding FullDurationTimeSpan}" />
                         </FlexLayout>
+
+                        <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
                     </FlexLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
