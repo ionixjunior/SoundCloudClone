@@ -47,15 +47,11 @@
         <CollectionView ItemsSource="{Binding Streams}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <FlexLayout
-                        BackgroundColor="Blue"
-                        Direction="Column"
-                        HeightRequest="360">
+                    <FlexLayout Direction="Column" HeightRequest="360">
 
                         <FlexLayout
                             Margin="{StaticResource MarginItem}"
                             AlignItems="Center"
-                            BackgroundColor="Green"
                             FlexLayout.Basis="80">
                             <Frame
                                 Padding="0"
@@ -83,10 +79,7 @@
                             </StackLayout>
                         </FlexLayout>
 
-                        <Grid
-                            Margin="{StaticResource MarginItem}"
-                            BackgroundColor="Blue"
-                            FlexLayout.Basis="180">
+                        <Grid Margin="{StaticResource MarginItem}" FlexLayout.Basis="180">
                             <ffimageloading:CachedImage
                                 Aspect="AspectFill"
                                 HeightRequest="180"
@@ -108,7 +101,6 @@
                         <FlexLayout
                             Margin="{StaticResource MarginItem}"
                             AlignItems="Center"
-                            BackgroundColor="Yellow"
                             FlexLayout.Basis="40"
                             JustifyContent="SpaceBetween">
                             <Label Text="{Binding Genre, StringFormat='#{0}'}" />
@@ -116,6 +108,22 @@
                         </FlexLayout>
 
                         <BoxView BackgroundColor="#E1E1E1" HeightRequest="1" />
+
+                        <FlexLayout
+                            Margin="{StaticResource MarginItem}"
+                            AlignItems="Center"
+                            FlexLayout.Basis="59">
+                            <Label Text="{Binding PlaybackCount}" />
+
+                            <FlexLayout
+                                AlignItems="Center"
+                                FlexLayout.Grow="1"
+                                JustifyContent="End">
+                                <Label Text="{Binding RepostsCount}" />
+                                <Label Text="{Binding LikesCount}" />
+                                <Label Text="more" />
+                            </FlexLayout>
+                        </FlexLayout>
                     </FlexLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
