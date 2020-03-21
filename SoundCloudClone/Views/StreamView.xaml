@@ -42,22 +42,6 @@
                 <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
             </Style>
 
-            <Style x:Key="SocialButton" TargetType="Button">
-                <Setter Property="Margin" Value="5,0" />
-                <Setter Property="Padding" Value="{OnPlatform Android=0, iOS='10,0'}" />
-                <Setter Property="BorderColor" Value="#E5E5E5" />
-                <Setter Property="BorderWidth" Value="{OnPlatform Android=0, iOS=1}" />
-                <Setter Property="TextColor" Value="#666566" />
-                <Setter Property="BackgroundColor" Value="Transparent" />
-            </Style>
-
-            <Style
-                x:Key="LastSocialButton"
-                BasedOn="{StaticResource SocialButton}"
-                TargetType="Button">
-                <Setter Property="Margin" Value="0,0,0,0" />
-            </Style>
-
             <Style x:Key="SocialFrame" TargetType="Frame">
                 <Setter Property="Padding" Value="10,0" />
                 <Setter Property="HasShadow" Value="false" />
