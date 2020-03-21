@@ -166,6 +166,18 @@
     <BundleResource Include="Resources\stream%402x.png" />
     <BundleResource Include="Resources\stream%403x.png" />
     <BundleResource Include="Resources\Fonts\interstate-light-cond.ttf" />
+    <BundleResource Include="Resources\stream_like.png" />
+    <BundleResource Include="Resources\stream_like%402x.png" />
+    <BundleResource Include="Resources\stream_like%403x.png" />
+    <BundleResource Include="Resources\stream_more.png" />
+    <BundleResource Include="Resources\stream_more%402x.png" />
+    <BundleResource Include="Resources\stream_more%403x.png" />
+    <BundleResource Include="Resources\stream_playback_count.png" />
+    <BundleResource Include="Resources\stream_playback_count%402x.png" />
+    <BundleResource Include="Resources\stream_playback_count%403x.png" />
+    <BundleResource Include="Resources\stream_repost.png" />
+    <BundleResource Include="Resources\stream_repost%402x.png" />
+    <BundleResource Include="Resources\stream_repost%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
