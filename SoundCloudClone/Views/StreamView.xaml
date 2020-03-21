@@ -3,6 +3,7 @@
     x:Class="SoundCloudClone.Views.StreamView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:SoundCloudClone.Converters"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -97,7 +98,7 @@
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label Text="{Binding CreatedAt}" TextColor="{StaticResource TextSecondaryColor}" />
+                                <Label Text="{Binding CreatedAt, Converter={converter:DateTimeToTextConverter}}" TextColor="{StaticResource TextSecondaryColor}" />
                             </StackLayout>
                         </FlexLayout>
 

@@ -26,5 +26,6 @@
     <Folder Include="Models\Api\" />
     <Folder Include="Models\App\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>
