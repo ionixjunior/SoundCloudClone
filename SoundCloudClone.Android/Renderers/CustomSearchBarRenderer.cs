@@ -29,6 +29,9 @@ namespace SoundCloudClone.Droid.Renderers
                 var plateId = Context.Resources.GetIdentifier("android:id/search_plate", null, null);
                 var plateView = Control.FindViewById<LinearLayout>(plateId);
                 plateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                var customBackgroundId = Resource.Drawable.custom_search_background;
+                Control.Background = Context.GetDrawable(customBackgroundId);
             }
         }
     }
