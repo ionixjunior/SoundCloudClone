@@ -25,6 +25,10 @@ namespace SoundCloudClone.Droid.Renderers
                 var searchMagIconView = Control.FindViewById<ImageView>(searchMagIconId);
                 searchMagIconView.SetImageDrawable(null);
                 searchMagIconView.Visibility = ViewStates.Gone;
+
+                var plateId = Context.Resources.GetIdentifier("android:id/search_plate", null, null);
+                var plateView = Control.FindViewById<LinearLayout>(plateId);
+                plateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
             }
         }
     }
