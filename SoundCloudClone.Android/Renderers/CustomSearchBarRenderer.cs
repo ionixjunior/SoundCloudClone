@@ -21,18 +21,31 @@ namespace SoundCloudClone.Droid.Renderers
 
             if (Control != null)
             {
-                var searchMagIconId = Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);
-                var searchMagIconView = Control.FindViewById<ImageView>(searchMagIconId);
-                searchMagIconView.SetImageDrawable(null);
-                searchMagIconView.Visibility = ViewStates.Gone;
-
-                var plateId = Context.Resources.GetIdentifier("android:id/search_plate", null, null);
-                var plateView = Control.FindViewById<LinearLayout>(plateId);
-                plateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                var customBackgroundId = Resource.Drawable.custom_search_background;
-                Control.Background = Context.GetDrawable(customBackgroundId);
+                RemoveMagnifierIcon();
+                RemoveBottomLine();
+                ChangeBackgroundDrawable();
             }
+        }
+
+        private void RemoveMagnifierIcon()
+        {
+            var searchMagIconId = Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);
+            var searchMagIconView = Control.FindViewById<ImageView>(searchMagIconId);
+            searchMagIconView.SetImageDrawable(null);
+            searchMagIconView.Visibility = ViewStates.Gone;
+        }
+
+        private void RemoveBottomLine()
+        {
+            var plateId = Context.Resources.GetIdentifier("android:id/search_plate", null, null);
+            var plateView = Control.FindViewById<LinearLayout>(plateId);
+            plateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+        }
+
+        private void ChangeBackgroundDrawable()
+        {
+            var customBackgroundId = Resource.Drawable.custom_search_background;
+            Control.Background = Context.GetDrawable(customBackgroundId);
         }
     }
 }
