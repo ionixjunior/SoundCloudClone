@@ -1,0 +1,31 @@
+﻿using System;
+using Android.Content;
+using Android.Views;
+using Android.Widget;
+using SoundCloudClone.Droid.Renderers;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
+[assembly: ExportRenderer(typeof(SearchBar), typeof(CustomSearchBarRenderer))]
+namespace SoundCloudClone.Droid.Renderers
+{
+    public class CustomSearchBarRenderer : SearchBarRenderer
+    {
+        public CustomSearchBarRenderer(Context context) : base(context)
+        {
+        }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<SearchBar> e)
+        {
+            base.OnElementChanged(e);
+
+            if (Control != null)
+            {
+                var searchMagIconId = Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);
+                var searchMagIconView = Control.FindViewById<ImageView>(searchMagIconId);
+                searchMagIconView.SetImageDrawable(null);
+                searchMagIconView.Visibility = ViewStates.Gone;
+            }
+        }
+    }
+}

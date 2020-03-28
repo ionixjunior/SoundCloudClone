@@ -3,6 +3,10 @@
     x:Class="SoundCloudClone.Views.SearchView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+        <SearchBar Placeholder="Search" />
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <FlexLayout
             AlignItems="Center"

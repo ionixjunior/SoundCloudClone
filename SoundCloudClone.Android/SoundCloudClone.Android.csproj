@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\CustomTabbedPageRenderer.cs" />
     <Compile Include="Utils\ResourceUtil.cs" />
+    <Compile Include="Renderers\CustomSearchBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
