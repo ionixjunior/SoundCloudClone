@@ -4,6 +4,22 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <Label Text="Search View" />
+        <FlexLayout
+            AlignItems="Center"
+            BackgroundColor="#F1F1F1"
+            Direction="Column"
+            JustifyContent="Center">
+            <BoxView
+                BackgroundColor="Blue"
+                HeightRequest="200"
+                WidthRequest="200" />
+
+            <Label FontSize="Title" Text="Search SoundCloud" />
+            <Label
+                FontSize="Subtitle"
+                Text="{OnPlatform iOS='Find artists, music and audio',
+                                  Android='Find artists, tracks, albums and playlists'}"
+                TextColor="{StaticResource TextSecondaryColor}" />
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>
