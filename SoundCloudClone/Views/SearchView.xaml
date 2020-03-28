@@ -4,7 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <NavigationPage.TitleView>
-        <SearchBar Margin="0,0,15,0" Placeholder="Search SoundCloud" />
+        <SearchBar
+            Margin="0,0,15,0"
+            FontFamily="{StaticResource FontLight}"
+            FontSize="Large"
+            Placeholder="Search SoundCloud"
+            PlaceholderColor="{StaticResource TextSecondaryColor}" />
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
