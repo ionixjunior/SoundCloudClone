@@ -178,6 +178,9 @@
     <BundleResource Include="Resources\stream_repost.png" />
     <BundleResource Include="Resources\stream_repost%402x.png" />
     <BundleResource Include="Resources\stream_repost%403x.png" />
+    <BundleResource Include="Resources\search_magnifier.png" />
+    <BundleResource Include="Resources\search_magnifier%402x.png" />
+    <BundleResource Include="Resources\search_magnifier%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
