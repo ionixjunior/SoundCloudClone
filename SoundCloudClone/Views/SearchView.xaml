@@ -9,13 +9,18 @@
             BackgroundColor="#F1F1F1"
             Direction="Column"
             JustifyContent="Center">
-            <BoxView
-                BackgroundColor="Blue"
-                HeightRequest="200"
-                WidthRequest="200" />
+            <Image
+                Margin="0,0,0,50"
+                HeightRequest="140"
+                Source="search_magnifier"
+                WidthRequest="140" />
 
-            <Label FontSize="Title" Text="Search SoundCloud" />
             <Label
+                Margin="5"
+                FontSize="Title"
+                Text="Search SoundCloud" />
+            <Label
+                Margin="5"
                 FontSize="Subtitle"
                 Text="{OnPlatform iOS='Find artists, music and audio',
                                   Android='Find artists, tracks, albums and playlists'}"
