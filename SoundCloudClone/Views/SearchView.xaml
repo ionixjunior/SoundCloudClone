@@ -4,12 +4,21 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <NavigationPage.TitleView>
-        <SearchBar
-            Margin="0,0,15,0"
-            FontFamily="{StaticResource FontLight}"
-            FontSize="Large"
-            Placeholder="Search SoundCloud"
-            PlaceholderColor="{StaticResource TextSecondaryColor}" />
+        <OnPlatform x:TypeArguments="View">
+            <OnPlatform.Android>
+                <SearchBar
+                    Margin="0,0,15,0"
+                    FontFamily="{StaticResource FontLight}"
+                    FontSize="Large"
+                    Placeholder="Search SoundCloud"
+                    PlaceholderColor="{StaticResource TextSecondaryColor}" />
+
+            </OnPlatform.Android>
+
+            <OnPlatform.iOS>
+                <Label Style="{StaticResource TitleNavigationPage}" Text="Search" />
+            </OnPlatform.iOS>
+        </OnPlatform>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
