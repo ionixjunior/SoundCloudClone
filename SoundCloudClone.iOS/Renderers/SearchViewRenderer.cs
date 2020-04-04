@@ -35,7 +35,8 @@ namespace SoundCloudClone.iOS.Renderers
         [Export("searchBar:textDidChange:")]
         public void TextChanged(UISearchBar searchBar, string searchText)
         {
-            System.Diagnostics.Debug.WriteLine($"Digitou {searchText}");
+            if (Element is SearchView searchView)
+                searchView.SearchBy(searchText);
         }
     }
 }

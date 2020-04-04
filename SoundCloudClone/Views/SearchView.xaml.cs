@@ -21,5 +21,10 @@ namespace SoundCloudClone.Views
         {
             return "search_selected";
         }
+
+        public void SearchBy(string text)
+        {
+            System.Diagnostics.Debug.WriteLine($"Vai procurar por {text}");
+        }
     }
 }
