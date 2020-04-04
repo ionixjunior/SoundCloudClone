@@ -16,7 +16,10 @@ namespace SoundCloudClone.iOS.Renderers
         {
             base.ViewDidLoad();
 
-            _searchController = new UISearchController();
+            _searchController = new UISearchController()
+            {
+                AutomaticallyShowsCancelButton = false
+            };
         }
 
         public override void WillMoveToParentViewController(UIViewController parent)
