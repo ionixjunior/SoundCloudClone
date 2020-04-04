@@ -6,5 +6,11 @@ namespace SoundCloudClone.ViewModels
         public SearchViewModel()
         {
         }
+
+        public void SearchBy(string text)
+        {
+            // TODO IMPLEMENTAR BUSCA
+            System.Diagnostics.Debug.WriteLine($"Vai procurar por {text} na viewmodel");
+        }
     }
 }

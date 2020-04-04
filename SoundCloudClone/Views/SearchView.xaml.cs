@@ -26,7 +26,8 @@ namespace SoundCloudClone.Views
 
         public void SearchBy(string text)
         {
-            System.Diagnostics.Debug.WriteLine($"Vai procurar por {text}");
+            if (BindingContext is SearchViewModel viewModel)
+                viewModel.SearchBy(text);
         }
 
         private void OnTextChanged(object sender, TextChangedEventArgs args) => SearchBy(args.NewTextValue);
