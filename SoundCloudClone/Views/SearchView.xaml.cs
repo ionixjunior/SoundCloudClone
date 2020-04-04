@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.ViewModels;
 using Xamarin.Forms;
 
 namespace SoundCloudClone.Views
@@ -10,6 +11,7 @@ namespace SoundCloudClone.Views
         public SearchView()
         {
             InitializeComponent();
+            BindingContext = new SearchViewModel();
         }
 
         public string GetIcon()
