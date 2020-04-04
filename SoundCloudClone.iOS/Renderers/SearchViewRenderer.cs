@@ -1,4 +1,5 @@
 ﻿using System;
+using Foundation;
 using SoundCloudClone.iOS.Renderers;
 using SoundCloudClone.Views;
 using UIKit;
@@ -8,7 +9,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(SearchView), typeof(SearchViewRenderer))]
 namespace SoundCloudClone.iOS.Renderers
 {
-    public class SearchViewRenderer : PageRenderer
+    public class SearchViewRenderer : PageRenderer, IUISearchBarDelegate
     {
         private UISearchController _searchController;
 
@@ -20,6 +21,7 @@ namespace SoundCloudClone.iOS.Renderers
             {
                 AutomaticallyShowsCancelButton = false
             };
+            _searchController.SearchBar.Delegate = this;
         }
 
         public override void WillMoveToParentViewController(UIViewController parent)
@@ -28,6 +30,12 @@ namespace SoundCloudClone.iOS.Renderers
 
             parent.NavigationItem.SearchController = _searchController;
             parent.NavigationItem.HidesSearchBarWhenScrolling = false;
+        }
+
+        [Export("searchBar:textDidChange:")]
+        public void TextChanged(UISearchBar searchBar, string searchText)
+        {
+            System.Diagnostics.Debug.WriteLine($"Digitou {searchText}");
         }
     }
 }
