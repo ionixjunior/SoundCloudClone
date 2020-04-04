@@ -17,6 +17,7 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="refit" Version="5.0.23" />
     <PackageReference Include="Humanizer.Core" Version="2.7.9" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
