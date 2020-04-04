@@ -24,6 +24,7 @@ namespace SoundCloudClone.iOS.Renderers
             base.WillMoveToParentViewController(parent);
 
             parent.NavigationItem.SearchController = _searchController;
+            parent.NavigationItem.HidesSearchBarWhenScrolling = false;
         }
     }
 }
