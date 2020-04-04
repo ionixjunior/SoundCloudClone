@@ -11,7 +11,8 @@
                     FontFamily="{StaticResource FontLight}"
                     FontSize="Large"
                     Placeholder="Search SoundCloud"
-                    PlaceholderColor="{StaticResource TextSecondaryColor}" />
+                    PlaceholderColor="{StaticResource TextSecondaryColor}"
+                    TextChanged="OnTextChanged" />
 
             </OnPlatform.Android>
 

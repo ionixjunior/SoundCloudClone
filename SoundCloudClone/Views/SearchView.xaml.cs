@@ -26,5 +26,7 @@ namespace SoundCloudClone.Views
         {
             System.Diagnostics.Debug.WriteLine($"Vai procurar por {text}");
         }
+
+        private void OnTextChanged(object sender, TextChangedEventArgs args) => SearchBy(args.NewTextValue);
     }
 }
