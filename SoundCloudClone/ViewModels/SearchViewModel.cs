@@ -2,6 +2,7 @@
 using System.Reactive.Linq;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Extensions;
+using System.Threading.Tasks;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -21,13 +22,20 @@ namespace SoundCloudClone.ViewModels
                     x => SearchTextChanged -= x)
                 .Throttle(TimeSpan.FromSeconds(1))
                 .Select(x => x.EventArgs)
-                .Subscribe(OnSearchTextChanged);
+                .Subscribe(async (x) => await OnSearchTextChangedAsync(x));
         }
 
-        private async void OnSearchTextChanged(string text)
+        private async Task OnSearchTextChangedAsync(string text)
         {
-            var suggestionsApi = await _api.GetSearchSuggestions();
-            var suggestionsApp = suggestionsApi.ToSearchSuggestionApp();
+            try
+            {
+                var suggestionsApi = await _api.GetSearchSuggestions();
+                var suggestionsApp = suggestionsApi.ToSearchSuggestionApp();
+            }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Debug.WriteLine(exception.Message);
+            }
         }
 
         public void SearchBy(string text) => SearchTextChanged.Invoke(this, text);
