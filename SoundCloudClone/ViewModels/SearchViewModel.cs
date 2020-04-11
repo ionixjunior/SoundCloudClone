@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reactive.Linq;
+using SoundCloudClone.Interfaces;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -7,8 +8,12 @@ namespace SoundCloudClone.ViewModels
     {
         public event EventHandler<string> SearchTextChanged;
 
-        public SearchViewModel()
+        private readonly IApi _api;
+
+        public SearchViewModel(IApi api)
         {
+            _api = api;
+
             Observable
                 .FromEventPattern<string>(
                     x => SearchTextChanged += x,
@@ -18,10 +23,9 @@ namespace SoundCloudClone.ViewModels
                 .Subscribe(OnSearchTextChanged);
         }
 
-        private void OnSearchTextChanged(string text)
+        private async void OnSearchTextChanged(string text)
         {
-            // TODO IMPLEMENTAR A CONSULTA NA API
-            System.Diagnostics.Debug.WriteLine($"Buscando view evento o texto {text}");
+            var suggestionsApi = await _api.GetSearchSuggestions();
         }
 
         public void SearchBy(string text) => SearchTextChanged.Invoke(this, text);

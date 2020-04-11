@@ -11,7 +11,9 @@ namespace SoundCloudClone.Views
         public SearchView()
         {
             InitializeComponent();
-            BindingContext = new SearchViewModel();
+
+            var api = DependencyService.Get<IApi>();
+            BindingContext = new SearchViewModel(api);
         }
 
         public string GetIcon()
