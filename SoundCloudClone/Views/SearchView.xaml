@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.SearchView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
     <NavigationPage.TitleView>
         <OnPlatform x:TypeArguments="View">
             <OnPlatform.Android>
@@ -23,27 +24,57 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <FlexLayout
-            AlignItems="Center"
-            BackgroundColor="#F1F1F1"
-            Direction="Column"
-            JustifyContent="Center">
-            <Image
-                Margin="0,0,0,50"
-                HeightRequest="140"
-                Source="search_magnifier"
-                WidthRequest="140" />
+        <Grid>
+            <FlexLayout
+                AlignItems="Center"
+                BackgroundColor="#F1F1F1"
+                Direction="Column"
+                JustifyContent="Center">
+                <Image
+                    Margin="0,0,0,50"
+                    HeightRequest="140"
+                    Source="search_magnifier"
+                    WidthRequest="140" />
 
-            <Label
-                Margin="5"
-                FontSize="Title"
-                Text="Search SoundCloud" />
-            <Label
-                Margin="5"
-                FontSize="Subtitle"
-                Text="{OnPlatform iOS='Find artists, music and audio',
-                                  Android='Find artists, tracks, albums and playlists'}"
-                TextColor="{StaticResource TextSecondaryColor}" />
-        </FlexLayout>
+                <Label
+                    Margin="5"
+                    FontSize="Title"
+                    Text="Search SoundCloud" />
+                <Label
+                    Margin="5"
+                    FontSize="Subtitle"
+                    Text="{OnPlatform iOS='Find artists, music and audio',
+                                      Android='Find artists, tracks, albums and playlists'}"
+                    TextColor="{StaticResource TextSecondaryColor}" />
+            </FlexLayout>
+
+            <ListView
+                BackgroundColor="#F1F1F1"
+                HasUnevenRows="True"
+                IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
+                ItemsSource="{Binding Suggestions}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <FlexLayout
+                                    Margin="30,0,20,0"
+                                    AlignItems="Center"
+                                    HeightRequest="60"
+                                    JustifyContent="SpaceBetween">
+                                    <Label FontSize="Medium" Text="{Binding Description}" />
+
+                                    <Image
+                                        HeightRequest="14"
+                                        Source="search_suggestion"
+                                        WidthRequest="14" />
+                                </FlexLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
