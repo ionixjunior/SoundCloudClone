@@ -182,9 +182,6 @@
     <BundleResource Include="Resources\search_magnifier.png" />
     <BundleResource Include="Resources\search_magnifier%402x.png" />
     <BundleResource Include="Resources\search_magnifier%403x.png" />
-    <BundleResource Include="Resources\search_suggestion%403x.png" />
-    <BundleResource Include="Resources\search_suggestion%402x.png" />
-    <BundleResource Include="Resources\search_suggestion.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
