@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Extensions;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -26,6 +27,7 @@ namespace SoundCloudClone.ViewModels
         private async void OnSearchTextChanged(string text)
         {
             var suggestionsApi = await _api.GetSearchSuggestions();
+            var suggestionsApp = suggestionsApi.ToSearchSuggestionApp();
         }
 
         public void SearchBy(string text) => SearchTextChanged.Invoke(this, text);
