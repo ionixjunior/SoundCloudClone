@@ -6,6 +6,8 @@ using SoundCloudClone.Extensions;
 using System.Threading.Tasks;
 using MvvmHelpers;
 using SoundCloudClone.Models.App;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace SoundCloudClone.ViewModels
 {
@@ -27,32 +29,30 @@ namespace SoundCloudClone.ViewModels
                     x => SearchTextChanged -= x)
                 .Throttle(TimeSpan.FromSeconds(1))
                 .Select(x => x.EventArgs)
-                .Subscribe(async (x) => await OnSearchTextChangedAsync(x));
+                .Select(async (texto) => await LoadSuggestions(texto))
+                .Switch()
+                .ObserveOn(SynchronizationContext.Current)
+                .Subscribe(ShowSuggestions);
         }
 
-        private async Task OnSearchTextChangedAsync(string text)
+        private async Task<IList<SearchSuggestion>> LoadSuggestions(string x)
         {
-            // TEMPORÁRIO
-            if (text == string.Empty)
-            {
-                Suggestions.Clear();
-                return;
-            }
-
-            if (Suggestions.Any())
-                return;
-
             try
             {
                 var suggestionsApi = await _api.GetSearchSuggestions();
-                var suggestionsApp = suggestionsApi.ToSearchSuggestionApp();
-
-                Suggestions.AddRange(suggestionsApp);
+                return suggestionsApi.ToSearchSuggestionApp();
             }
             catch (Exception exception)
             {
                 System.Diagnostics.Debug.WriteLine(exception.Message);
+                return new List<SearchSuggestion>();
             }
+        }
+
+        private void ShowSuggestions(IList<SearchSuggestion> suggestions)
+        {
+            Suggestions.Clear();
+            Suggestions.AddRange(suggestions);
         }
 
         public void SearchBy(string text) => SearchTextChanged.Invoke(this, text);
