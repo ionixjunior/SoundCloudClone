@@ -48,33 +48,42 @@
                     TextColor="{StaticResource TextSecondaryColor}" />
             </FlexLayout>
 
-            <ListView
-                BackgroundColor="#F1F1F1"
-                HasUnevenRows="True"
-                IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
-                ItemsSource="{Binding Suggestions}"
-                SeparatorVisibility="None">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <FlexLayout
-                                    Margin="30,0,20,0"
-                                    AlignItems="Center"
-                                    HeightRequest="60"
-                                    JustifyContent="SpaceBetween">
-                                    <Label FontSize="Medium" Text="{Binding Description}" />
+            <OnPlatform x:TypeArguments="View">
+                <OnPlatform.Android>
+                    <ListView
+                        BackgroundColor="#F1F1F1"
+                        HasUnevenRows="True"
+                        IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
+                        ItemsSource="{Binding Suggestions}"
+                        SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <FlexLayout
+                                            Margin="30,0,20,0"
+                                            AlignItems="Center"
+                                            HeightRequest="60"
+                                            JustifyContent="SpaceBetween">
+                                            <Label FontSize="Medium" Text="{Binding Description}" />
 
-                                    <Image
-                                        HeightRequest="14"
-                                        Source="search_suggestion"
-                                        WidthRequest="14" />
-                                </FlexLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                            <Image
+                                                HeightRequest="14"
+                                                Source="search_suggestion"
+                                                WidthRequest="14" />
+                                        </FlexLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </OnPlatform.Android>
+
+                <OnPlatform.iOS>
+                    <ContentView />
+                </OnPlatform.iOS>
+            </OnPlatform>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
