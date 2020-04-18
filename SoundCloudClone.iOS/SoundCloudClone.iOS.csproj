@@ -115,6 +115,7 @@
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Controls\SearchResults.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -189,5 +190,6 @@
   <ItemGroup>
     <Folder Include="Renderers\" />
     <Folder Include="Resources\Fonts\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

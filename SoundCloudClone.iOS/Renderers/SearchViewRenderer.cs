@@ -17,7 +17,10 @@ namespace SoundCloudClone.iOS.Renderers
         {
             base.ViewDidLoad();
 
-            _searchController = new UISearchController()
+            var storyboard = UIStoryboard.FromName("SearchResults", null);
+            var searchResultsController = storyboard.InstantiateInitialViewController();
+
+            _searchController = new UISearchController(searchResultsController)
             {
                 AutomaticallyShowsCancelButton = false
             };
