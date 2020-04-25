@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Models.App;
 using SoundCloudClone.ViewModels;
 using Xamarin.Forms;
 
@@ -33,5 +34,12 @@ namespace SoundCloudClone.Views
         }
 
         private void OnTextChanged(object sender, TextChangedEventArgs args) => SearchBy(args.NewTextValue);
+
+        private void OnItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs args)
+        {
+            if (args.SelectedItem is SearchSuggestion suggestion)
+                if (BindingContext is SearchViewModel viewModel)
+                    viewModel.SelectSuggestion(suggestion);
+        }
     }
 }

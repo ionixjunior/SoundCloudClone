@@ -54,6 +54,7 @@
                         BackgroundColor="#F1F1F1"
                         HasUnevenRows="True"
                         IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
+                        ItemSelected="OnItemSelected"
                         ItemsSource="{Binding Suggestions}"
                         SeparatorVisibility="None">
                         <ListView.ItemTemplate>
