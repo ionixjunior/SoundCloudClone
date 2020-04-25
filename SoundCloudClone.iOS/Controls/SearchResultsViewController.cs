@@ -61,7 +61,7 @@ namespace SoundCloudClone.iOS.Controls
         {
             View.Frame = new CGRect(
                 View.Frame.X,
-                View.Frame.Y,
+                -44,
                 View.Frame.Width,
                 SearchResultsTableView.ContentSize.Height
             );
