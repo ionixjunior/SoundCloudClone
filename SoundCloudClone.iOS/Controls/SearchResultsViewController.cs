@@ -74,6 +74,7 @@ namespace SoundCloudClone.iOS.Controls
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             SuggestionSelected?.Invoke(this, _results[indexPath.Row]);
+            DismissViewController(true, null);
         }
     }
 }
