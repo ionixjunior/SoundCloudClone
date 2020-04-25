@@ -61,6 +61,7 @@ namespace SoundCloudClone.ViewModels
         {
             // TODO FAZER A BUSCA BASEADO NO ITEM SELECIONADO
             System.Diagnostics.Debug.WriteLine($"Item selecionado na viewmodel: {suggestion.Description}");
+            Suggestions.Clear();
         }
     }
 }

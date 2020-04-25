@@ -49,6 +49,13 @@ namespace SoundCloudClone.iOS.Controls
             return _results.Count;
         }
 
+        internal void ClearResults()
+        {
+            _results.Clear();
+            SearchResultsTableView.ReloadData();
+            UpdateViewHeight();
+        }
+
         internal void UpdateResults(IList newItems)
         {
             _results.Clear();

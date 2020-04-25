@@ -42,6 +42,14 @@ namespace SoundCloudClone.iOS.Renderers
 
         private void OnSuggestionsChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
+            if (args.Action == NotifyCollectionChangedAction.Reset)
+            {
+                if (_searchResultsController is SearchResultsViewController viewController)
+                {
+                    viewController.ClearResults();
+                }
+            }
+
             if (args.Action == NotifyCollectionChangedAction.Add)
             {
                 if (_searchResultsController is SearchResultsViewController viewController)
