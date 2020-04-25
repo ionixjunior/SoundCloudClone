@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoreGraphics;
 using Foundation;
 using SoundCloudClone.Models.App;
 using UIKit;
@@ -22,6 +23,13 @@ namespace SoundCloudClone.iOS.Controls
             base.ViewDidLoad();
 
             SearchResultsTableView.DataSource = this;
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+
+            UpdateViewHeight();
         }
 
         public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -46,6 +54,17 @@ namespace SoundCloudClone.iOS.Controls
                 _results.Add(item);
 
             SearchResultsTableView.ReloadData();
+            UpdateViewHeight();
+        }
+
+        private void UpdateViewHeight()
+        {
+            View.Frame = new CGRect(
+                View.Frame.X,
+                View.Frame.Y,
+                View.Frame.Width,
+                SearchResultsTableView.ContentSize.Height
+            );
         }
     }
 }
