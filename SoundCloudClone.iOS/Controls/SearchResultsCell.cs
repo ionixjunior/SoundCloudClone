@@ -3,6 +3,7 @@
 using System;
 
 using Foundation;
+using SoundCloudClone.Models.App;
 using UIKit;
 
 namespace SoundCloudClone.iOS.Controls
@@ -13,9 +14,9 @@ namespace SoundCloudClone.iOS.Controls
 		{
 		}
 
-		public void Update(string result)
-        {
-			Name.Text = result;
+		public void Update(SearchSuggestion searchSuggestion)
+		{
+			Name.Text = searchSuggestion.Description;
         }
 	}
 }
