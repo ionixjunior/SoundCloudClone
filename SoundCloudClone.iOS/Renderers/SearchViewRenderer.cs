@@ -35,6 +35,9 @@ namespace SoundCloudClone.iOS.Renderers
 
             if (Element.BindingContext is SearchViewModel viewModel)
                 viewModel.Suggestions.CollectionChanged += OnSuggestionsChanged;
+
+            if (_searchResultsController is SearchResultsViewController viewController)
+                viewController.SuggestionSelected += OnSuggestionSelected;
         }
 
         private void OnSuggestionsChanged(object sender, NotifyCollectionChangedEventArgs args)
@@ -46,6 +49,12 @@ namespace SoundCloudClone.iOS.Renderers
                     viewController.UpdateResults(args.NewItems);
                 }
             }
+        }
+
+        private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
+        {
+            if (Element.BindingContext is SearchViewModel viewModel)
+                viewModel.SelectSuggestion(suggestion);
         }
 
         public override void WillMoveToParentViewController(UIViewController parent)

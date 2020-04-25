@@ -10,9 +10,11 @@ using UIKit;
 
 namespace SoundCloudClone.iOS.Controls
 {
-	public partial class SearchResultsViewController : UIViewController, IUITableViewDataSource
+	public partial class SearchResultsViewController : UIViewController, IUITableViewDataSource, IUITableViewDelegate
 	{
         private List<SearchSuggestion> _results = new List<SearchSuggestion>();
+
+        public event EventHandler<SearchSuggestion> SuggestionSelected;
 
 		public SearchResultsViewController (IntPtr handle) : base (handle)
 		{
@@ -23,6 +25,7 @@ namespace SoundCloudClone.iOS.Controls
             base.ViewDidLoad();
 
             SearchResultsTableView.DataSource = this;
+            SearchResultsTableView.Delegate = this;
         }
 
         public override void ViewDidLayoutSubviews()
@@ -65,6 +68,12 @@ namespace SoundCloudClone.iOS.Controls
                 View.Frame.Width,
                 SearchResultsTableView.ContentSize.Height
             );
+        }
+
+        [Export("tableView:didSelectRowAtIndexPath:")]
+        public void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            SuggestionSelected?.Invoke(this, _results[indexPath.Row]);
         }
     }
 }
