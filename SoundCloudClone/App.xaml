@@ -29,6 +29,10 @@
                 <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
             </Style>
 
+            <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#F2F2F2" />
+            </Style>
+
             <Style x:Key="TitleNavigationPage" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
                 <Setter Property="TextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
