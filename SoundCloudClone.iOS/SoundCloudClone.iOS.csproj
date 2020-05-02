@@ -194,6 +194,24 @@
     <BundleResource Include="Resources\search_suggestion%403x.png" />
     <BundleResource Include="Resources\search_suggestion%402x.png" />
     <BundleResource Include="Resources\search_suggestion.png" />
+    <BundleResource Include="Resources\library_stations%403x.png" />
+    <BundleResource Include="Resources\library_profile%403x.png" />
+    <BundleResource Include="Resources\library_arrow%403x.png" />
+    <BundleResource Include="Resources\library_following%402x.png" />
+    <BundleResource Include="Resources\library_playlists%403x.png" />
+    <BundleResource Include="Resources\library_following%403x.png" />
+    <BundleResource Include="Resources\library_tracks%402x.png" />
+    <BundleResource Include="Resources\library_tracks%403x.png" />
+    <BundleResource Include="Resources\library_profile%402x.png" />
+    <BundleResource Include="Resources\library_stations%402x.png" />
+    <BundleResource Include="Resources\library_arrow%402x.png" />
+    <BundleResource Include="Resources\library_profile.png" />
+    <BundleResource Include="Resources\library_playlists%402x.png" />
+    <BundleResource Include="Resources\library_following.png" />
+    <BundleResource Include="Resources\library_stations.png" />
+    <BundleResource Include="Resources\library_arrow.png" />
+    <BundleResource Include="Resources\library_playlists.png" />
+    <BundleResource Include="Resources\library_tracks.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
