@@ -3,8 +3,7 @@
     x:Class="SoundCloudClone.Views.HomeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    BackgroundColor="#F2F2F2">
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <NavigationPage.TitleView>
         <Label Style="{StaticResource TitleNavigationPage}" Text="{Binding Title}" />
     </NavigationPage.TitleView>

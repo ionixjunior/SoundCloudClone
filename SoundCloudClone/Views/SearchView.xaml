@@ -27,7 +27,6 @@
         <Grid>
             <FlexLayout
                 AlignItems="Center"
-                BackgroundColor="#F1F1F1"
                 Direction="Column"
                 JustifyContent="Center">
                 <Image

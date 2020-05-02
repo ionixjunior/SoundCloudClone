@@ -71,7 +71,7 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <CollectionView BackgroundColor="#F1F1F1" ItemsSource="{Binding Streams}">
+        <CollectionView ItemsSource="{Binding Streams}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="20" Orientation="Vertical" />
             </CollectionView.ItemsLayout>
