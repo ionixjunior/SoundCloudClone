@@ -44,6 +44,33 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <OnPlatform x:TypeArguments="View">
+            <On Platform="Android">
+                <FlexLayout Padding="0,0,15,0" JustifyContent="SpaceBetween">
+                    <Label Style="{StaticResource TitleNavigationPage}" Text="Library" />
+                    <Image
+                        HeightRequest="32"
+                        Source="library_profile"
+                        WidthRequest="32" />
+                </FlexLayout>
+            </On>
+
+            <On Platform="iOS">
+                <Grid Padding="10,0">
+                    <Label Style="{StaticResource TitleNavigationPage}" Text="Library" />
+                    <Image
+                        HeightRequest="32"
+                        HorizontalOptions="End"
+                        Source="library_profile"
+                        VerticalOptions="Start"
+                        WidthRequest="32" />
+                </Grid>
+            </On>
+        </OnPlatform>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0" VerticalOptions="Start">
