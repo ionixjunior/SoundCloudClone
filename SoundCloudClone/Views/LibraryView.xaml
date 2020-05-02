@@ -150,6 +150,7 @@
                     HeightRequest="80">
                     <Label Style="{StaticResource TitleItem}" Text="Recently Played" />
                 </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout
                     Padding="60,0"
@@ -159,6 +160,7 @@
                     JustifyContent="Center">
                     <Label Style="{StaticResource ContentItem}" Text="Find your recently played content here." />
                 </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout
                     Padding="20,0"
