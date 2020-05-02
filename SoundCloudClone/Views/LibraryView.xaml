@@ -8,6 +8,19 @@
         <ResourceDictionary>
             <Style x:Key="DefaultItem" TargetType="Label">
                 <Setter Property="FontSize" Value="Title" />
+                <Setter Property="Padding" Value="20,0,0,0" />
+                <Setter Property="FlexLayout.Grow" Value="1" />
+            </Style>
+
+            <Style x:Key="ArrowIconItem" TargetType="Image">
+                <Setter Property="FlexLayout.Basis" Value="18" />
+                <Setter Property="HeightRequest" Value="18" />
+                <Setter Property="Source" Value="library_arrow" />
+            </Style>
+
+            <Style x:Key="DefaultImage" TargetType="Image">
+                <Setter Property="FlexLayout.Basis" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
             </Style>
 
             <Style x:Key="TitleItem" TargetType="Label">
@@ -39,7 +52,9 @@
                     AlignItems="Center"
                     BackgroundColor="White"
                     HeightRequest="80">
-                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                    <Image Source="library_tracks" Style="{StaticResource DefaultImage}" />
+                    <Label Style="{StaticResource DefaultItem}" Text="Liked tracks" />
+                    <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
 
                 <FlexLayout
@@ -47,7 +62,37 @@
                     AlignItems="Center"
                     BackgroundColor="White"
                     HeightRequest="80">
-                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                    <Image Source="library_playlists" Style="{StaticResource DefaultImage}" />
+                    <Label Style="{StaticResource DefaultItem}" Text="{OnPlatform Android='Playlists', iOS='Playlist &amp; albums'}" />
+                    <Image Style="{StaticResource ArrowIconItem}" />
+                </FlexLayout>
+
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="Android">
+                        <FlexLayout
+                            Padding="20,0"
+                            AlignItems="Center"
+                            BackgroundColor="White"
+                            HeightRequest="80">
+                            <Image Source="library_albums" Style="{StaticResource DefaultImage}" />
+                            <Label Style="{StaticResource DefaultItem}" Text="Albums" />
+                            <Image Style="{StaticResource ArrowIconItem}" />
+                        </FlexLayout>
+                    </On>
+
+                    <On Platform="iOS">
+                        <ContentView />
+                    </On>
+                </OnPlatform>
+
+                <FlexLayout
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Image Source="library_following" Style="{StaticResource DefaultImage}" />
+                    <Label Style="{StaticResource DefaultItem}" Text="Following" />
+                    <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
 
                 <FlexLayout
@@ -55,7 +100,9 @@
                     AlignItems="Center"
                     BackgroundColor="White"
                     HeightRequest="80">
-                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                    <Image Source="library_stations" Style="{StaticResource DefaultImage}" />
+                    <Label Style="{StaticResource DefaultItem}" Text="Stations" />
+                    <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
 
 
@@ -82,8 +129,10 @@
                     Padding="20,0"
                     AlignItems="Center"
                     BackgroundColor="White"
-                    HeightRequest="80">
+                    HeightRequest="80"
+                    JustifyContent="Center">
                     <Label Style="{StaticResource FooterItem}" Text="See more recently played" />
+                    <Image Margin="8,0,0,0" Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
             </StackLayout>
         </ScrollView>
