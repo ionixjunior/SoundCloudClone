@@ -17,6 +17,9 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 #### Tela de busca
 <kbd><img width="250" src="art/android_search_1.png" /></kbd><kbd><img width="250" src="art/android_search_2.png" /></kbd><kbd><img width="250" src="art/android_search_3.png" /></kbd>
 
+#### Tela da biblioteca
+<kbd><img width="250" src="art/android_library_1.png" /></kbd><kbd><img width="250" src="art/android_library_2.png" /></kbd>
+
 ### iOS
 
 #### Tela dos álbuns
@@ -27,3 +30,6 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 
 #### Tela de busca
 <kbd><img width="250" src="art/ios_search_1.png" /></kbd><kbd><img width="250" src="art/ios_search_2.png" /></kbd><kbd><img width="250" src="art/ios_search_3.png" /></kbd>
+
+#### Tela da biblioteca
+<kbd><img width="250" src="art/ios_library_1.png" /></kbd><kbd><img width="250" src="art/ios_library_2.png" /></kbd>
