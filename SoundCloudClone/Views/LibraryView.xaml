@@ -2,8 +2,90 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.LibraryView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#f2f2f2">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="DefaultItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Title" />
+            </Style>
+
+            <Style x:Key="TitleItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+            </Style>
+
+            <Style x:Key="ContentItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="FooterItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Label Text="Library View" />
+        <ScrollView>
+            <StackLayout
+                BackgroundColor="#E5E5E5"
+                Spacing="1"
+                VerticalOptions="Start">
+                <FlexLayout
+                    Margin="0,16,0,0"
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                </FlexLayout>
+
+                <FlexLayout
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                </FlexLayout>
+
+                <FlexLayout
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Label Style="{StaticResource DefaultItem}" Text="teste" />
+                </FlexLayout>
+
+
+
+                <FlexLayout
+                    Margin="0,16,0,0"
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Label Style="{StaticResource TitleItem}" Text="Recently Played" />
+                </FlexLayout>
+
+                <FlexLayout
+                    Padding="60,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="280"
+                    JustifyContent="Center">
+                    <Label Style="{StaticResource ContentItem}" Text="Find your recently played content here." />
+                </FlexLayout>
+
+                <FlexLayout
+                    Padding="20,0"
+                    AlignItems="Center"
+                    BackgroundColor="White"
+                    HeightRequest="80">
+                    <Label Style="{StaticResource FooterItem}" Text="See more recently played" />
+                </FlexLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
