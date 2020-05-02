@@ -2,8 +2,7 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.LibraryView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="#f2f2f2">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="DefaultItem" TargetType="Label">
@@ -38,14 +37,16 @@
                 <Setter Property="FontSize" Value="Subtitle" />
                 <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
             </Style>
+
+            <Style x:Key="SeparatorItem" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="#E5E5E5" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout
-                BackgroundColor="#E5E5E5"
-                Spacing="1"
-                VerticalOptions="Start">
+            <StackLayout Spacing="0" VerticalOptions="Start">
                 <FlexLayout
                     Margin="0,16,0,0"
                     Padding="20,0"
@@ -56,6 +57,7 @@
                     <Label Style="{StaticResource DefaultItem}" Text="Liked tracks" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout
                     Padding="20,0"
@@ -66,18 +68,23 @@
                     <Label Style="{StaticResource DefaultItem}" Text="{OnPlatform Android='Playlists', iOS='Playlist &amp; albums'}" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <OnPlatform x:TypeArguments="View">
                     <On Platform="Android">
-                        <FlexLayout
-                            Padding="20,0"
-                            AlignItems="Center"
-                            BackgroundColor="White"
-                            HeightRequest="80">
-                            <Image Source="library_albums" Style="{StaticResource DefaultImage}" />
-                            <Label Style="{StaticResource DefaultItem}" Text="Albums" />
-                            <Image Style="{StaticResource ArrowIconItem}" />
-                        </FlexLayout>
+                        <StackLayout Spacing="0">
+                            <FlexLayout
+                                Padding="20,0"
+                                AlignItems="Center"
+                                BackgroundColor="White"
+                                HeightRequest="80">
+                                <Image Source="library_albums" Style="{StaticResource DefaultImage}" />
+                                <Label Style="{StaticResource DefaultItem}" Text="Albums" />
+                                <Image Style="{StaticResource ArrowIconItem}" />
+                            </FlexLayout>
+
+                            <BoxView Style="{StaticResource SeparatorItem}" />
+                        </StackLayout>
                     </On>
 
                     <On Platform="iOS">
@@ -94,6 +101,7 @@
                     <Label Style="{StaticResource DefaultItem}" Text="Following" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout
                     Padding="20,0"
