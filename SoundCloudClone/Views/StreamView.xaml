@@ -79,7 +79,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <FlexLayout
-                        BackgroundColor="White"
+                        BackgroundColor="{DynamicResource ContentItemBackground}"
                         Direction="Column"
                         HeightRequest="360">
 
