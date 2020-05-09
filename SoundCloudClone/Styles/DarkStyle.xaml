@@ -10,4 +10,10 @@
     <Color x:Key="TextSecondaryColor">#686868</Color>
     <Color x:Key="ContentItemBackground">#201E20</Color>
     <Color x:Key="ContentPageBackground">#100F11</Color>
+
+    <OnPlatform
+        x:Key="NavigationBarTextColor"
+        x:TypeArguments="Color"
+        Android="#9D9D9D"
+        iOS="#CBCBCC" />
 </ResourceDictionary>

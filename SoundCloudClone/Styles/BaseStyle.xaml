@@ -11,7 +11,6 @@
 
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationPrimary}" />
-        <Setter Property="BarTextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
     </Style>
 
     <Style TargetType="Label">
@@ -25,7 +24,7 @@
 
     <Style x:Key="TitleNavigationPage" TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
-        <Setter Property="TextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
+        <Setter Property="TextColor" Value="{DynamicResource NavigationBarTextColor}" />
         <Setter Property="HorizontalTextAlignment" Value="{OnPlatform iOS='Center', Android='Start'}" />
         <Setter Property="FontSize" Value="Title" />
     </Style>
