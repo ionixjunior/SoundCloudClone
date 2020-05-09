@@ -28,5 +28,6 @@
     <Folder Include="Models\App\" />
     <Folder Include="Extensions\" />
     <Folder Include="Converters\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
 </Project>
