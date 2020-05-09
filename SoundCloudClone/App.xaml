@@ -7,6 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Application.Resources>
-        <ResourceDictionary Source="Styles/LightStyle.xaml" />
+        <ResourceDictionary Source="Styles/DarkStyle.xaml" />
     </Application.Resources>
 </Application>
