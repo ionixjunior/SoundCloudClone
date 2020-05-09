@@ -45,9 +45,10 @@
             <Style x:Key="SocialFrame" TargetType="Frame">
                 <Setter Property="Padding" Value="10,0" />
                 <Setter Property="HasShadow" Value="false" />
-                <Setter Property="BorderColor" Value="{OnPlatform Android=Transparent, iOS='#E5E5E5'}" />
+                <Setter Property="BorderColor" Value="{DynamicResource SocialFrameBorderColor}" />
                 <Setter Property="HeightRequest" Value="44" />
                 <Setter Property="Margin" Value="5,0" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource ContentItemBackground}" />
             </Style>
 
             <Style

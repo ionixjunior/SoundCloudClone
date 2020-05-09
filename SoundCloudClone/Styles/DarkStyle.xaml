@@ -13,6 +13,12 @@
     <Color x:Key="ContentPageBackground">#100F11</Color>
 
     <OnPlatform
+        x:Key="SocialFrameBorderColor"
+        x:TypeArguments="Color"
+        Android="Transparent"
+        iOS="#0F0E10" />
+
+    <OnPlatform
         x:Key="NavigationBarTextColor"
         x:TypeArguments="Color"
         Android="#9D9D9D"
