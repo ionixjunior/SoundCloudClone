@@ -2,36 +2,10 @@
 <ResourceDictionary
     x:Class="SoundCloudClone.Styles.DarkStyle"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <OnPlatform
-        x:Key="FontLight"
-        x:TypeArguments="x:String"
-        Android="Fonts/interstate-light-cond.ttf#Interstate Light Cond"
-        iOS="Interstate Light Cond" />
-
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Source="BaseStyle.xaml">
     <Color x:Key="NavbarBackground">#111111</Color>
     <Color x:Key="NavigationPrimary">#FFFFFF</Color>
     <Color x:Key="TextPrimaryColor">#f90000</Color>
     <Color x:Key="TextSecondaryColor">#8F8E8F</Color>
-
-    <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-        <Setter Property="BarTextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
-    </Style>
-
-    <Style TargetType="Label">
-        <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
-        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
-    </Style>
-
-    <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-        <Setter Property="BackgroundColor" Value="#F2F2F2" />
-    </Style>
-
-    <Style x:Key="TitleNavigationPage" TargetType="Label">
-        <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
-        <Setter Property="TextColor" Value="{OnPlatform iOS='#191919', Android='#666666'}" />
-        <Setter Property="HorizontalTextAlignment" Value="{OnPlatform iOS='Center', Android='Start'}" />
-        <Setter Property="FontSize" Value="Title" />
-    </Style>
 </ResourceDictionary>
