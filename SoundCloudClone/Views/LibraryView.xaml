@@ -39,8 +39,15 @@
             </Style>
 
             <Style x:Key="SeparatorItem" TargetType="BoxView">
-                <Setter Property="BackgroundColor" Value="#E5E5E5" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorItemBackground}" />
                 <Setter Property="HeightRequest" Value="1" />
+            </Style>
+
+            <Style x:Key="FlexItem" TargetType="FlexLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ContentItemBackground}" />
+                <Setter Property="Padding" Value="20,0" />
+                <Setter Property="AlignItems" Value="Center" />
+                <Setter Property="HeightRequest" Value="80" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -74,23 +81,14 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0" VerticalOptions="Start">
-                <FlexLayout
-                    Margin="0,16,0,0"
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80">
+                <FlexLayout Margin="0,16,0,0" Style="{StaticResource FlexItem}">
                     <Image Source="library_tracks" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Liked tracks" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80">
+                <FlexLayout Style="{StaticResource FlexItem}">
                     <Image Source="library_playlists" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="{OnPlatform Android='Playlists', iOS='Playlist &amp; albums'}" />
                     <Image Style="{StaticResource ArrowIconItem}" />
@@ -100,11 +98,7 @@
                 <OnPlatform x:TypeArguments="View">
                     <On Platform="Android">
                         <StackLayout Spacing="0">
-                            <FlexLayout
-                                Padding="20,0"
-                                AlignItems="Center"
-                                BackgroundColor="White"
-                                HeightRequest="80">
+                            <FlexLayout Style="{StaticResource FlexItem}">
                                 <Image Source="library_albums" Style="{StaticResource DefaultImage}" />
                                 <Label Style="{StaticResource DefaultItem}" Text="Albums" />
                                 <Image Style="{StaticResource ArrowIconItem}" />
@@ -119,22 +113,14 @@
                     </On>
                 </OnPlatform>
 
-                <FlexLayout
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80">
+                <FlexLayout Style="{StaticResource FlexItem}">
                     <Image Source="library_following" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Following" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80">
+                <FlexLayout Style="{StaticResource FlexItem}">
                     <Image Source="library_stations" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Stations" />
                     <Image Style="{StaticResource ArrowIconItem}" />
@@ -142,32 +128,21 @@
 
 
 
-                <FlexLayout
-                    Margin="0,16,0,0"
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80">
+                <FlexLayout Margin="0,16,0,0" Style="{StaticResource FlexItem}">
                     <Label Style="{StaticResource TitleItem}" Text="Recently Played" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout
                     Padding="60,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
                     HeightRequest="280"
-                    JustifyContent="Center">
+                    JustifyContent="Center"
+                    Style="{StaticResource FlexItem}">
                     <Label Style="{StaticResource ContentItem}" Text="Find your recently played content here." />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout
-                    Padding="20,0"
-                    AlignItems="Center"
-                    BackgroundColor="White"
-                    HeightRequest="80"
-                    JustifyContent="Center">
+                <FlexLayout JustifyContent="Center" Style="{StaticResource FlexItem}">
                     <Label Style="{StaticResource FooterItem}" Text="See more recently played" />
                     <Image Margin="8,0,0,0" Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
