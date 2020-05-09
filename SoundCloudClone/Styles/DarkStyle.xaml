@@ -8,6 +8,7 @@
     <Color x:Key="NavigationPrimary">#1F1E20</Color>
     <Color x:Key="TextPrimaryColor">#CECECE</Color>
     <Color x:Key="TextSecondaryColor">#686868</Color>
+    <Color x:Key="SeparatorItemBackground">#0F0E10</Color>
     <Color x:Key="ContentItemBackground">#201E20</Color>
     <Color x:Key="ContentPageBackground">#100F11</Color>
 
