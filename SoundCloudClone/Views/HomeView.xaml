@@ -12,7 +12,7 @@
         <CollectionView IsGrouped="True" ItemsSource="{Binding AlbumGroups}">
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="15" BackgroundColor="#FFFFFF">
+                    <StackLayout Padding="15" BackgroundColor="{DynamicResource ContentItemBackground}">
                         <Label FontSize="Title" Text="{Binding Title}" />
                         <Label
                             FontSize="Subtitle"
@@ -28,7 +28,7 @@
                     <StackLayout HeightRequest="300">
                         <CollectionView
                             Margin="-1,-1,-1,0"
-                            BackgroundColor="#FFFFFF"
+                            BackgroundColor="{DynamicResource ContentItemBackground}"
                             HeightRequest="280"
                             HorizontalScrollBarVisibility="Never"
                             ItemsSource="{Binding Albums}">

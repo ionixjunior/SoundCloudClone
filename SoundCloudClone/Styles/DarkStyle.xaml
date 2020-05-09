@@ -5,7 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Source="BaseStyle.xaml">
     <Color x:Key="NavbarBackground">#111111</Color>
-    <Color x:Key="NavigationPrimary">#FFFFFF</Color>
-    <Color x:Key="TextPrimaryColor">#f90000</Color>
-    <Color x:Key="TextSecondaryColor">#8F8E8F</Color>
+    <Color x:Key="NavigationPrimary">#1F1E20</Color>
+    <Color x:Key="TextPrimaryColor">#CECECE</Color>
+    <Color x:Key="TextSecondaryColor">#686868</Color>
+    <Color x:Key="ContentItemBackground">#201E20</Color>
+    <Color x:Key="ContentPageBackground">#100F11</Color>
 </ResourceDictionary>

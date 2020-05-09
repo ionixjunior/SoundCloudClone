@@ -20,7 +20,7 @@
     </Style>
 
     <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-        <Setter Property="BackgroundColor" Value="#F2F2F2" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ContentPageBackground}" />
     </Style>
 
     <Style x:Key="TitleNavigationPage" TargetType="Label">
