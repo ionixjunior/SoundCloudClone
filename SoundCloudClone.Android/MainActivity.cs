@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms.Platform.Android;
 
 namespace SoundCloudClone.Droid
 {
@@ -22,8 +23,17 @@ namespace SoundCloudClone.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
+
             LoadApplication(new App());
+            ChangeStatusBarColor();
         }
+
+        private void ChangeStatusBarColor()
+        {
+            var statusBarColor = (Xamarin.Forms.Color)App.Current.Resources["StatusBarBackground"];
+            Window.SetStatusBarColor(statusBarColor.ToAndroid());
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
