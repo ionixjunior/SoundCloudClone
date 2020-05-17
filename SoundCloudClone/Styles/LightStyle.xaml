@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Source="BaseStyle.xaml">
+    <Color x:Key="StatusBarBackground">#F2F2F2</Color>
     <Color x:Key="NavbarBackground">#111111</Color>
     <Color x:Key="NavigationPrimary">#FFFFFF</Color>
     <Color x:Key="TextPrimaryColor">#000000</Color>
