@@ -51,7 +51,7 @@
             <OnPlatform x:TypeArguments="View">
                 <OnPlatform.Android>
                     <ListView
-                        BackgroundColor="#F1F1F1"
+                        BackgroundColor="{DynamicResource ContentPageBackground}"
                         HasUnevenRows="True"
                         IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
                         ItemSelected="OnItemSelected"
