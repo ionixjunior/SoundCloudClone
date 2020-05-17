@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MainTheme" parent="MainTheme.Base">
+    <style name="MainTheme.Light" parent="MainTheme.Base">
+        <item name="colorPrimaryDark">#f90000</item>
+    </style>
+    <style name="MainTheme.Dark" parent="MainTheme.Base">
+        <item name="colorPrimaryDark">#00ff00</item>
     </style>
     <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
