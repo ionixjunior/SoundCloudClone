@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.Views;
 using Android.Widget;
 using SoundCloudClone.Droid.Renderers;
@@ -44,8 +45,12 @@ namespace SoundCloudClone.Droid.Renderers
 
         private void ChangeBackgroundDrawable()
         {
-            var contentPageBackground = App.Current.Resources["ContentPageBackground"];
+            var contentPageBackground = (Color)App.Current.Resources["ContentPageBackground"];
+
             var customBackgroundId = Resource.Drawable.custom_search_background;
+            var drawable = Context.Resources.GetDrawable(customBackgroundId) as GradientDrawable;
+            drawable.SetColor(contentPageBackground.ToAndroid());
+
             Control.Background = Context.GetDrawable(customBackgroundId);
         }
     }
