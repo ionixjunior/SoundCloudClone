@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace SoundCloudClone.Droid
 {
-    [Activity(Label = "SoundCloudClone", Icon = "@mipmap/icon", Theme = "@style/MainTheme.Light", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "SoundCloudClone", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
