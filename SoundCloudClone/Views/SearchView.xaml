@@ -13,7 +13,8 @@
                     FontSize="Large"
                     Placeholder="Search SoundCloud"
                     PlaceholderColor="{StaticResource TextSecondaryColor}"
-                    TextChanged="OnTextChanged" />
+                    TextChanged="OnTextChanged"
+                    TextColor="{DynamicResource TextPrimaryColor}" />
 
             </OnPlatform.Android>
 
