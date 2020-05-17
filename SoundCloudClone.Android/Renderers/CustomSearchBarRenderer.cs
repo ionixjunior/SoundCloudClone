@@ -44,6 +44,7 @@ namespace SoundCloudClone.Droid.Renderers
 
         private void ChangeBackgroundDrawable()
         {
+            var contentPageBackground = App.Current.Resources["ContentPageBackground"];
             var customBackgroundId = Resource.Drawable.custom_search_background;
             Control.Background = Context.GetDrawable(customBackgroundId);
         }
