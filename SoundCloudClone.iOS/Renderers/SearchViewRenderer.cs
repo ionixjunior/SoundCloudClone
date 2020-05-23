@@ -95,7 +95,7 @@ namespace SoundCloudClone.iOS.Renderers
         private void ChangeSearchBarFont()
         {
             if (_searchController.SearchBar.ValueForKey(new NSString("searchField")) is UITextField textField)
-                textField.Font = UIFont.FromName("Interstate Light Cond", 20);
+                textField.Font = Constants.DefaultFont;
         }
 
         private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
