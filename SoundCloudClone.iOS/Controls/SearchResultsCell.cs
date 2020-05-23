@@ -23,5 +23,10 @@ namespace SoundCloudClone.iOS.Controls
 		{
 			Name.TextColor = color;
         }
-	}
+
+		internal void ChangeFont()
+		{
+			Name.Font = UIFont.FromName("Interstate Light Cond", 20);
+		}
+    }
 }

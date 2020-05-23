@@ -42,6 +42,7 @@ namespace SoundCloudClone.iOS.Controls
 
             cell.Update(_results[indexPath.Row]);
             cell.ChangeColor(_cellTextColor);
+            cell.ChangeFont();
 
             return cell;
         }
