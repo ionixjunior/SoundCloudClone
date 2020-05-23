@@ -13,6 +13,7 @@ namespace SoundCloudClone.iOS.Controls
 	public partial class SearchResultsViewController : UIViewController, IUITableViewDataSource, IUITableViewDelegate
 	{
         private List<SearchSuggestion> _results = new List<SearchSuggestion>();
+        private UIColor _cellTextColor = UIColor.Clear;
 
         public event EventHandler<SearchSuggestion> SuggestionSelected;
 
@@ -40,6 +41,7 @@ namespace SoundCloudClone.iOS.Controls
             var cell = tableView.DequeueReusableCell("SearchResultCell", indexPath) as SearchResultsCell;
 
             cell.Update(_results[indexPath.Row]);
+            cell.ChangeColor(_cellTextColor);
 
             return cell;
         }
@@ -77,9 +79,10 @@ namespace SoundCloudClone.iOS.Controls
             );
         }
 
-        internal void ChangeBackgroundColor(UIColor color)
+        internal void ChangeColors(UIColor tableViewBackgroundColor, UIColor cellTextColor)
         {
-            SearchResultsTableView.BackgroundColor = color;
+            SearchResultsTableView.BackgroundColor = tableViewBackgroundColor;
+            _cellTextColor = cellTextColor;
         }
 
         [Export("tableView:didSelectRowAtIndexPath:")]
