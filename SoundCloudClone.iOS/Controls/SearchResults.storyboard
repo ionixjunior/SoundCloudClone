@@ -55,6 +55,7 @@
                                                 <constraint firstItem="1O3-Lw-f09" firstAttribute="leading" secondItem="Gkh-qT-LA1" secondAttribute="leadingMargin" constant="32" id="LTI-nT-Lzt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <connections>
                                             <outlet property="Name" destination="C2L-AH-ZPa" id="1yk-Kb-gww"/>
