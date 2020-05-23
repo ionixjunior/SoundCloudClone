@@ -42,7 +42,7 @@ namespace SoundCloudClone.iOS.Renderers
 
         private void OnSuggestionsChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
-            ChangeBackgroundColor();
+            ChangeColors();
 
             if (args.Action == NotifyCollectionChangedAction.Reset)
             {
@@ -61,7 +61,7 @@ namespace SoundCloudClone.iOS.Renderers
             }
         }
 
-        private void ChangeBackgroundColor()
+        private void ChangeColors()
         {
             var contentPageBackground = (Color)App.Current.Resources["ContentItemBackground"];
             var textPrimaryColor = (Color)App.Current.Resources["TextPrimaryColor"];
@@ -73,6 +73,22 @@ namespace SoundCloudClone.iOS.Renderers
                     textPrimaryColor.ToUIColor(),
                     separatorItemBackground.ToUIColor()
                 );
+
+            ChangeSearchBarTextColor(textPrimaryColor.ToUIColor());
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            var textPrimaryColor = (Color)App.Current.Resources["TextPrimaryColor"];
+            ChangeSearchBarTextColor(textPrimaryColor.ToUIColor());
+        }
+
+        private void ChangeSearchBarTextColor(UIColor color)
+        {
+            if (_searchController.SearchBar.ValueForKey(new NSString("searchField")) is UITextField textField)
+                textField.TextColor = color;
         }
 
         private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
