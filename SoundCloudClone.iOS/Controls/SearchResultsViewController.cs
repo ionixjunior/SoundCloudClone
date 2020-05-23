@@ -77,6 +77,11 @@ namespace SoundCloudClone.iOS.Controls
             );
         }
 
+        internal void ChangeBackgroundColor(UIColor color)
+        {
+            SearchResultsTableView.BackgroundColor = color;
+        }
+
         [Export("tableView:didSelectRowAtIndexPath:")]
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {

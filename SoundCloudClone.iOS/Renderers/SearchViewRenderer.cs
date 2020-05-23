@@ -42,6 +42,8 @@ namespace SoundCloudClone.iOS.Renderers
 
         private void OnSuggestionsChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
+            ChangeBackgroundColor();
+
             if (args.Action == NotifyCollectionChangedAction.Reset)
             {
                 if (_searchResultsController is SearchResultsViewController viewController)
@@ -57,6 +59,14 @@ namespace SoundCloudClone.iOS.Renderers
                     viewController.UpdateResults(args.NewItems);
                 }
             }
+        }
+
+        private void ChangeBackgroundColor()
+        {
+            var contentPageBackground = (Color)App.Current.Resources["ContentItemBackground"];
+
+            if (_searchResultsController is SearchResultsViewController searchResults)
+                searchResults.ChangeBackgroundColor(contentPageBackground.ToUIColor());
         }
 
         private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
