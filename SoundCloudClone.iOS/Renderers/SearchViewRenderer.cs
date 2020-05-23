@@ -65,11 +65,13 @@ namespace SoundCloudClone.iOS.Renderers
         {
             var contentPageBackground = (Color)App.Current.Resources["ContentItemBackground"];
             var textPrimaryColor = (Color)App.Current.Resources["TextPrimaryColor"];
+            var separatorItemBackground = (Color)App.Current.Resources["SeparatorItemBackground"];
 
             if (_searchResultsController is SearchResultsViewController searchResults)
                 searchResults.ChangeColors(
                     contentPageBackground.ToUIColor(),
-                    textPrimaryColor.ToUIColor()
+                    textPrimaryColor.ToUIColor(),
+                    separatorItemBackground.ToUIColor()
                 );
         }
 

@@ -79,9 +79,10 @@ namespace SoundCloudClone.iOS.Controls
             );
         }
 
-        internal void ChangeColors(UIColor tableViewBackgroundColor, UIColor cellTextColor)
+        internal void ChangeColors(UIColor tableViewBackgroundColor, UIColor cellTextColor, UIColor separatorItemBackground)
         {
             SearchResultsTableView.BackgroundColor = tableViewBackgroundColor;
+            SearchResultsTableView.SeparatorColor = separatorItemBackground;
             _cellTextColor = cellTextColor;
         }
 
