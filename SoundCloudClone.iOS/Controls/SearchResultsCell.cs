@@ -19,7 +19,7 @@ namespace SoundCloudClone.iOS.Controls
 			Name.Text = searchSuggestion.Description;
 		}
 
-		public void ChangeColor(UIColor color)
+		public void ChangeStyle(UIColor color)
 		{
 			Name.TextColor = color;
         }

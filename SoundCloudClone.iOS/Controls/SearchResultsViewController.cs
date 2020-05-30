@@ -41,7 +41,7 @@ namespace SoundCloudClone.iOS.Controls
             var cell = tableView.DequeueReusableCell("SearchResultCell", indexPath) as SearchResultsCell;
 
             cell.Update(_results[indexPath.Row]);
-            cell.ChangeColor(_cellTextColor);
+            cell.ChangeStyle(_cellTextColor);
             cell.ChangeFont();
 
             return cell;
@@ -80,7 +80,7 @@ namespace SoundCloudClone.iOS.Controls
             );
         }
 
-        internal void ChangeColors(UIColor tableViewBackgroundColor, UIColor cellTextColor, UIColor separatorItemBackground)
+        internal void ChangeStyle(UIColor tableViewBackgroundColor, UIColor cellTextColor, UIColor separatorItemBackground)
         {
             SearchResultsTableView.BackgroundColor = tableViewBackgroundColor;
             SearchResultsTableView.SeparatorColor = separatorItemBackground;

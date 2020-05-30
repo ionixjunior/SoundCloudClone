@@ -13,6 +13,9 @@ namespace SoundCloudClone.iOS.Controls
 	partial class SearchResultsCell
 	{
 		[Outlet]
+		UIKit.UIImageView Icon { get; set; }
+
+		[Outlet]
 		UIKit.UILabel Name { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +23,11 @@ namespace SoundCloudClone.iOS.Controls
 			if (Name != null) {
 				Name.Dispose ();
 				Name = null;
+			}
+
+			if (Icon != null) {
+				Icon.Dispose ();
+				Icon = null;
 			}
 		}
 	}
