@@ -9,39 +9,39 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 ### Android
 
 #### Tela dos álbuns
-<kbd><img width="250" src="art/android_home_1_light.png" /></kbd>
+<kbd><img width="250" src="art/android_home_1_light.png" /></kbd><kbd><img width="250" src="art/android_home_1_dark.png" /></kbd>
 
 #### Tela dos streamings
-<kbd><img width="250" src="art/android_stream_1_light.png" /></kbd>
+<kbd><img width="250" src="art/android_stream_1_light.png" /></kbd><kbd><img width="250" src="art/android_stream_1_dark.png" /></kbd>
 
 #### Tela de busca
-<kbd><img width="250" src="art/android_search_1_light.png" /></kbd>
+<kbd><img width="250" src="art/android_search_1_light.png" /></kbd><kbd><img width="250" src="art/android_search_1_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/android_search_2_light.png" /></kbd>
+<kbd><img width="250" src="art/android_search_2_light.png" /></kbd><kbd><img width="250" src="art/android_search_2_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/android_search_3_light.png" /></kbd>
+<kbd><img width="250" src="art/android_search_3_light.png" /></kbd><kbd><img width="250" src="art/android_search_3_dark.png" /></kbd>
 
 #### Tela da biblioteca
-<kbd><img width="250" src="art/android_library_1_light.png" /></kbd>
+<kbd><img width="250" src="art/android_library_1_light.png" /></kbd><kbd><img width="250" src="art/android_library_1_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/android_library_2_light.png" /></kbd>
+<kbd><img width="250" src="art/android_library_2_light.png" /></kbd><kbd><img width="250" src="art/android_library_2_dark.png" /></kbd>
 
 ### iOS
 
 #### Tela dos álbuns
-<kbd><img width="250" src="art/ios_home_1_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_home_1_light.png" /></kbd><kbd><img width="250" src="art/ios_home_1_dark.png" /></kbd>
 
 #### Tela dos streamings
-<kbd><img width="250" src="art/ios_stream_1_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_stream_1_light.png" /></kbd><kbd><img width="250" src="art/ios_stream_1_dark.png" /></kbd>
 
 #### Tela de busca
-<kbd><img width="250" src="art/ios_search_1_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_search_1_light.png" /></kbd><kbd><img width="250" src="art/ios_search_1_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/ios_search_2_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_search_2_light.png" /></kbd><kbd><img width="250" src="art/ios_search_2_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/ios_search_3_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_search_3_light.png" /></kbd><kbd><img width="250" src="art/ios_search_3_dark.png" /></kbd>
 
 #### Tela da biblioteca
-<kbd><img width="250" src="art/ios_library_1_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_library_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_1_dark.png" /></kbd>
 
-<kbd><img width="250" src="art/ios_library_2_light.png" /></kbd>
+<kbd><img width="250" src="art/ios_library_2_light.png" /></kbd><kbd><img width="250" src="art/ios_library_2_dark.png" /></kbd>
