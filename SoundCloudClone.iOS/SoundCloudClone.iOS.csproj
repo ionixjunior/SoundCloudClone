@@ -152,67 +152,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_selected.png" />
-    <BundleResource Include="Resources\home_selected%402x.png" />
-    <BundleResource Include="Resources\home_selected%403x.png" />
-    <BundleResource Include="Resources\home.png" />
-    <BundleResource Include="Resources\home%402x.png" />
-    <BundleResource Include="Resources\home%403x.png" />
-    <BundleResource Include="Resources\library_selected.png" />
-    <BundleResource Include="Resources\library_selected%402x.png" />
-    <BundleResource Include="Resources\library_selected%403x.png" />
-    <BundleResource Include="Resources\library.png" />
-    <BundleResource Include="Resources\library%402x.png" />
-    <BundleResource Include="Resources\library%403x.png" />
-    <BundleResource Include="Resources\search_selected.png" />
-    <BundleResource Include="Resources\search_selected%402x.png" />
-    <BundleResource Include="Resources\search_selected%403x.png" />
-    <BundleResource Include="Resources\search.png" />
-    <BundleResource Include="Resources\search%402x.png" />
-    <BundleResource Include="Resources\search%403x.png" />
-    <BundleResource Include="Resources\stream_selected.png" />
-    <BundleResource Include="Resources\stream_selected%402x.png" />
-    <BundleResource Include="Resources\stream_selected%403x.png" />
-    <BundleResource Include="Resources\stream.png" />
-    <BundleResource Include="Resources\stream%402x.png" />
-    <BundleResource Include="Resources\stream%403x.png" />
     <BundleResource Include="Resources\Fonts\interstate-light-cond.ttf" />
-    <BundleResource Include="Resources\stream_like.png" />
-    <BundleResource Include="Resources\stream_like%402x.png" />
-    <BundleResource Include="Resources\stream_like%403x.png" />
-    <BundleResource Include="Resources\stream_more.png" />
-    <BundleResource Include="Resources\stream_more%402x.png" />
-    <BundleResource Include="Resources\stream_more%403x.png" />
-    <BundleResource Include="Resources\stream_playback_count.png" />
-    <BundleResource Include="Resources\stream_playback_count%402x.png" />
-    <BundleResource Include="Resources\stream_playback_count%403x.png" />
-    <BundleResource Include="Resources\stream_repost.png" />
-    <BundleResource Include="Resources\stream_repost%402x.png" />
-    <BundleResource Include="Resources\stream_repost%403x.png" />
-    <BundleResource Include="Resources\search_magnifier.png" />
-    <BundleResource Include="Resources\search_magnifier%402x.png" />
-    <BundleResource Include="Resources\search_magnifier%403x.png" />
-    <BundleResource Include="Resources\search_suggestion%403x.png" />
-    <BundleResource Include="Resources\search_suggestion%402x.png" />
-    <BundleResource Include="Resources\search_suggestion.png" />
-    <BundleResource Include="Resources\library_stations%403x.png" />
-    <BundleResource Include="Resources\library_profile%403x.png" />
-    <BundleResource Include="Resources\library_arrow%403x.png" />
-    <BundleResource Include="Resources\library_following%402x.png" />
-    <BundleResource Include="Resources\library_playlists%403x.png" />
-    <BundleResource Include="Resources\library_following%403x.png" />
-    <BundleResource Include="Resources\library_tracks%402x.png" />
-    <BundleResource Include="Resources\library_tracks%403x.png" />
-    <BundleResource Include="Resources\library_profile%402x.png" />
-    <BundleResource Include="Resources\library_stations%402x.png" />
-    <BundleResource Include="Resources\library_arrow%402x.png" />
-    <BundleResource Include="Resources\library_profile.png" />
-    <BundleResource Include="Resources\library_playlists%402x.png" />
-    <BundleResource Include="Resources\library_following.png" />
-    <BundleResource Include="Resources\library_stations.png" />
-    <BundleResource Include="Resources\library_arrow.png" />
-    <BundleResource Include="Resources\library_playlists.png" />
-    <BundleResource Include="Resources\library_tracks.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
