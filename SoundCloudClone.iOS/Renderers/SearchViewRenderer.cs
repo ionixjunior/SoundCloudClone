@@ -42,7 +42,7 @@ namespace SoundCloudClone.iOS.Renderers
 
         private void OnSuggestionsChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
-            ChangeColors();
+            ChangeStyle();
 
             if (args.Action == NotifyCollectionChangedAction.Reset)
             {
@@ -66,12 +66,14 @@ namespace SoundCloudClone.iOS.Renderers
             var contentPageBackground = (Color)App.Current.Resources["ContentItemBackground"];
             var textPrimaryColor = (Color)App.Current.Resources["TextPrimaryColor"];
             var separatorItemBackground = (Color)App.Current.Resources["SeparatorItemBackground"];
+            var searchSuggestionIcon = (FileImageSource)App.Current.Resources["search_suggestion"];
 
             if (_searchResultsController is SearchResultsViewController searchResults)
                 searchResults.ChangeStyle(
                     contentPageBackground.ToUIColor(),
                     textPrimaryColor.ToUIColor(),
-                    separatorItemBackground.ToUIColor()
+                    separatorItemBackground.ToUIColor(),
+                    UIImage.FromFile(searchSuggestionIcon.File)
                 );
 
             ChangeSearchBarTextColor(textPrimaryColor.ToUIColor());
