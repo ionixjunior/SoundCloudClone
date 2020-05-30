@@ -14,6 +14,18 @@
     <Color x:Key="ContentItemBackground">#FFFFFF</Color>
     <Color x:Key="ContentPageBackground">#F2F2F2</Color>
 
+    <FileImageSource x:Key="stream_playback_count">stream_playback_count_light</FileImageSource>
+    <FileImageSource x:Key="stream_repost">stream_repost_light</FileImageSource>
+    <FileImageSource x:Key="stream_like">stream_like_light</FileImageSource>
+    <FileImageSource x:Key="stream_more">stream_more_light</FileImageSource>
+    <FileImageSource x:Key="search_suggestion">search_suggestion_light</FileImageSource>
+    <FileImageSource x:Key="library_arrow">library_arrow_light</FileImageSource>
+    <FileImageSource x:Key="library_tracks">library_tracks_light</FileImageSource>
+    <FileImageSource x:Key="library_playlists">library_playlists_light</FileImageSource>
+    <FileImageSource x:Key="library_albums">library_albums_light</FileImageSource>
+    <FileImageSource x:Key="library_following">library_following_light</FileImageSource>
+    <FileImageSource x:Key="library_stations">library_stations_light</FileImageSource>
+
     <OnPlatform
         x:Key="SocialFrameBorderColor"
         x:TypeArguments="Color"

@@ -14,7 +14,7 @@
             <Style x:Key="ArrowIconItem" TargetType="Image">
                 <Setter Property="FlexLayout.Basis" Value="18" />
                 <Setter Property="HeightRequest" Value="18" />
-                <Setter Property="Source" Value="library_arrow" />
+                <Setter Property="Source" Value="{DynamicResource library_arrow}" />
             </Style>
 
             <Style x:Key="DefaultImage" TargetType="Image">
@@ -82,14 +82,14 @@
         <ScrollView>
             <StackLayout Spacing="0" VerticalOptions="Start">
                 <FlexLayout Margin="0,16,0,0" Style="{StaticResource FlexItem}">
-                    <Image Source="library_tracks" Style="{StaticResource DefaultImage}" />
+                    <Image Source="{DynamicResource library_tracks}" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Liked tracks" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout Style="{StaticResource FlexItem}">
-                    <Image Source="library_playlists" Style="{StaticResource DefaultImage}" />
+                    <Image Source="{DynamicResource library_playlists}" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="{OnPlatform Android='Playlists', iOS='Playlist &amp; albums'}" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
@@ -99,7 +99,7 @@
                     <On Platform="Android">
                         <StackLayout Spacing="0">
                             <FlexLayout Style="{StaticResource FlexItem}">
-                                <Image Source="library_albums" Style="{StaticResource DefaultImage}" />
+                                <Image Source="{DynamicResource library_albums}" Style="{StaticResource DefaultImage}" />
                                 <Label Style="{StaticResource DefaultItem}" Text="Albums" />
                                 <Image Style="{StaticResource ArrowIconItem}" />
                             </FlexLayout>
@@ -114,14 +114,14 @@
                 </OnPlatform>
 
                 <FlexLayout Style="{StaticResource FlexItem}">
-                    <Image Source="library_following" Style="{StaticResource DefaultImage}" />
+                    <Image Source="{DynamicResource library_following}" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Following" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
                 <FlexLayout Style="{StaticResource FlexItem}">
-                    <Image Source="library_stations" Style="{StaticResource DefaultImage}" />
+                    <Image Source="{DynamicResource library_stations}" Style="{StaticResource DefaultImage}" />
                     <Label Style="{StaticResource DefaultItem}" Text="Stations" />
                     <Image Style="{StaticResource ArrowIconItem}" />
                 </FlexLayout>

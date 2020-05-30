@@ -153,7 +153,7 @@
                                 BorderColor="Transparent"
                                 Style="{StaticResource FirstSocialFrame}">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="stream_playback_count" />
+                                    <Image Source="{DynamicResource stream_playback_count}" />
                                     <Label
                                         Text="{Binding PlaybackCount, Converter={converters:SocialCounterToTextConverter}}"
                                         TextColor="{StaticResource TextSecondaryColor}"
@@ -167,21 +167,21 @@
                                 JustifyContent="End">
                                 <Frame Style="{StaticResource SocialFrame}">
                                     <StackLayout Orientation="Horizontal" Spacing="0">
-                                        <Image Margin="5,0" Source="stream_repost" />
+                                        <Image Margin="5,0" Source="{DynamicResource stream_repost}" />
                                         <Label Text="{Binding RepostsCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </Frame>
 
                                 <Frame Style="{StaticResource SocialFrame}">
                                     <StackLayout Orientation="Horizontal">
-                                        <Image Margin="5,0" Source="stream_like" />
+                                        <Image Margin="5,0" Source="{DynamicResource stream_like}" />
                                         <Label Text="{Binding LikesCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </Frame>
 
                                 <Frame Style="{StaticResource LastSocialFrame}">
                                     <StackLayout Orientation="Horizontal">
-                                        <Image Margin="5,0" Source="stream_more" />
+                                        <Image Margin="5,0" Source="{DynamicResource stream_more}" />
                                     </StackLayout>
                                 </Frame>
                             </FlexLayout>

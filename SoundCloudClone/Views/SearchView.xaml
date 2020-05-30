@@ -70,7 +70,7 @@
 
                                             <Image
                                                 HeightRequest="14"
-                                                Source="search_suggestion"
+                                                Source="{DynamicResource search_suggestion}"
                                                 WidthRequest="14" />
                                         </FlexLayout>
                                     </ViewCell.View>
