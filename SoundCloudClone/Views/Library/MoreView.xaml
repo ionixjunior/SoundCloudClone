@@ -3,6 +3,27 @@
     x:Class="SoundCloudClone.Views.Library.MoreView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlexItem" TargetType="FlexLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ContentItemBackground}" />
+                <Setter Property="Padding" Value="20,0" />
+                <Setter Property="AlignItems" Value="Center" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+
+            <Style x:Key="DefaultItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style x:Key="SeparatorItem" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorItemBackground}" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <NavigationPage.TitleView>
         <Label
             Margin="-40,0,0,0"
@@ -10,5 +31,76 @@
             Text="More" />
     </NavigationPage.TitleView>
 
-    <ContentPage.Content />
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#100F11">
+            <StackLayout Spacing="0">
+                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                    <Label
+                        FlexLayout.Grow="1"
+                        Style="{StaticResource DefaultItem}"
+                        Text="Your profile" />
+
+                    <Label
+                        Margin="0,0,5,0"
+                        Style="{StaticResource DefaultItem}"
+                        Text="ionixjunior"
+                        TextColor="{DynamicResource TextSecondaryColor}" />
+                    <Image Source="{DynamicResource library_arrow}" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label
+                        FlexLayout.Grow="1"
+                        Style="{StaticResource DefaultItem}"
+                        Text="Settings" />
+                    <Image Source="{DynamicResource library_arrow}" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label Style="{StaticResource DefaultItem}" Text="Open SoundCloud Pulse app for Creators" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label Style="{StaticResource DefaultItem}" Text="Restore subscription" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label Style="{StaticResource DefaultItem}" Text="Tell a friend" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                    <Label
+                        FlexLayout.Grow="1"
+                        Style="{StaticResource DefaultItem}"
+                        Text="Troubleshooting" />
+                    <Image Source="{DynamicResource library_arrow}" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label Style="{StaticResource DefaultItem}" Text="Contact support" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                    <Label
+                        FlexLayout.Grow="1"
+                        Style="{StaticResource DefaultItem}"
+                        Text="Legal" />
+                    <Image Source="{DynamicResource library_arrow}" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+
+                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                    <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
+                </FlexLayout>
+                <BoxView Style="{StaticResource SeparatorItem}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
