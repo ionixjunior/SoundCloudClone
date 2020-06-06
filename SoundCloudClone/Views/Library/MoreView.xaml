@@ -33,74 +33,158 @@
 
     <ContentPage.Content>
         <ScrollView BackgroundColor="#100F11">
-            <StackLayout Spacing="0">
-                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                    <Label
-                        FlexLayout.Grow="1"
-                        Style="{StaticResource DefaultItem}"
-                        Text="Your profile" />
+            <OnPlatform x:TypeArguments="View">
+                <On Platform="Android">
+                    <StackLayout Spacing="0">
+                        <FlexLayout
+                            Margin="0,24,0,0"
+                            HeightRequest="160"
+                            Style="{StaticResource FlexItem}">
+                            <BoxView
+                                BackgroundColor="#7F8B91"
+                                CornerRadius="60"
+                                HeightRequest="120"
+                                WidthRequest="120" />
 
-                    <Label
-                        Margin="0,0,5,0"
-                        Style="{StaticResource DefaultItem}"
-                        Text="ionixjunior"
-                        TextColor="{DynamicResource TextSecondaryColor}" />
-                    <Image Source="{DynamicResource library_arrow}" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                            <StackLayout Margin="20,0,0,0" Spacing="0">
+                                <Label Style="{StaticResource DefaultItem}" Text="ionixjunior" />
+                                <Label
+                                    Style="{StaticResource DefaultItem}"
+                                    Text="View public profile"
+                                    TextColor="{DynamicResource TextSecondaryColor}" />
+                            </StackLayout>
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label
-                        FlexLayout.Grow="1"
-                        Style="{StaticResource DefaultItem}"
-                        Text="Settings" />
-                    <Image Source="{DynamicResource library_arrow}" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Activity" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label Style="{StaticResource DefaultItem}" Text="Open SoundCloud Pulse app for Creators" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Record" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label Style="{StaticResource DefaultItem}" Text="Restore subscription" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Settings" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label Style="{StaticResource DefaultItem}" Text="Tell a friend" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Install SoundCloud Pulse app" />
 
-                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                    <Label
-                        FlexLayout.Grow="1"
-                        Style="{StaticResource DefaultItem}"
-                        Text="Troubleshooting" />
-                    <Image Source="{DynamicResource library_arrow}" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                            <Label
+                                Margin="0,0,5,0"
+                                Style="{StaticResource DefaultItem}"
+                                Text="for Creators"
+                                TextColor="{DynamicResource TextSecondaryColor}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label Style="{StaticResource DefaultItem}" Text="Contact support" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Support" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <Label
-                        FlexLayout.Grow="1"
-                        Style="{StaticResource DefaultItem}"
-                        Text="Legal" />
-                    <Image Source="{DynamicResource library_arrow}" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Legal" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                    <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
-            </StackLayout>
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <Label
+                            Margin="0,24,0,0"
+                            HorizontalTextAlignment="Center"
+                            Text="App version 2020.04.06-release (16090)"
+                            TextColor="{DynamicResource TextSecondaryColor}" />
+
+                        <Label
+                            Margin="0,0,0,24"
+                            HorizontalTextAlignment="Center"
+                            Text="Flipper version 5.0.6"
+                            TextColor="{DynamicResource TextSecondaryColor}" />
+                    </StackLayout>
+                </On>
+                <On Platform="iOS">
+                    <StackLayout Spacing="0">
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Your profile" />
+
+                            <Label
+                                Margin="0,0,5,0"
+                                Style="{StaticResource DefaultItem}"
+                                Text="ionixjunior"
+                                TextColor="{DynamicResource TextSecondaryColor}" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Settings" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Open SoundCloud Pulse app for Creators" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Restore subscription" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Tell a friend" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Troubleshooting" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Contact support" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Legal" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+                    </StackLayout>
+                </On>
+            </OnPlatform>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
