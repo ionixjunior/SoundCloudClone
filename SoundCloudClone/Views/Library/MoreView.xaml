@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SoundCloudClone.Views.Library.MoreView">
-    <ContentPage.Content>
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SoundCloudClone.Views.Library.MoreView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+        <Label
+            Margin="-40,0,0,0"
+            Style="{StaticResource TitleNavigationPage}"
+            Text="More" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content />
 </ContentPage>
