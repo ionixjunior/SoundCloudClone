@@ -26,7 +26,8 @@
 
     <NavigationPage.TitleView>
         <Label
-            Margin="-40,0,0,0"
+            Margin="{OnPlatform Android='0',
+                                iOS='-40,0,0,0'}"
             Style="{StaticResource TitleNavigationPage}"
             Text="More" />
     </NavigationPage.TitleView>
