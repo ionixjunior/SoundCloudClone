@@ -21,5 +21,10 @@ namespace SoundCloudClone.Views
         {
             return "library_selected";
         }
+
+        private void OnProfileTapped(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("clicou");
+        }
     }
 }

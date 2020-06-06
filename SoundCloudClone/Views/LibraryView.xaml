@@ -60,7 +60,11 @@
                     <Image
                         HeightRequest="32"
                         Source="library_profile"
-                        WidthRequest="32" />
+                        WidthRequest="32">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </FlexLayout>
             </On>
 
@@ -72,7 +76,11 @@
                         HorizontalOptions="End"
                         Source="library_profile"
                         VerticalOptions="Start"
-                        WidthRequest="32" />
+                        WidthRequest="32">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Grid>
             </On>
         </OnPlatform>
