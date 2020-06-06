@@ -29,5 +29,6 @@
     <Folder Include="Extensions\" />
     <Folder Include="Converters\" />
     <Folder Include="Styles\" />
+    <Folder Include="Views\Library\" />
   </ItemGroup>
 </Project>
