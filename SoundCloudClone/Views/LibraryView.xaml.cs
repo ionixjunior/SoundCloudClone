@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Views.Library;
 using Xamarin.Forms;
 
 namespace SoundCloudClone.Views
@@ -22,9 +23,9 @@ namespace SoundCloudClone.Views
             return "library_selected";
         }
 
-        private void OnProfileTapped(object sender, EventArgs e)
+        private async void OnProfileTapped(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("clicou");
+            await Navigation.PushAsync(new MoreView());
         }
     }
 }
