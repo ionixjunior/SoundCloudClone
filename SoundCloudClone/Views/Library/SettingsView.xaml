@@ -72,7 +72,65 @@
 
                 <On Platform="iOS">
                     <StackLayout Spacing="0">
-                        <Label Text="View do iOS" />
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Autoplay releted tracks" />
+                            <Switch IsToggled="True" OnColor="{DynamicResource Accent}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Interface style" />
+
+                            <Label
+                                Margin="0,0,5,0"
+                                Style="{StaticResource DefaultItem}"
+                                Text="System"
+                                TextColor="{DynamicResource TextSecondaryColor}" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Notifications" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Analytics" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Communications" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label
+                                FlexLayout.Grow="1"
+                                Style="{StaticResource DefaultItem}"
+                                Text="Advertising" />
+                            <Image Source="{DynamicResource library_arrow}" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
                     </StackLayout>
                 </On>
             </OnPlatform>
