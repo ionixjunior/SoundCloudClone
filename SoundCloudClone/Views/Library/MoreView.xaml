@@ -33,7 +33,7 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#100F11">
+        <ScrollView>
             <OnPlatform x:TypeArguments="View">
                 <On Platform="Android">
                     <StackLayout Spacing="0">
