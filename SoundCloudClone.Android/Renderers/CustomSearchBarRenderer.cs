@@ -48,7 +48,7 @@ namespace SoundCloudClone.Droid.Renderers
             var contentPageBackground = (Color)App.Current.Resources["ContentPageBackground"];
 
             var customBackgroundId = Resource.Drawable.custom_search_background;
-            var drawable = Context.Resources.GetDrawable(customBackgroundId) as GradientDrawable;
+            var drawable = Context.Resources.GetDrawable(customBackgroundId, theme: null) as GradientDrawable;
             drawable.SetColor(contentPageBackground.ToAndroid());
 
             Control.Background = Context.GetDrawable(customBackgroundId);
