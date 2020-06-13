@@ -3,7 +3,79 @@
     x:Class="SoundCloudClone.Views.Library.SettingsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlexItem" TargetType="FlexLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ContentItemBackground}" />
+                <Setter Property="Padding" Value="20,0" />
+                <Setter Property="AlignItems" Value="Center" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+
+            <Style x:Key="DefaultItem" TargetType="Label">
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style x:Key="SeparatorItem" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorItemBackground}" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Label
+            Margin="{OnPlatform Android='0',
+                                iOS='-40,0,0,0'}"
+            Style="{StaticResource TitleNavigationPage}"
+            Text="Settings" />
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
-        <Label Text="Settings" />
+        <ScrollView>
+            <OnPlatform x:TypeArguments="View">
+                <On Platform="Android">
+                    <StackLayout Spacing="0">
+                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Basic settings" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Notifications" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Theme" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Analytics" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Communications" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+
+                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <Label Style="{StaticResource DefaultItem}" Text="Advertising" />
+                        </FlexLayout>
+                        <BoxView Style="{StaticResource SeparatorItem}" />
+                    </StackLayout>
+                </On>
+
+                <On Platform="iOS">
+                    <StackLayout Spacing="0">
+                        <Label Text="View do iOS" />
+                    </StackLayout>
+                </On>
+            </OnPlatform>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
