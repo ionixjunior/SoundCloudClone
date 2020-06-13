@@ -11,5 +11,13 @@ namespace SoundCloudClone.Views.Library
         {
             InitializeComponent();
         }
+
+        private void OnLightThemeTapped(object sender, EventArgs e)
+        {
+        }
+
+        private void OnDarkThemeTapped(object sender, EventArgs e)
+        {
+        }
     }
 }
