@@ -11,5 +11,10 @@ namespace SoundCloudClone.Views.Library
         {
             InitializeComponent();
         }
+
+        private async void OnThemeOptionTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ThemeView());
+        }
     }
 }

@@ -49,6 +49,10 @@
                         <BoxView Style="{StaticResource SeparatorItem}" />
 
                         <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnThemeOptionTapped" />
+                            </FlexLayout.GestureRecognizers>
+
                             <Label Style="{StaticResource DefaultItem}" Text="Theme" />
                         </FlexLayout>
                         <BoxView Style="{StaticResource SeparatorItem}" />
@@ -82,6 +86,10 @@
                         <BoxView Style="{StaticResource SeparatorItem}" />
 
                         <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnThemeOptionTapped" />
+                            </FlexLayout.GestureRecognizers>
+
                             <Label
                                 FlexLayout.Grow="1"
                                 Style="{StaticResource DefaultItem}"
