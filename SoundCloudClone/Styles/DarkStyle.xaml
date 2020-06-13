@@ -13,6 +13,7 @@
     <Color x:Key="SeparatorItemBackground">#121012</Color>
     <Color x:Key="ContentItemBackground">#201E20</Color>
     <Color x:Key="ContentPageBackground">#100F11</Color>
+    <Color x:Key="Accent">#FE5403</Color>
 
     <FileImageSource x:Key="stream_playback_count">stream_playback_count_dark</FileImageSource>
     <FileImageSource x:Key="stream_repost">stream_repost_dark</FileImageSource>
