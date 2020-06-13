@@ -68,6 +68,10 @@
                         <BoxView Style="{StaticResource SeparatorItem}" />
 
                         <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                            </FlexLayout.GestureRecognizers>
+
                             <Label Style="{StaticResource DefaultItem}" Text="Settings" />
                         </FlexLayout>
                         <BoxView Style="{StaticResource SeparatorItem}" />
@@ -132,6 +136,10 @@
                         <BoxView Style="{StaticResource SeparatorItem}" />
 
                         <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                            </FlexLayout.GestureRecognizers>
+
                             <Label
                                 FlexLayout.Grow="1"
                                 Style="{StaticResource DefaultItem}"

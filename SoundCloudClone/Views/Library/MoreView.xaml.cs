@@ -11,5 +11,10 @@ namespace SoundCloudClone.Views.Library
         {
             InitializeComponent();
         }
+
+        private async void OnSettingsTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsView());
+        }
     }
 }
