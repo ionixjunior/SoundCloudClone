@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using MvvmHelpers;
+using MvvmHelpers.Commands;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
-using Xamarin.Forms;
 
 namespace SoundCloudClone.ViewModels
 {
