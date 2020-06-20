@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SoundCloudClone.Interfaces;
 using SoundCloudClone.Styles;
 using SoundCloudClone.ViewModels;
 using Xamarin.Forms;
@@ -11,7 +12,9 @@ namespace SoundCloudClone.Views.Library
         public ThemeView()
         {
             InitializeComponent();
-            BindingContext = new ThemeViewModel();
+
+            var theme = DependencyService.Get<ITheme>();
+            BindingContext = new ThemeViewModel(theme);
         }
 
         private void OnLightThemeTapped(object sender, EventArgs e)
