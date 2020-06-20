@@ -21,6 +21,7 @@ namespace SoundCloudClone
         private void RegisterDependencies()
         {
             DependencyService.Register<IApi, ApiService>();
+            DependencyService.Register<ITheme, ThemeService>();
         }
 
         protected override void OnStart()

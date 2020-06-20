@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using SoundCloudClone.Enums;
+using SoundCloudClone.Interfaces;
 
 namespace SoundCloudClone.Services
 {
-    public class ThemeService
+    public class ThemeService : ITheme
     {
         public IList<ThemeEnum> GetOptions()
         {
