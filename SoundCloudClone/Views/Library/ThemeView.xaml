@@ -36,7 +36,10 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0">
-                <CollectionView ItemsSource="{Binding Options}">
+                <CollectionView
+                    ItemsSource="{Binding Options}"
+                    SelectionChangedCommand="{Binding OptionSelectedCommand}"
+                    SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <FlexLayout
