@@ -30,5 +30,6 @@
     <Folder Include="Converters\" />
     <Folder Include="Styles\" />
     <Folder Include="Views\Library\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>
