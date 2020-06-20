@@ -30,6 +30,8 @@ namespace SoundCloudClone.Models.App
             IsSelected = true;
         }
 
+        public void UnSelect() => IsSelected = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

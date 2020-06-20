@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections.Generic;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
@@ -23,6 +23,8 @@ namespace SoundCloudClone.ViewModels
         private void OptionSelected()
         {
             System.Diagnostics.Debug.WriteLine($"INVOCOU O COMANDO: {SelectedOption?.Name}");
+
+            Options.FirstOrDefault(option => option.IsSelected)?.UnSelect();
             SelectedOption?.Select();
         }
     }
