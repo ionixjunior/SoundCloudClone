@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
-using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
 
@@ -22,8 +21,6 @@ namespace SoundCloudClone.ViewModels
 
         private void OptionSelected()
         {
-            System.Diagnostics.Debug.WriteLine($"INVOCOU O COMANDO: {SelectedOption?.Name}");
-
             Options.FirstOrDefault(option => option.IsSelected)?.UnSelect();
             SelectedOption?.Select();
         }
