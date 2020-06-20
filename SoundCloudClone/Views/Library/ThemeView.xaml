@@ -38,6 +38,7 @@
             <StackLayout Spacing="0">
                 <CollectionView
                     ItemsSource="{Binding Options}"
+                    SelectedItem="{Binding SelectedOption}"
                     SelectionChangedCommand="{Binding OptionSelectedCommand}"
                     SelectionMode="Single">
                     <CollectionView.ItemTemplate>
