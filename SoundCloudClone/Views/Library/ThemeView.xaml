@@ -36,6 +36,25 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0">
+                <CollectionView ItemsSource="{Binding Options}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <FlexLayout
+                                AlignItems="Center"
+                                JustifyContent="SpaceBetween"
+                                Style="{StaticResource FlexItem}">
+                                <Label Style="{StaticResource DefaultItem}" Text="{Binding .}" />
+
+                                <BoxView
+                                    BackgroundColor="#FE5403"
+                                    HeightRequest="20"
+                                    WidthRequest="20" />
+                            </FlexLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!--
                 <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
                     <FlexLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLightThemeTapped" />
@@ -53,6 +72,7 @@
                     <Label Style="{StaticResource DefaultItem}" Text="Dark" />
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
+                -->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
