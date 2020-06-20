@@ -25,11 +25,7 @@ namespace SoundCloudClone.Models.App
             IsSelected = isSelected;
         }
 
-        public void Select()
-        {
-            IsSelected = true;
-        }
-
+        public void Select() => IsSelected = true;
         public void UnSelect() => IsSelected = false;
 
         public event PropertyChangedEventHandler PropertyChanged;
