@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using MvvmHelpers;
-using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Models.App;
 
 namespace SoundCloudClone.ViewModels
 {
     public class ThemeViewModel : BaseViewModel
     {
-        public IList<ThemeEnum> Options { get; private set; }
+        public IList<Theme> Options { get; private set; }
 
         public ThemeViewModel(ITheme theme)
         {

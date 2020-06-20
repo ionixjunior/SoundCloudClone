@@ -1,24 +1,25 @@
 ﻿using System.Collections.Generic;
 using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Models.App;
 using Xamarin.Essentials;
 
 namespace SoundCloudClone.Services
 {
     public class ThemeService : ITheme
     {
-        public IList<ThemeEnum> GetOptions()
+        public IList<Theme> GetOptions()
         {
-            var options = new List<ThemeEnum>();
+            var options = new List<Theme>();
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
-                options.Add(ThemeEnum.BatterySaver);
+                options.Add(new Theme(ThemeEnum.BatterySaver, false));
 
             if (DeviceInfo.Platform == DevicePlatform.iOS)
-                options.Add(ThemeEnum.System);
+                options.Add(new Theme(ThemeEnum.System, false));
 
-            options.Add(ThemeEnum.Light);
-            options.Add(ThemeEnum.Dark);
+            options.Add(new Theme(ThemeEnum.Light, false));
+            options.Add(new Theme(ThemeEnum.Dark, true));
 
             return options;
         }
