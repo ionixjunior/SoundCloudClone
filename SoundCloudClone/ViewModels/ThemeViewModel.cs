@@ -23,6 +23,7 @@ namespace SoundCloudClone.ViewModels
         private void OptionSelected()
         {
             System.Diagnostics.Debug.WriteLine($"INVOCOU O COMANDO: {SelectedOption?.Name}");
+            SelectedOption?.Select();
         }
     }
 }
