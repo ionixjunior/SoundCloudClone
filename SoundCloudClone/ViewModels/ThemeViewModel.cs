@@ -10,6 +10,7 @@ namespace SoundCloudClone.ViewModels
 {
     public class ThemeViewModel : BaseViewModel
     {
+        private readonly ITheme _theme;
         private readonly IStorage _storage;
 
         public IList<Theme> Options { get; private set; }
@@ -18,6 +19,7 @@ namespace SoundCloudClone.ViewModels
 
         public ThemeViewModel(ITheme theme, IStorage storage)
         {
+            _theme = theme;
             _storage = storage;
 
             Options = theme.GetOptions();
@@ -31,7 +33,7 @@ namespace SoundCloudClone.ViewModels
             Options.FirstOrDefault(option => option.IsSelected)?.UnSelect();
             SelectedOption?.Select();
             _storage.Set(Constants.SelectedThemeKey, (int)SelectedOption.Name);
-
+            _theme.Change(SelectedOption.Name);
         }
     }
 }
