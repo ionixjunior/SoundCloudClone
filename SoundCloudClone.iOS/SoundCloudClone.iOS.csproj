@@ -249,6 +249,9 @@
     <BundleResource Include="Resources\stream_playback_count_dark.png" />
     <BundleResource Include="Resources\search_suggestion_light.png" />
     <BundleResource Include="Resources\stream_more_dark%402x.png" />
+    <BundleResource Include="Resources\checked.png" />
+    <BundleResource Include="Resources\checked%402x.png" />
+    <BundleResource Include="Resources\checked%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
