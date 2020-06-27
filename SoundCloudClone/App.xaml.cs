@@ -16,7 +16,7 @@ namespace SoundCloudClone
             InitializeComponent();
 
             RegisterDependencies();
-            CheckTheme();
+            ChangeTheme();
             MainPage = new MainPage();
         }
 
@@ -27,7 +27,7 @@ namespace SoundCloudClone
             DependencyService.Register<IStorage, StorageService>();
         }
 
-        private void CheckTheme()
+        private void ChangeTheme()
         {
             var storage = DependencyService.Get<IStorage>();
             var themeValue = storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
