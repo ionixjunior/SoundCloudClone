@@ -49,11 +49,7 @@
                                 Style="{StaticResource FlexItem}">
                                 <Label Style="{StaticResource DefaultItem}" Text="{Binding Name}" />
 
-                                <BoxView
-                                    BackgroundColor="#FE5403"
-                                    HeightRequest="20"
-                                    IsVisible="{Binding IsSelected}"
-                                    WidthRequest="20" />
+                                <Image IsVisible="{Binding IsSelected}" Source="checked" />
                             </FlexLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
