@@ -14,7 +14,8 @@ namespace SoundCloudClone.Views.Library
             InitializeComponent();
 
             var theme = DependencyService.Get<ITheme>();
-            BindingContext = new ThemeViewModel(theme);
+            var storage = DependencyService.Get<IStorage>();
+            BindingContext = new ThemeViewModel(theme, storage);
         }
 
         private void OnLightThemeTapped(object sender, EventArgs e)
