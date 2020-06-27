@@ -36,6 +36,19 @@ namespace SoundCloudClone.Services
                 case ThemeEnum.Dark:
                     Application.Current.Resources = new DarkStyle();
                     break;
+                case ThemeEnum.System:
+                    var systemTheme = AppInfo.RequestedTheme;
+
+                    if (systemTheme == AppTheme.Light)
+                        Application.Current.Resources = new LightStyle();
+
+                    if (systemTheme == AppTheme.Dark)
+                        Application.Current.Resources = new DarkStyle();
+
+                    if (systemTheme == AppTheme.Unspecified)
+                        Application.Current.Resources = new LightStyle();
+
+                    break;
             }
         }
     }
