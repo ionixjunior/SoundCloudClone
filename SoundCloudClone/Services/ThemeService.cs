@@ -2,7 +2,9 @@
 using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
+using SoundCloudClone.Styles;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SoundCloudClone.Services
 {
@@ -22,6 +24,19 @@ namespace SoundCloudClone.Services
             options.Add(new Theme(ThemeEnum.Dark, true));
 
             return options;
+        }
+
+        public void Change(ThemeEnum theme)
+        {
+            switch (theme)
+            {
+                case ThemeEnum.Light:
+                    Application.Current.Resources = new LightStyle();
+                    break;
+                case ThemeEnum.Dark:
+                    Application.Current.Resources = new DarkStyle();
+                    break;
+            }
         }
     }
 }

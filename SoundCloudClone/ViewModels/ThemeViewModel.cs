@@ -31,6 +31,7 @@ namespace SoundCloudClone.ViewModels
             Options.FirstOrDefault(option => option.IsSelected)?.UnSelect();
             SelectedOption?.Select();
             _storage.Set(Constants.SelectedThemeKey, (int)SelectedOption.Name);
+
         }
     }
 }
