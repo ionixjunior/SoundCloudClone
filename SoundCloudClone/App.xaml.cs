@@ -30,7 +30,7 @@ namespace SoundCloudClone
         private void CheckTheme()
         {
             var storage = DependencyService.Get<IStorage>();
-            var theme = storage.Get("selected_theme", (int)ThemeEnum.NonSelected);
+            var theme = storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
         }
 
         protected override void OnStart()

@@ -23,14 +23,14 @@ namespace SoundCloudClone.ViewModels
             Options = theme.GetOptions();
             OptionSelectedCommand = new Command(OptionSelected);
 
-            var value = _storage.Get("selected_theme", (int)ThemeEnum.NonSelected);
+            var value = _storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
         }
 
         private void OptionSelected()
         {
             Options.FirstOrDefault(option => option.IsSelected)?.UnSelect();
             SelectedOption?.Select();
-            _storage.Set("selected_theme", (int)SelectedOption.Name);
+            _storage.Set(Constants.SelectedThemeKey, (int)SelectedOption.Name);
         }
     }
 }
