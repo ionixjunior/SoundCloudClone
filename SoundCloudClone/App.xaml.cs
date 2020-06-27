@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using SoundCloudClone.Views;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Services;
+using SoundCloudClone.Enums;
 
 namespace SoundCloudClone
 {
@@ -15,6 +16,7 @@ namespace SoundCloudClone
             InitializeComponent();
 
             RegisterDependencies();
+            CheckTheme();
             MainPage = new MainPage();
         }
 
@@ -23,6 +25,12 @@ namespace SoundCloudClone
             DependencyService.Register<IApi, ApiService>();
             DependencyService.Register<ITheme, ThemeService>();
             DependencyService.Register<IStorage, StorageService>();
+        }
+
+        private void CheckTheme()
+        {
+            var storage = DependencyService.Get<IStorage>();
+            var theme = storage.Get("selected_theme", (int)ThemeEnum.NonSelected);
         }
 
         protected override void OnStart()
