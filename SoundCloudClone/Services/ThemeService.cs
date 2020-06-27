@@ -28,38 +28,23 @@ namespace SoundCloudClone.Services
 
         public void Change(ThemeEnum theme)
         {
-            switch (theme)
+            var appStyle = theme switch
             {
-                case ThemeEnum.Light:
-                    ChangeByAppStyle(new LightStyle());
-                    break;
-                case ThemeEnum.Dark:
-                    ChangeByAppStyle(new DarkStyle());
-                    break;
-                case ThemeEnum.System:
-                    ChangeBySystem();
-                    break;
-            }
+                ThemeEnum.Light => new LightStyle(),
+                ThemeEnum.Dark => new DarkStyle(),
+                ThemeEnum.System => GetStyleBySystem(),
+                _ => new LightStyle()
+            };
+
+            Application.Current.Resources = appStyle;
         }
 
-        private void ChangeByAppStyle(ResourceDictionary style)
+        private ResourceDictionary GetStyleBySystem()
         {
-            Application.Current.Resources = style;
+            if (AppInfo.RequestedTheme == AppTheme.Dark)
+                return new DarkStyle();
+
+            return new LightStyle();
         }
-
-        private void ChangeBySystem()
-        {
-            var systemTheme = AppInfo.RequestedTheme;
-
-            if (systemTheme == AppTheme.Light)
-                ChangeByAppStyle(new LightStyle());
-
-            if (systemTheme == AppTheme.Dark)
-                ChangeByAppStyle(new DarkStyle());
-
-            if (systemTheme == AppTheme.Unspecified)
-                ChangeByAppStyle(new LightStyle());
-        }
-
     }
 }
