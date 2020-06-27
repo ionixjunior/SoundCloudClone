@@ -2,9 +2,10 @@
 {
     public enum ThemeEnum
     {
-        Light,
-        Dark,
-        System,
-        BatterySaver
+        NonSelected = 0,
+        Light = 1,
+        Dark = 2,
+        System = 3,
+        BatterySaver = 4
     }
 }
