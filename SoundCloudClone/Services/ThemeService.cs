@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
@@ -10,6 +11,9 @@ namespace SoundCloudClone.Services
 {
     public class ThemeService : ITheme
     {
+        private Lazy<LightStyle> _lightStyle = new Lazy<LightStyle>();
+        private Lazy<DarkStyle> _darkStyle = new Lazy<DarkStyle>();
+
         public IList<Theme> GetOptions()
         {
             var options = new List<Theme>();
@@ -30,10 +34,10 @@ namespace SoundCloudClone.Services
         {
             var appStyle = theme switch
             {
-                ThemeEnum.Light => new LightStyle(),
-                ThemeEnum.Dark => new DarkStyle(),
+                ThemeEnum.Light => _lightStyle.Value,
+                ThemeEnum.Dark => _darkStyle.Value,
                 ThemeEnum.System => GetStyleBySystem(),
-                _ => new LightStyle()
+                _ => _lightStyle.Value
             };
 
             Application.Current.Resources = appStyle;
@@ -42,9 +46,9 @@ namespace SoundCloudClone.Services
         private ResourceDictionary GetStyleBySystem()
         {
             if (AppInfo.RequestedTheme == AppTheme.Dark)
-                return new DarkStyle();
+                return _darkStyle.Value;
 
-            return new LightStyle();
+            return _lightStyle.Value;
         }
     }
 }
