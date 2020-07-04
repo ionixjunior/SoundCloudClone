@@ -30,6 +30,8 @@ namespace SoundCloudClone.Services
             return options;
         }
 
+        private ResourceDictionary _lastAppStyleSelected;
+
         public void Change(ThemeEnum theme)
         {
             var appStyle = theme switch
@@ -41,7 +43,22 @@ namespace SoundCloudClone.Services
                 _ => _lightStyle.Value
             };
 
-            Application.Current.Resources = appStyle;
+            if (ThemeShouldChange(appStyle))
+            {
+                Application.Current.Resources = appStyle;
+                _lastAppStyleSelected = appStyle;
+            }
+        }
+
+        private bool ThemeShouldChange(ResourceDictionary appStyle)
+        {
+            if (_lastAppStyleSelected is null)
+                return true;
+
+            if (_lastAppStyleSelected != appStyle)
+                return true;
+
+            return false;
         }
 
         private ResourceDictionary GetStyleBySystem()
