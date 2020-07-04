@@ -10,12 +10,18 @@ namespace SoundCloudClone
 {
     public partial class App : Application
     {
+        private readonly IStorage _storage;
+        private readonly ITheme _theme;
 
         public App()
         {
             InitializeComponent();
 
             RegisterDependencies();
+
+            _storage = DependencyService.Get<IStorage>();
+            _theme = DependencyService.Get<ITheme>();
+
             MainPage = new MainPage();
         }
 
@@ -28,12 +34,9 @@ namespace SoundCloudClone
 
         private void ChangeTheme()
         {
-            var storage = DependencyService.Get<IStorage>();
-            var themeValue = storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
-
+            var themeValue = _storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
             var themeEnum = (ThemeEnum)themeValue;
-            var theme = DependencyService.Get<ITheme>();
-            theme.Change(themeEnum);
+            _theme.Change(themeEnum);
         }
 
         protected override void OnStart()
