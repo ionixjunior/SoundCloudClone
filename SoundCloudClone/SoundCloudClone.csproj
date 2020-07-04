@@ -35,5 +35,6 @@
     <Folder Include="Styles\" />
     <Folder Include="Views\Library\" />
     <Folder Include="Enums\" />
+    <Folder Include="ViewModels\Library\" />
   </ItemGroup>
 </Project>
