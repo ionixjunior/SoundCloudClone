@@ -15,6 +15,14 @@ namespace SoundCloudClone.Views.Library
             BindingContext = new SettingsViewModel(storage);
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (BindingContext is SettingsViewModel viewModel)
+                viewModel.LoadSelectedTheme();
+        }
+
         private async void OnThemeOptionTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ThemeView());
