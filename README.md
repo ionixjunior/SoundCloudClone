@@ -26,6 +26,17 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 
 <kbd><img width="250" src="art/android_library_2_light.png" /></kbd><kbd><img width="250" src="art/android_library_2_dark.png" /></kbd>
 
+#### Tela de opções
+<kbd><img width="250" src="art/android_library_more_1_light.png" /></kbd><kbd><img width="250" src="art/android_library_more_1_dark.png" /></kbd>
+
+<kbd><img width="250" src="art/android_library_more_2_light.png" /></kbd><kbd><img width="250" src="art/android_library_more_2_dark.png" /></kbd>
+
+#### Tela de configurações
+<kbd><img width="250" src="art/android_library_settings_1_light.png" /></kbd><kbd><img width="250" src="art/android_library_settings_1_dark.png" /></kbd>
+
+#### Tela de seleção do tema
+<kbd><img width="250" src="art/android_library_theme_1_light.png" /></kbd><kbd><img width="250" src="art/android_library_theme_1_dark.png" /></kbd>
+
 ### iOS
 
 #### Tela dos álbuns
@@ -45,3 +56,12 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 <kbd><img width="250" src="art/ios_library_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_1_dark.png" /></kbd>
 
 <kbd><img width="250" src="art/ios_library_2_light.png" /></kbd><kbd><img width="250" src="art/ios_library_2_dark.png" /></kbd>
+
+#### Tela de opções
+<kbd><img width="250" src="art/ios_library_more_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_more_1_dark.png" /></kbd>
+
+#### Tela de configurações
+<kbd><img width="250" src="art/ios_library_settings_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_settings_1_dark.png" /></kbd>
+
+#### Tela de seleção do tema
+<kbd><img width="250" src="art/ios_library_theme_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_theme_1_dark.png" /></kbd>
