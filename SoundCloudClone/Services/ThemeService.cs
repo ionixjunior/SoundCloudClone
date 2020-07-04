@@ -25,7 +25,7 @@ namespace SoundCloudClone.Services
                 options.Add(new Theme(ThemeEnum.System, false));
 
             options.Add(new Theme(ThemeEnum.Light, false));
-            options.Add(new Theme(ThemeEnum.Dark, true));
+            options.Add(new Theme(ThemeEnum.Dark, false));
 
             return options;
         }
