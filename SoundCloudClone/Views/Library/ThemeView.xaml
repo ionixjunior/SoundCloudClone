@@ -55,26 +55,6 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-
-                <!--
-                <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                    <FlexLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLightThemeTapped" />
-                    </FlexLayout.GestureRecognizers>
-
-                    <Label Style="{StaticResource DefaultItem}" Text="Light" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
-
-                <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                    <FlexLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnDarkThemeTapped" />
-                    </FlexLayout.GestureRecognizers>
-
-                    <Label Style="{StaticResource DefaultItem}" Text="Dark" />
-                </FlexLayout>
-                <BoxView Style="{StaticResource SeparatorItem}" />
-                -->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
