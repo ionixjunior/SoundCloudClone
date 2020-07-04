@@ -16,7 +16,6 @@ namespace SoundCloudClone
             InitializeComponent();
 
             RegisterDependencies();
-            ChangeTheme();
             MainPage = new MainPage();
         }
 
@@ -39,6 +38,7 @@ namespace SoundCloudClone
 
         protected override void OnStart()
         {
+            ChangeTheme();
         }
 
         protected override void OnSleep()
@@ -47,6 +47,7 @@ namespace SoundCloudClone
 
         protected override void OnResume()
         {
+            ChangeTheme();
         }
     }
 }
