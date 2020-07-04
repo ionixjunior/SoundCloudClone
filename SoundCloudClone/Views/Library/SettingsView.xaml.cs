@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.ViewModels.Library;
 using Xamarin.Forms;
