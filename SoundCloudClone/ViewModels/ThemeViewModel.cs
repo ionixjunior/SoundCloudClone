@@ -24,8 +24,7 @@ namespace SoundCloudClone.ViewModels
 
             Options = theme.GetOptions();
             OptionSelectedCommand = new Command(OptionSelected);
-
-            var value = _storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
+            SelectConfiguredOption(storage);
         }
 
         private void OptionSelected()
@@ -34,6 +33,13 @@ namespace SoundCloudClone.ViewModels
             SelectedOption?.Select();
             _storage.Set(Constants.SelectedThemeKey, (int)SelectedOption.Name);
             _theme.Change(SelectedOption.Name);
+        }
+
+        private void SelectConfiguredOption(IStorage storage)
+        {
+            var themeValue = storage.Get(Constants.SelectedThemeKey, (int)ThemeEnum.NonSelected);
+            var themeEnum = (ThemeEnum)themeValue;
+            Options.FirstOrDefault(option => option.Name == themeEnum)?.Select();
         }
     }
 }
