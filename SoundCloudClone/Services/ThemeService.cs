@@ -37,6 +37,7 @@ namespace SoundCloudClone.Services
                 ThemeEnum.Light => _lightStyle.Value,
                 ThemeEnum.Dark => _darkStyle.Value,
                 ThemeEnum.System => GetStyleBySystem(),
+                ThemeEnum.BatterySaver => GetStyleByBatterySaver(),
                 _ => _lightStyle.Value
             };
 
@@ -46,6 +47,14 @@ namespace SoundCloudClone.Services
         private ResourceDictionary GetStyleBySystem()
         {
             if (AppInfo.RequestedTheme == AppTheme.Dark)
+                return _darkStyle.Value;
+
+            return _lightStyle.Value;
+        }
+
+        private ResourceDictionary GetStyleByBatterySaver()
+        {
+            if (Battery.EnergySaverStatus == EnergySaverStatus.On)
                 return _darkStyle.Value;
 
             return _lightStyle.Value;
