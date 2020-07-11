@@ -28,4 +28,10 @@
         d:Text="Text value"
         FlexLayout.Grow="1"
         Style="{StaticResource DefaultItem}" />
+
+    <Image
+        x:Name="ArrowImage"
+        d:IsVisible="true"
+        IsVisible="false"
+        Source="{DynamicResource library_arrow}" />
 </FlexLayout>

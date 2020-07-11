@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace SoundCloudClone.Controls
 {
@@ -19,14 +18,32 @@ namespace SoundCloudClone.Controls
             set => SetValue(TextProperty, value);
         }
 
-        public ItemView()
-        {
-            InitializeComponent();
-        }
-
         private static void OnTextChanged(BindableObject bindable, object oldValue, object newValue)
         {
             (bindable as ItemView).TextLabel.Text = (string)newValue;
+        }
+
+        public static readonly BindableProperty HasVisibleArrowProperty = BindableProperty.Create(
+            nameof(HasVisibleArrow),
+            typeof(bool),
+            typeof(ItemView),
+            false,
+            propertyChanged: OnHasVisiableArrowChanged);
+
+        public bool HasVisibleArrow
+        {
+            get => (bool)GetValue(HasVisibleArrowProperty);
+            set => SetValue(HasVisibleArrowProperty, value);
+        }
+
+        private static void OnHasVisiableArrowChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            (bindable as ItemView).ArrowImage.IsVisible = (bool)newValue;
+        }
+
+        public ItemView()
+        {
+            InitializeComponent();
         }
     }
 }
