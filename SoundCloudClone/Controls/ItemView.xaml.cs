@@ -41,6 +41,29 @@ namespace SoundCloudClone.Controls
             (bindable as ItemView).ArrowImage.IsVisible = (bool)newValue;
         }
 
+        public static readonly BindableProperty DetailProperty = BindableProperty.Create(
+            nameof(Detail),
+            typeof(string),
+            typeof(ItemView),
+            string.Empty,
+            propertyChanged: OnDetailChanged
+        );
+
+        public string Detail
+        {
+            get => (string)GetValue(DetailProperty);
+            set => SetValue(DetailProperty, value);
+        }
+
+        private static void OnDetailChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if ((bindable as ItemView).DetailLabel is Label label)
+            {
+                label.Text = (string)newValue;
+                label.IsVisible = !string.IsNullOrWhiteSpace(label.Text);
+            }
+        }
+
         public ItemView()
         {
             InitializeComponent();
