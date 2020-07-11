@@ -2,12 +2,12 @@
 
 namespace SoundCloudClone.Controls
 {
-    public partial class ItemView : FlexLayout
+    public partial class ItemTextView : FlexLayout
     {
         public static readonly BindableProperty TextProperty = BindableProperty.Create(
             nameof(Text),
             typeof(string),
-            typeof(ItemView),
+            typeof(ItemTextView),
             string.Empty,
             propertyChanged: OnTextChanged
         );
@@ -20,13 +20,13 @@ namespace SoundCloudClone.Controls
 
         private static void OnTextChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            (bindable as ItemView).TextLabel.Text = (string)newValue;
+            (bindable as ItemTextView).TextLabel.Text = (string)newValue;
         }
 
         public static readonly BindableProperty HasVisibleArrowProperty = BindableProperty.Create(
             nameof(HasVisibleArrow),
             typeof(bool),
-            typeof(ItemView),
+            typeof(ItemTextView),
             false,
             propertyChanged: OnHasVisiableArrowChanged);
 
@@ -38,13 +38,13 @@ namespace SoundCloudClone.Controls
 
         private static void OnHasVisiableArrowChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            (bindable as ItemView).ArrowImage.IsVisible = (bool)newValue;
+            (bindable as ItemTextView).ArrowImage.IsVisible = (bool)newValue;
         }
 
         public static readonly BindableProperty DetailProperty = BindableProperty.Create(
             nameof(Detail),
             typeof(string),
-            typeof(ItemView),
+            typeof(ItemTextView),
             string.Empty,
             propertyChanged: OnDetailChanged
         );
@@ -57,14 +57,14 @@ namespace SoundCloudClone.Controls
 
         private static void OnDetailChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if ((bindable as ItemView).DetailLabel is Label label)
+            if ((bindable as ItemTextView).DetailLabel is Label label)
             {
                 label.Text = (string)newValue;
                 label.IsVisible = !string.IsNullOrWhiteSpace(label.Text);
             }
         }
 
-        public ItemView()
+        public ItemTextView()
         {
             InitializeComponent();
         }
