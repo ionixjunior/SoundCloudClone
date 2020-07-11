@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.Library.MoreView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SoundCloudClone.Controls">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="FlexItem" TargetType="FlexLayout">
@@ -15,11 +16,6 @@
             <Style x:Key="DefaultItem" TargetType="Label">
                 <Setter Property="FontSize" Value="Subtitle" />
                 <Setter Property="Padding" Value="0" />
-            </Style>
-
-            <Style x:Key="SeparatorItem" TargetType="BoxView">
-                <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorItemBackground}" />
-                <Setter Property="HeightRequest" Value="1" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -36,7 +32,7 @@
         <ScrollView>
             <OnPlatform x:TypeArguments="View">
                 <On Platform="Android">
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="1">
                         <FlexLayout
                             Margin="0,24,0,0"
                             HeightRequest="160"
@@ -55,55 +51,20 @@
                                     TextColor="{DynamicResource TextSecondaryColor}" />
                             </StackLayout>
                         </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
 
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Activity" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                        <controls:ItemTextView Text="Activity" />
+                        <controls:ItemTextView Text="Record" />
 
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Record" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <FlexLayout.GestureRecognizers>
+                        <controls:ItemTextView Text="Settings">
+                            <controls:ItemTextView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnSettingsTapped" />
-                            </FlexLayout.GestureRecognizers>
+                            </controls:ItemTextView.GestureRecognizers>
+                        </controls:ItemTextView>
 
-                            <Label Style="{StaticResource DefaultItem}" Text="Settings" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Install SoundCloud Pulse app" />
-
-                            <Label
-                                Margin="0,0,5,0"
-                                Style="{StaticResource DefaultItem}"
-                                Text="for Creators"
-                                TextColor="{DynamicResource TextSecondaryColor}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Support" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Legal" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                        <controls:ItemTextView Detail="for Creators" Text="Install SoundCloud Pulse app" />
+                        <controls:ItemTextView Margin="0,24,0,0" Text="Support" />
+                        <controls:ItemTextView Text="Legal" />
+                        <controls:ItemTextView Margin="0,24,0,0" Text="Sign out" />
 
                         <Label
                             Margin="0,24,0,0"
@@ -119,77 +80,29 @@
                     </StackLayout>
                 </On>
                 <On Platform="iOS">
-                    <StackLayout Spacing="0">
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Your profile" />
+                    <StackLayout Spacing="0.5">
+                        <controls:ItemTextView
+                            Margin="0,24,0,0"
+                            Detail="ionixjunior"
+                            HasVisibleArrow="true"
+                            Text="Your profile" />
 
-                            <Label
-                                Margin="0,0,5,0"
-                                Style="{StaticResource DefaultItem}"
-                                Text="ionixjunior"
-                                TextColor="{DynamicResource TextSecondaryColor}" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <FlexLayout.GestureRecognizers>
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Settings">
+                            <controls:ItemTextView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnSettingsTapped" />
-                            </FlexLayout.GestureRecognizers>
+                            </controls:ItemTextView.GestureRecognizers>
+                        </controls:ItemTextView>
 
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Settings" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Open SoundCloud Pulse app for Creators" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Restore subscription" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Tell a friend" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Troubleshooting" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Contact support" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Legal" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Sign out" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                        <controls:ItemTextView Text="Open SoundCloud Pulse app for Creators" />
+                        <controls:ItemTextView Text="Restore subscription" />
+                        <controls:ItemTextView Text="Tell a friend" />
+                        <controls:ItemTextView
+                            Margin="0,24,0,0"
+                            HasVisibleArrow="true"
+                            Text="Troubleshooting" />
+                        <controls:ItemTextView Text="Contact support" />
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Legal" />
+                        <controls:ItemTextView Margin="0,24,0,0" Text="Sign out" />
                     </StackLayout>
                 </On>
             </OnPlatform>
