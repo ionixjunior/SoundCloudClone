@@ -2,7 +2,7 @@
 
 namespace SoundCloudClone.Controls
 {
-    public partial class ItemTextView : FlexLayout
+    public partial class ItemTextView : ItemBaseView
     {
         public static readonly BindableProperty TextProperty = BindableProperty.Create(
             nameof(Text),
