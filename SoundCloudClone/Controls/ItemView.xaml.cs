@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
 namespace SoundCloudClone.Controls
 {
@@ -8,7 +9,8 @@ namespace SoundCloudClone.Controls
             nameof(Text),
             typeof(string),
             typeof(ItemView),
-            string.Empty
+            string.Empty,
+            propertyChanged: OnTextChanged
         );
 
         public string Text
@@ -20,6 +22,11 @@ namespace SoundCloudClone.Controls
         public ItemView()
         {
             InitializeComponent();
+        }
+
+        private static void OnTextChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            (bindable as ItemView).TextLabel.Text = (string)newValue;
         }
     }
 }

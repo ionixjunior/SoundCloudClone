@@ -21,6 +21,7 @@
     </FlexLayout.Resources>
 
     <Label
+        x:Name="TextLabel"
         FlexLayout.Grow="1"
         Style="{StaticResource DefaultItem}"
         Text="Teste do item" />
