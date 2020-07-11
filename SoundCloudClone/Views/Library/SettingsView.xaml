@@ -3,28 +3,8 @@
     x:Class="SoundCloudClone.Views.Library.SettingsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SoundCloudClone.Controls"
     xmlns:converters="clr-namespace:SoundCloudClone.Converters">
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="FlexItem" TargetType="FlexLayout">
-                <Setter Property="BackgroundColor" Value="{DynamicResource ContentItemBackground}" />
-                <Setter Property="Padding" Value="20,0" />
-                <Setter Property="AlignItems" Value="Center" />
-                <Setter Property="HeightRequest" Value="60" />
-            </Style>
-
-            <Style x:Key="DefaultItem" TargetType="Label">
-                <Setter Property="FontSize" Value="Subtitle" />
-                <Setter Property="Padding" Value="0" />
-            </Style>
-
-            <Style x:Key="SeparatorItem" TargetType="BoxView">
-                <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorItemBackground}" />
-                <Setter Property="HeightRequest" Value="1" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
     <NavigationPage.TitleView>
         <Label
@@ -38,108 +18,40 @@
         <ScrollView>
             <OnPlatform x:TypeArguments="View">
                 <On Platform="Android">
-                    <StackLayout Spacing="0">
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Basic settings" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Notifications" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <FlexLayout.GestureRecognizers>
+                    <StackLayout Spacing="1">
+                        <controls:ItemTextView Margin="0,24,0,0" Text="Basic settings" />
+                        <controls:ItemTextView Text="Notifications" />
+                        <controls:ItemTextView Text="Theme">
+                            <controls:ItemTextView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnThemeOptionTapped" />
-                            </FlexLayout.GestureRecognizers>
-
-                            <Label Style="{StaticResource DefaultItem}" Text="Theme" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Analytics" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Communications" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label Style="{StaticResource DefaultItem}" Text="Advertising" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                            </controls:ItemTextView.GestureRecognizers>
+                        </controls:ItemTextView>
+                        <controls:ItemTextView Text="Analytics" />
+                        <controls:ItemTextView Text="Communications" />
+                        <controls:ItemTextView Text="Advertising" />
                     </StackLayout>
                 </On>
 
                 <On Platform="iOS">
-                    <StackLayout Spacing="0">
-                        <FlexLayout Margin="0,24,0,0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Autoplay releted tracks" />
-                            <Switch IsToggled="True" OnColor="{DynamicResource Accent}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                    <StackLayout Spacing="0.5">
+                        <controls:ItemSwitchView
+                            Margin="0,24,0,0"
+                            IsToggled="true"
+                            Text="Autoplay releted tracks" />
 
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <FlexLayout.GestureRecognizers>
+                        <controls:ItemTextView
+                            Detail="{Binding SelectedTheme, Converter={converters:ThemeEnumToTextConverter}}"
+                            HasVisibleArrow="true"
+                            Text="Interface style">
+                            <controls:ItemTextView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnThemeOptionTapped" />
-                            </FlexLayout.GestureRecognizers>
+                            </controls:ItemTextView.GestureRecognizers>
+                        </controls:ItemTextView>
 
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Interface style" />
-
-                            <Label
-                                Margin="0,0,5,0"
-                                Style="{StaticResource DefaultItem}"
-                                Text="{Binding SelectedTheme, Converter={converters:ThemeEnumToTextConverter}}"
-                                TextColor="{DynamicResource TextSecondaryColor}" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Notifications" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Analytics" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Communications" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
-
-                        <FlexLayout Margin="0" Style="{StaticResource FlexItem}">
-                            <Label
-                                FlexLayout.Grow="1"
-                                Style="{StaticResource DefaultItem}"
-                                Text="Advertising" />
-                            <Image Source="{DynamicResource library_arrow}" />
-                        </FlexLayout>
-                        <BoxView Style="{StaticResource SeparatorItem}" />
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Notifications" />
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Analytics" />
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Communications" />
+                        <controls:ItemTextView HasVisibleArrow="true" Text="Advertising" />
                     </StackLayout>
                 </On>
             </OnPlatform>
