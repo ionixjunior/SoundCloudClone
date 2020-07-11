@@ -3,7 +3,10 @@
     x:Class="SoundCloudClone.Controls.ItemView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Style="{StaticResource FlexItem}">
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource FlexItem}"
+    mc:Ignorable="d">
     <FlexLayout.Resources>
         <ResourceDictionary>
             <Style x:Key="FlexItem" TargetType="FlexLayout">
@@ -22,7 +25,7 @@
 
     <Label
         x:Name="TextLabel"
+        d:Text="Text value"
         FlexLayout.Grow="1"
-        Style="{StaticResource DefaultItem}"
-        Text="Teste do item" />
+        Style="{StaticResource DefaultItem}" />
 </FlexLayout>
