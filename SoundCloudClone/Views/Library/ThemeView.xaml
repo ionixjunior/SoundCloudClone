@@ -36,20 +36,16 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Spacing="0">
-                <CollectionView
-                    ItemsSource="{Binding Options}"
-                    SelectedItem="{Binding SelectedOption}"
-                    SelectionChangedCommand="{Binding OptionSelectedCommand}"
-                    SelectionMode="Single">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <controls:ItemSelectView IsSelected="{Binding IsSelected}" Text="{Binding Name, Converter={converters:ThemeEnumToTextConverter}}" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-        </ScrollView>
+        <CollectionView
+            ItemsSource="{Binding Options}"
+            SelectedItem="{Binding SelectedOption}"
+            SelectionChangedCommand="{Binding OptionSelectedCommand}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:ItemSelectView IsSelected="{Binding IsSelected}" Text="{Binding Name, Converter={converters:ThemeEnumToTextConverter}}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
