@@ -37,6 +37,7 @@
 
     <ContentPage.Content>
         <CollectionView
+            ItemSizingStrategy="MeasureFirstItem"
             ItemsSource="{Binding Options}"
             SelectedItem="{Binding SelectedOption}"
             SelectionChangedCommand="{Binding OptionSelectedCommand}"
