@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<controls:ItemBaseView
+    x:Class="SoundCloudClone.Controls.ItemSelectView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SoundCloudClone.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource FlexItem}"
+    mc:Ignorable="d">
+    <Label
+        x:Name="TextLabel"
+        d:Text="Item 1"
+        FlexLayout.Grow="1"
+        Style="{StaticResource DefaultItem}" />
+    <Image
+        x:Name="SelectImage"
+        d:IsVisible="true"
+        IsVisible="false"
+        Source="checked" />
+</controls:ItemBaseView>
