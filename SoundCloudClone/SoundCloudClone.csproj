@@ -37,5 +37,6 @@
     <Folder Include="Enums\" />
     <Folder Include="ViewModels\Library\" />
     <Folder Include="Controls\" />
+    <Folder Include="Views\Playlist\" />
   </ItemGroup>
 </Project>
