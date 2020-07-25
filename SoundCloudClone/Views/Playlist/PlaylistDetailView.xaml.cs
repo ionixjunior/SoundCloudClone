@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using SoundCloudClone.Interfaces;
+using SoundCloudClone.ViewModels.Playlist;
+using Xamarin.Forms;
 
 namespace SoundCloudClone.Views.Playlist
 {
@@ -7,6 +10,21 @@ namespace SoundCloudClone.Views.Playlist
         public PlaylistDetailView()
         {
             InitializeComponent();
+
+            var api = DependencyService.Get<IApi>();
+            BindingContext = new PlaylistDetailViewModel(api);
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await OnAppearingAsync();
+        }
+
+        private async Task OnAppearingAsync()
+        {
+            if (BindingContext is IInitialize viewModel)
+                await viewModel.InitializeAsync();
         }
     }
 }
