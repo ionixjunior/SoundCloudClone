@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
+using SoundCloudClone.Extensions;
 
 namespace SoundCloudClone.ViewModels.Playlist
 {
@@ -17,7 +18,9 @@ namespace SoundCloudClone.ViewModels.Playlist
         {
             try
             {
-                var data = await _api.GetPlaylistDetail();
+                var playlistDetailApi = await _api.GetPlaylistDetail();
+                var playlist = playlistDetailApi.ToPlaylistApp();
+                var tracks = playlistDetailApi.ToTracksApp();
             }
             catch (Exception exception)
             {
