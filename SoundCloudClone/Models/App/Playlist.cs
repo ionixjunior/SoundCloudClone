@@ -1,4 +1,6 @@
-﻿namespace SoundCloudClone.Models.App
+﻿using System;
+
+namespace SoundCloudClone.Models.App
 {
     public class Playlist
     {
@@ -9,6 +11,9 @@
         public int LikesCount { get; }
         public string Username { get; }
         public string ArtworkUrlTemplate { get; }
+
+        public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t500x500");
+        public TimeSpan DurationTimeSpan => TimeSpan.FromMilliseconds(Duration);
 
         public Playlist(SoundCloudClone.Models.Api.Playlist playlistApi)
         {
