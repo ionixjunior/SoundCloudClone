@@ -2,12 +2,23 @@
 {
     public class Playlist
     {
-        public string Description { get; set; }
-        public string Title { get; set; }
-        public int TrackCount { get; set; }
-        public long Duration { get; set; }
-        public int LikesCount { get; set; }
-        public string Username { get; set; }
-        public string ArtworkUrlTemplate { get; set; }
+        public string Description { get; }
+        public string Title { get; }
+        public int TrackCount { get; }
+        public long Duration { get; }
+        public int LikesCount { get; }
+        public string Username { get; }
+        public string ArtworkUrlTemplate { get; }
+
+        public Playlist(SoundCloudClone.Models.Api.Playlist playlistApi)
+        {
+            Description = playlistApi.Description;
+            Title = playlistApi.Title;
+            TrackCount = playlistApi.TrackCount;
+            Duration = playlistApi.Duration;
+            LikesCount = playlistApi.Embedded.Stats.LikesCount;
+            Username = playlistApi.Embedded.User.Username;
+            ArtworkUrlTemplate = playlistApi.ArtworkUrlTemplate;
+        }
     }
 }
