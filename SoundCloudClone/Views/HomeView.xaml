@@ -44,6 +44,10 @@
                                         HeightRequest="280"
                                         JustifyContent="Start"
                                         WidthRequest="180">
+                                        <FlexLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnPlaylistTapped" />
+                                        </FlexLayout.GestureRecognizers>
+
                                         <ffimageloading:CachedImage
                                             HeightRequest="180"
                                             Source="{Binding ArtworkUrl}"

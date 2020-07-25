@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.ViewModels;
+using SoundCloudClone.Views.Playlist;
 using Xamarin.Forms;
 
 namespace SoundCloudClone.Views
@@ -37,6 +38,11 @@ namespace SoundCloudClone.Views
         public string GetSelectedIcon()
         {
             return "home_selected";
+        }
+
+        private async void OnPlaylistTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PlaylistDetailView());
         }
     }
 }
