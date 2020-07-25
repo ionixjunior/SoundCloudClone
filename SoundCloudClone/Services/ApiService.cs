@@ -29,5 +29,10 @@ namespace SoundCloudClone.Services
         {
             return await _api.GetStreams();
         }
+
+        public async Task<PlaylistDetail> GetPlaylistDetail()
+        {
+            return await _api.GetPlaylistDetail();
+        }
     }
 }
