@@ -13,7 +13,7 @@ namespace SoundCloudClone.Models.App
         public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t50x50");
         public TimeSpan FullDurationTimeSpan => TimeSpan.FromMilliseconds(FullDuration);
 
-        public Track(SoundCloudClone.Models.Api.Track trackApi)
+        public Track(SoundCloudClone.Models.Api.CollectionTrack trackApi)
         {
             FullDuration = trackApi.FullDuration;
             Title = trackApi.Title;
