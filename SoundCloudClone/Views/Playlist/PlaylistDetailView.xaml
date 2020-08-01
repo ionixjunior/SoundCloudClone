@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="SoundCloudClone.Views.Playlist.PlaylistDetailView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
     <NavigationPage.TitleView>
         <Label
             Margin="{OnPlatform Android='0',
@@ -51,7 +52,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Red">
+        <StackLayout BackgroundColor="Red" Spacing="0">
             <Grid>
                 <Image
                     Aspect="AspectFill"
@@ -79,6 +80,36 @@
                     </Label>
                 </StackLayout>
             </Grid>
+
+            <FlexLayout
+                Padding="20,0"
+                AlignItems="Center"
+                BackgroundColor="Yellow"
+                HeightRequest="60">
+                <Label FlexLayout.Grow="1" TextColor="{DynamicResource TextSecondaryColor}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Playlist.TrackCount}" />
+                            <Span Text=" tracks, " />
+                            <Span Text="{Binding Playlist.DurationTimeSpan, StringFormat='{0:hh}:{0:mm}:{0:ss}'}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <BoxView
+                    BackgroundColor="Gray"
+                    CornerRadius="10"
+                    HeightRequest="20"
+                    WidthRequest="20" />
+                <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={converters:NumericalToMetricConverter}}" />
+
+                <BoxView
+                    Margin="25,0,0,0"
+                    BackgroundColor="Gray"
+                    CornerRadius="10"
+                    HeightRequest="20"
+                    WidthRequest="20" />
+            </FlexLayout>
             <Label FontSize="40" Text="{Binding Tracks.Count}" />
         </StackLayout>
     </ContentPage.Content>
