@@ -3,9 +3,21 @@
     x:Class="SoundCloudClone.Views.Playlist.PlaylistDetailView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+        <Label
+            Margin="{OnPlatform Android='0',
+                                iOS='-40,0,0,0'}"
+            Style="{StaticResource TitleNavigationPage}"
+            Text="Playlist" />
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label FontSize="40" Text="{Binding Playlist}" />
+        <StackLayout BackgroundColor="Red">
+            <Image
+                Aspect="AspectFill"
+                BackgroundColor="Yellow"
+                HeightRequest="460"
+                Source="{Binding Playlist.ArtworkUrl}" />
             <Label FontSize="40" Text="{Binding Tracks.Count}" />
         </StackLayout>
     </ContentPage.Content>
