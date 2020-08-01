@@ -12,7 +12,17 @@ namespace SoundCloudClone.ViewModels.Playlist
     {
         private readonly IApi _api;
 
-        public PlaylistApp Playlist { get; private set; }
+        private PlaylistApp _playlist;
+        public PlaylistApp Playlist
+        {
+            get => _playlist;
+            set
+            {
+                _playlist = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ObservableRangeCollection<Track> Tracks { get; private set; }
         
         public PlaylistDetailViewModel(IApi api)
