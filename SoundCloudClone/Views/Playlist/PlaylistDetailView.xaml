@@ -110,6 +110,13 @@
                     HeightRequest="20"
                     WidthRequest="20" />
             </FlexLayout>
+
+            <Label
+                Margin="20"
+                FontSize="Subtitle"
+                Text="{Binding Playlist.Description}"
+                VerticalTextAlignment="Center" />
+
             <Label FontSize="40" Text="{Binding Tracks.Count}" />
         </StackLayout>
     </ContentPage.Content>
