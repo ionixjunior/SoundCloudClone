@@ -116,7 +116,11 @@
                             WidthRequest="20" />
                     </FlexLayout>
 
-                    <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
+                    <BoxView
+                        BackgroundColor="{DynamicResource SeparatorItemBackground}"
+                        HeightRequest="1"
+                        IsVisible="{OnPlatform iOS=true,
+                                               Android=false}" />
 
                     <Label
                         Margin="20"
@@ -124,7 +128,11 @@
                         Text="{Binding Playlist.Description}"
                         VerticalTextAlignment="Center" />
 
-                    <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
+                    <BoxView
+                        BackgroundColor="{DynamicResource SeparatorItemBackground}"
+                        HeightRequest="1"
+                        IsVisible="{OnPlatform iOS=true,
+                                               Android=false}" />
                 </StackLayout>
             </CollectionView.Header>
 
