@@ -59,6 +59,14 @@
                     HeightRequest="460"
                     Source="{Binding Playlist.ArtworkUrl}" />
 
+                <BoxView
+                    BackgroundColor="Gray"
+                    CornerRadius="50"
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
                 <StackLayout Margin="15,25" VerticalOptions="End">
                     <Label Style="{StaticResource OverlayLabel}" Text="{Binding Playlist.Username}" />
 
