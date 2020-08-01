@@ -3,7 +3,8 @@
     x:Class="SoundCloudClone.Views.Playlist.PlaylistDetailView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <NavigationPage.TitleView>
         <Label
             Margin="{OnPlatform Android='0',
@@ -52,72 +53,144 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Red" Spacing="0">
-            <Grid>
-                <Image
-                    Aspect="AspectFill"
-                    BackgroundColor="Yellow"
-                    HeightRequest="460"
-                    Source="{Binding Playlist.ArtworkUrl}" />
+        <CollectionView ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Tracks}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
 
-                <BoxView
-                    BackgroundColor="Gray"
-                    CornerRadius="50"
-                    HeightRequest="100"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="100" />
+            <CollectionView.Header>
+                <StackLayout Spacing="0">
+                    <Grid>
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="460"
+                            Source="{Binding Playlist.ArtworkUrl}" />
 
-                <StackLayout Margin="15,25" VerticalOptions="End">
-                    <Label Style="{StaticResource OverlayLabel}" Text="{Binding Playlist.Username}" />
+                        <BoxView
+                            BackgroundColor="Gray"
+                            CornerRadius="50"
+                            HeightRequest="100"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="100" />
 
-                    <Label Opacity="{StaticResource OverlayOpacity}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Style="{StaticResource OverlaySpan}" Text="{Binding Playlist.Title}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                        <StackLayout Margin="15,25" VerticalOptions="End">
+                            <Label Style="{StaticResource OverlayLabel}" Text="{Binding Playlist.Username}" />
+
+                            <Label Opacity="{StaticResource OverlayOpacity}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Style="{StaticResource OverlaySpan}" Text="{Binding Playlist.Title}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <FlexLayout
+                        Padding="20,0"
+                        AlignItems="Center"
+                        HeightRequest="60">
+                        <Label FlexLayout.Grow="1" TextColor="{DynamicResource TextSecondaryColor}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Playlist.TrackCount}" />
+                                    <Span Text=" tracks, " />
+                                    <Span Text="{Binding Playlist.DurationTimeSpan, StringFormat='{0:hh}:{0:mm}:{0:ss}'}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <BoxView
+                            BackgroundColor="Gray"
+                            CornerRadius="10"
+                            HeightRequest="20"
+                            WidthRequest="20" />
+                        <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={converters:NumericalToMetricConverter}}" />
+
+                        <BoxView
+                            Margin="25,0,0,0"
+                            BackgroundColor="Gray"
+                            CornerRadius="10"
+                            HeightRequest="20"
+                            WidthRequest="20" />
+                    </FlexLayout>
+
+                    <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
+
+                    <Label
+                        Margin="20"
+                        FontSize="Subtitle"
+                        Text="{Binding Playlist.Description}"
+                        VerticalTextAlignment="Center" />
+
+                    <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
                 </StackLayout>
-            </Grid>
+            </CollectionView.Header>
 
-            <FlexLayout
-                Padding="20,0"
-                AlignItems="Center"
-                BackgroundColor="Yellow"
-                HeightRequest="60">
-                <Label FlexLayout.Grow="1" TextColor="{DynamicResource TextSecondaryColor}">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="{Binding Playlist.TrackCount}" />
-                            <Span Text=" tracks, " />
-                            <Span Text="{Binding Playlist.DurationTimeSpan, StringFormat='{0:hh}:{0:mm}:{0:ss}'}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <FlexLayout Margin="0,20" Direction="Column">
+                        <FlexLayout
+                            Margin="20,0"
+                            AlignItems="Center"
+                            FlexLayout.Grow="1"
+                            HeightRequest="70">
+                            <ffimageloading:CachedImage
+                                HeightRequest="70"
+                                Source="{Binding ArtworkUrl}"
+                                WidthRequest="70" />
 
-                <BoxView
-                    BackgroundColor="Gray"
-                    CornerRadius="10"
-                    HeightRequest="20"
-                    WidthRequest="20" />
-                <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={converters:NumericalToMetricConverter}}" />
+                            <FlexLayout
+                                Margin="20,0,0,0"
+                                Direction="Column"
+                                FlexLayout.Grow="1"
+                                HeightRequest="70">
+                                <FlexLayout
+                                    AlignItems="Center"
+                                    FlexLayout.Grow="1"
+                                    JustifyContent="SpaceBetween">
+                                    <Label Text="{Binding Username}" TextColor="{DynamicResource TextSecondaryColor}" />
+                                    <Label Text="{Binding FullDurationTimeSpan, StringFormat='{0:mm}:{0:ss}'}" TextColor="{DynamicResource TextSecondaryColor}" />
+                                </FlexLayout>
 
-                <BoxView
-                    Margin="25,0,0,0"
-                    BackgroundColor="Gray"
-                    CornerRadius="10"
-                    HeightRequest="20"
-                    WidthRequest="20" />
-            </FlexLayout>
+                                <Label
+                                    FlexLayout.Grow="1"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding Title}"
+                                    VerticalTextAlignment="Center" />
 
-            <Label
-                Margin="20"
-                FontSize="Subtitle"
-                Text="{Binding Playlist.Description}"
-                VerticalTextAlignment="Center" />
+                                <FlexLayout
+                                    Margin="0,10,0,0"
+                                    AlignItems="Center"
+                                    FlexLayout.Grow="1">
+                                    <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
+                                        <BoxView
+                                            BackgroundColor="Gray"
+                                            CornerRadius="8"
+                                            HeightRequest="16"
+                                            WidthRequest="16" />
+                                        <Label Text="{Binding PlaybackCount, Converter={converters:NumericalToMetricConverter}}" TextColor="{DynamicResource TextSecondaryColor}" />
+                                    </FlexLayout>
 
-            <Label FontSize="40" Text="{Binding Tracks.Count}" />
-        </StackLayout>
+                                    <FlexLayout
+                                        AlignItems="Center"
+                                        FlexLayout.Grow="1"
+                                        JustifyContent="End">
+                                        <BoxView
+                                            BackgroundColor="Gray"
+                                            CornerRadius="8"
+                                            HeightRequest="16"
+                                            WidthRequest="16" />
+                                    </FlexLayout>
+                                </FlexLayout>
+                            </FlexLayout>
+                        </FlexLayout>
+
+                        <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
+                    </FlexLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

@@ -7,6 +7,8 @@ namespace SoundCloudClone.Views.Playlist
 {
     public partial class PlaylistDetailView : ContentPage
     {
+        private bool _dataAlreadyLoaded = false;
+
         public PlaylistDetailView()
         {
             InitializeComponent();
@@ -23,8 +25,13 @@ namespace SoundCloudClone.Views.Playlist
 
         private async Task OnAppearingAsync()
         {
+            if (_dataAlreadyLoaded)
+                return;
+
             if (BindingContext is IInitialize viewModel)
                 await viewModel.InitializeAsync();
+
+            _dataAlreadyLoaded = true;
         }
     }
 }
