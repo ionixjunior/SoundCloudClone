@@ -11,13 +11,66 @@
             Text="Playlist" />
     </NavigationPage.TitleView>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform
+                x:Key="MarginItem"
+                x:TypeArguments="Thickness"
+                Default="15,0" />
+
+            <OnPlatform
+                x:Key="OverlayOpacity"
+                x:TypeArguments="x:Double"
+                Default="0.9" />
+
+            <OnPlatform
+                x:Key="OverlayThickness"
+                x:TypeArguments="Thickness"
+                Default="5" />
+
+            <Style x:Key="OverlayLabel" TargetType="Label">
+                <Setter Property="Padding" Value="{StaticResource OverlayThickness}" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Opacity" Value="{StaticResource OverlayOpacity}" />
+            </Style>
+
+            <Style x:Key="OverlaySpan" TargetType="Span">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Span">
+                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout BackgroundColor="Red">
-            <Image
-                Aspect="AspectFill"
-                BackgroundColor="Yellow"
-                HeightRequest="460"
-                Source="{Binding Playlist.ArtworkUrl}" />
+            <Grid>
+                <Image
+                    Aspect="AspectFill"
+                    BackgroundColor="Yellow"
+                    HeightRequest="460"
+                    Source="{Binding Playlist.ArtworkUrl}" />
+
+                <StackLayout Margin="15,25" VerticalOptions="End">
+                    <Label Style="{StaticResource OverlayLabel}" Text="{Binding Playlist.Username}" />
+
+                    <Label Opacity="{StaticResource OverlayOpacity}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Style="{StaticResource OverlaySpan}" Text="{Binding Playlist.Title}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Grid>
             <Label FontSize="40" Text="{Binding Tracks.Count}" />
         </StackLayout>
     </ContentPage.Content>
