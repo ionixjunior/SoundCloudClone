@@ -169,10 +169,9 @@
                                     AlignItems="Center"
                                     FlexLayout.Grow="1">
                                     <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
-                                        <BoxView
-                                            BackgroundColor="Gray"
-                                            CornerRadius="8"
+                                        <Image
                                             HeightRequest="16"
+                                            Source="{DynamicResource play}"
                                             WidthRequest="16" />
                                         <Label Text="{Binding PlaybackCount, Converter={converters:NumericalToMetricConverter}}" TextColor="{DynamicResource TextSecondaryColor}" />
                                     </FlexLayout>
