@@ -180,10 +180,9 @@
                                         AlignItems="Center"
                                         FlexLayout.Grow="1"
                                         JustifyContent="End">
-                                        <BoxView
-                                            BackgroundColor="Gray"
-                                            CornerRadius="8"
+                                        <Image
                                             HeightRequest="16"
+                                            Source="{DynamicResource more}"
                                             WidthRequest="16" />
                                     </FlexLayout>
                                 </FlexLayout>
