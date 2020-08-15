@@ -105,11 +105,10 @@
                             WidthRequest="20" />
                         <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={converters:NumericalToMetricConverter}}" />
 
-                        <BoxView
+                        <Image
                             Margin="25,0,0,0"
-                            BackgroundColor="Gray"
-                            CornerRadius="10"
                             HeightRequest="20"
+                            Source="{DynamicResource more}"
                             WidthRequest="20" />
                     </FlexLayout>
 
