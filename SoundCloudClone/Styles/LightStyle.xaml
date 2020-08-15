@@ -26,6 +26,11 @@
     <FileImageSource x:Key="library_albums">library_albums_light</FileImageSource>
     <FileImageSource x:Key="library_following">library_following_light</FileImageSource>
     <FileImageSource x:Key="library_stations">library_stations_light</FileImageSource>
+    <FileImageSource x:Key="error">error_light</FileImageSource>
+    <FileImageSource x:Key="more">more_light</FileImageSource>
+    <FileImageSource x:Key="play">play_light</FileImageSource>
+    <FileImageSource x:Key="playlist_like">playlist_like_light</FileImageSource>
+    <FileImageSource x:Key="playlist_liked">playlist_liked_light</FileImageSource>
 
     <OnPlatform
         x:Key="SocialFrameBorderColor"

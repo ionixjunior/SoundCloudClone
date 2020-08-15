@@ -26,6 +26,11 @@
     <FileImageSource x:Key="library_albums">library_albums_dark</FileImageSource>
     <FileImageSource x:Key="library_following">library_following_dark</FileImageSource>
     <FileImageSource x:Key="library_stations">library_stations_dark</FileImageSource>
+    <FileImageSource x:Key="error">error_dark</FileImageSource>
+    <FileImageSource x:Key="more">more_dark</FileImageSource>
+    <FileImageSource x:Key="play">play_dark</FileImageSource>
+    <FileImageSource x:Key="playlist_like">playlist_like_dark</FileImageSource>
+    <FileImageSource x:Key="playlist_liked">playlist_liked_dark</FileImageSource>
 
     <OnPlatform
         x:Key="SocialFrameBorderColor"
