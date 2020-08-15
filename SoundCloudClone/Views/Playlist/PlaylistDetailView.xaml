@@ -99,10 +99,9 @@
                             </Label.FormattedText>
                         </Label>
 
-                        <BoxView
-                            BackgroundColor="Gray"
-                            CornerRadius="10"
+                        <Image
                             HeightRequest="20"
+                            Source="{DynamicResource playlist_like}"
                             WidthRequest="20" />
                         <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={converters:NumericalToMetricConverter}}" />
 
