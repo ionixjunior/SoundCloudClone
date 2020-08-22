@@ -21,6 +21,7 @@ namespace SoundCloudClone.Views
             Container.HeightRequest = _likeContainerPosition.Height;
             Container.TranslationX = _likeContainerPosition.X;
             Container.TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing();
+            Container.IsVisible = true;
         }
 
         private double GetTopHeightSpacing()

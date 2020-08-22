@@ -3,14 +3,19 @@
     x:Class="SoundCloudClone.Views.OverlayPlaylistLikeTutorialView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     ios:Page.ModalPresentationStyle="OverFullScreen"
-    BackgroundColor="#BF000000">
+    BackgroundColor="#BF000000"
+    mc:Ignorable="d">
     <ContentPage.Content>
         <BoxView
             x:Name="Container"
+            d:IsVisible="true"
             BackgroundColor="Red"
             HorizontalOptions="Start"
+            IsVisible="false"
             VerticalOptions="Start" />
     </ContentPage.Content>
 </ContentPage>
