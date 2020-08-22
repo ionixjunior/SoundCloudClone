@@ -29,9 +29,28 @@ namespace SoundCloudClone.Views.Playlist
                 return;
 
             if (BindingContext is IInitialize viewModel)
+            {
                 await viewModel.InitializeAsync();
+                var likeContainerPosition = GetLikeContainerPosition();
+                await Navigation.PushModalAsync(new OverlayPlaylistLikeTutorialView(likeContainerPosition), false);
+            }
 
             _dataAlreadyLoaded = true;
+
+        }
+
+        private Rectangle GetLikeContainerPosition()
+        {
+            var parent = LikeContainer.Parent;
+            var likeY = LikeContainer.Bounds.Y;
+
+            while (parent is View parentView)
+            {
+                likeY += parentView.Bounds.Y;
+                parent = parentView.Parent;
+            }
+
+            return new Rectangle(LikeContainer.Bounds.X, likeY, LikeContainer.Bounds.Width, LikeContainer.Bounds.Height);
         }
     }
 }

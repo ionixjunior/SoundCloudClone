@@ -7,7 +7,7 @@ namespace SoundCloudClone.Views
 {
     public partial class OverlayPlaylistLikeTutorialView : ContentPage
     {
-        public OverlayPlaylistLikeTutorialView()
+        public OverlayPlaylistLikeTutorialView(Rectangle likeContainerPosition)
         {
             InitializeComponent();
         }
