@@ -7,10 +7,10 @@
     ios:Page.ModalPresentationStyle="OverFullScreen"
     BackgroundColor="#BF000000">
     <ContentPage.Content>
-        <Label
-            Margin="50"
-            FontSize="40"
-            Text="Página do overlay"
-            TextColor="White" />
+        <BoxView
+            x:Name="Container"
+            BackgroundColor="Red"
+            HorizontalOptions="Start"
+            VerticalOptions="Start" />
     </ContentPage.Content>
 </ContentPage>
