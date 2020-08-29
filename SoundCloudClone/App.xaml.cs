@@ -15,6 +15,7 @@ namespace SoundCloudClone
 
         public App()
         {
+            Device.SetFlags(new[] { "Shapes_Experimental" });
             InitializeComponent();
 
             RegisterDependencies();
