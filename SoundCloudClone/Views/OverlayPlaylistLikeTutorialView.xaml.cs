@@ -26,6 +26,7 @@ namespace SoundCloudClone.Views
 
             var grid = new Grid
             {
+                Opacity = 0,
                 Children =
                 {
                     new Path
@@ -90,10 +91,16 @@ namespace SoundCloudClone.Views
             };
 
             var tap = new TapGestureRecognizer();
-            tap.Tapped += async (object sender, System.EventArgs e) => await Navigation.PopModalAsync(false);
+            tap.Tapped += async (object sender, System.EventArgs e) =>
+            {
+                await grid.FadeTo(0, 100);
+                await Navigation.PopModalAsync(false);
+            };
             grid.GestureRecognizers.Add(tap);
 
             Content = grid;
+
+            grid.FadeTo(1);
         }
 
         private double GetTopHeightSpacing()
