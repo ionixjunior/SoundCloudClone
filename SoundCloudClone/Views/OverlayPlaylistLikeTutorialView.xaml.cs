@@ -69,6 +69,31 @@ namespace SoundCloudClone.Views
                         TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - ellipseRadius,
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Start
+                    },
+                    new StackLayout
+                    {
+                        Padding = new Thickness(20, 0),
+                        WidthRequest = _likeContainerPosition.X - ellipseRadius - 40,
+                        HorizontalOptions = LayoutOptions.Start,
+                        TranslationX = 0,
+                        TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - 15,
+                        Children =
+                        {
+                            new Label
+                            {
+                                HorizontalTextAlignment = TextAlignment.End,
+                                Text = "Like this playlist?",
+                                TextColor = Color.White,
+                                FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label))
+                            },
+                            new Label
+                            {
+                                HorizontalTextAlignment = TextAlignment.End,
+                                Text = "Tap the heart to save it to your library.",
+                                TextColor = Color.White,
+                                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                            }
+                        }
                     }
                 }
             };
