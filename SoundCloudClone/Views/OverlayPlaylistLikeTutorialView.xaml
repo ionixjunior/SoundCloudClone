@@ -7,15 +7,26 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     ios:Page.ModalPresentationStyle="OverFullScreen"
-    BackgroundColor="#BF000000"
+    BackgroundColor="Transparent"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <BoxView
-            x:Name="Container"
-            d:IsVisible="true"
-            BackgroundColor="Red"
-            HorizontalOptions="Start"
-            IsVisible="false"
-            VerticalOptions="Start" />
+        <!--
+        <Path
+            x:Name="MainOverlay"
+            Fill="Orange"
+            Stroke="Green"
+            StrokeThickness="2">
+            <Path.Data>
+                <GeometryGroup>
+                    <RectangleGeometry x:Name="RectangleOverlay" Rect="10,10,400,400" />
+
+                    <EllipseGeometry
+                        Center="150,100"
+                        RadiusX="50"
+                        RadiusY="50" />
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+        -->
     </ContentPage.Content>
 </ContentPage>
