@@ -18,16 +18,6 @@ namespace SoundCloudClone.Views
         {
             base.OnAppearing();
             Build();
-
-
-            //Container.WidthRequest = _likeContainerPosition.Width;
-            //Container.HeightRequest = _likeContainerPosition.Height;
-            //Container.TranslationX = _likeContainerPosition.X;
-            //Container.TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing();
-            //Container.IsVisible = true;
-
-
-            //RectangleOverlay.SetValue(Xamarin.Forms.Shapes.RectangleGeometry.RectProperty, new Rect(0, 0, Width, Height))
         }
 
         private void Build()
