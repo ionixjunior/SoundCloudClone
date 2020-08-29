@@ -94,10 +94,14 @@ namespace SoundCloudClone.Views
                                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
                             }
                         }
-                    }
+                    },
+                    new BoxView { BackgroundColor = Color.Transparent }
                 }
             };
 
+            var tap = new TapGestureRecognizer();
+            tap.Tapped += async (object sender, System.EventArgs e) => await Navigation.PopModalAsync(false);
+            grid.GestureRecognizers.Add(tap);
 
             Content = grid;
         }
