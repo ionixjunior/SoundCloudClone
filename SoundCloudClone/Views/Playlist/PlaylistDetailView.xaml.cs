@@ -50,7 +50,12 @@ namespace SoundCloudClone.Views.Playlist
                 parent = parentView.Parent;
             }
 
-            return new Rectangle(LikeContainer.Bounds.X, likeY, LikeContainer.Bounds.Width, LikeContainer.Bounds.Height);
+            return new Rectangle(
+                LikeContainer.Bounds.X + (LikeContainer.Bounds.Width / 2),
+                likeY + (LikeContainer.Bounds.Height / 2),
+                LikeContainer.Bounds.Width,
+                LikeContainer.Bounds.Height
+            );
         }
     }
 }
