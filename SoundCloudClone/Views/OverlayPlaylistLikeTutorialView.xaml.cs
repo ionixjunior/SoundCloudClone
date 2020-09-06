@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Threading.Tasks;
+using MvvmHelpers;
+using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Shapes;
 
@@ -21,6 +24,21 @@ namespace SoundCloudClone.Views
         }
 
         private void Build()
+        {
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                BuildiOS();
+                return;
+            }
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                BuildAndroid();
+                return;
+            }
+        }
+
+        private void BuildiOS()
         {
             var ellipseRadius = 60;
 
@@ -111,12 +129,68 @@ namespace SoundCloudClone.Views
                 return GetSafeAreaInsetTop() + navbarHeight;
             }
 
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                const double navbarHeight = 66;
+                return navbarHeight;
+            }
+
             return 0;
         }
 
         private double GetSafeAreaInsetTop()
         {
             return On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets().Top;
+        }
+
+        private void BuildAndroid()
+        {
+            var ellipseRadius = 60;
+            var translationXEllipse = _likeContainerPosition.X - ellipseRadius + 10;
+
+            var heartEllipse = new Ellipse
+            {
+                Scale = 0,
+                Opacity = 0,
+                WidthRequest = 100,
+                HeightRequest = 100,
+                Fill = new SolidColorBrush(Color.FromHex("F4570B")),
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start,
+                TranslationX = translationXEllipse,
+                TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - ellipseRadius
+            };
+
+            var grid = new Grid
+            {
+                Children =
+                {
+                    heartEllipse,
+                    new BoxView { BackgroundColor = Color.Transparent }
+                }
+            };
+
+            var tap = new TapGestureRecognizer();
+            tap.Tapped += async (object sender, System.EventArgs e) =>
+            {
+                await Navigation.PopModalAsync(false);
+            };
+            grid.GestureRecognizers.Add(tap);
+
+            Content = grid;
+
+            Task.WhenAny(StartAndroidAnimationAsync(heartEllipse)).SafeFireAndForget(AnimationException);
+        }
+
+        private void AnimationException(Exception exception)
+        {
+            System.Diagnostics.Debug.WriteLine(exception.Message);
+        }
+
+        private async Task StartAndroidAnimationAsync(View heartEllipse)
+        {
+            heartEllipse.ScaleTo(1, 100);
+            heartEllipse.FadeTo(1, 100);
         }
     }
 }
