@@ -17,9 +17,10 @@ namespace SoundCloudClone.Views
             _likeContainerPosition = likeContainerPosition;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+            await Task.Delay(100);
             Build();
         }
 
@@ -175,10 +176,25 @@ namespace SoundCloudClone.Views
                 TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - ellipseRadius
             };
 
+            var ellipseBackgroundWidth = Width;
+            var ellipseBackground = new Ellipse
+            {
+                Scale = 0,
+                Opacity = 0,
+                WidthRequest = ellipseBackgroundWidth,
+                HeightRequest = ellipseBackgroundWidth,
+                Fill = new SolidColorBrush(Color.FromHex("ffffff")),
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start,
+                TranslationX = (Width / 2) - (ellipseBackgroundWidth / 2) + 20,
+                TranslationY = (Height / 2) - (ellipseBackgroundWidth / 2) + 40
+            };
+
             var grid = new Grid
             {
                 Children =
                 {
+                    ellipseBackground,
                     heartEllipse,
                     pulseEllipse,
                     new BoxView { BackgroundColor = Color.Transparent }
@@ -195,7 +211,7 @@ namespace SoundCloudClone.Views
 
             Content = grid;
 
-            Task.WhenAny(StartAndroidAnimationAsync(heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
+            Task.WhenAny(StartAndroidAnimationAsync(ellipseBackground, heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
         }
 
         private void AnimationException(Exception exception)
@@ -205,9 +221,11 @@ namespace SoundCloudClone.Views
 
         private bool _animationCanBeExecuted = true;
 
-        private async Task StartAndroidAnimationAsync(View heartEllipse, View pulseEllipse)
+        private async Task StartAndroidAnimationAsync(View ellipseBackground, View heartEllipse, View pulseEllipse)
         {
             await Task.WhenAll(
+                ellipseBackground.ScaleTo(1.4, 100),
+                ellipseBackground.FadeTo(0.97, 100),
                 heartEllipse.ScaleTo(1, 100),
                 heartEllipse.FadeTo(1, 100)
             );
