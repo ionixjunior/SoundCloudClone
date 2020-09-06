@@ -161,11 +161,26 @@ namespace SoundCloudClone.Views
                 TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - ellipseRadius
             };
 
+            var pulseEllipse = new Ellipse
+            {
+                IsVisible = false,
+                Scale = 1,
+                Opacity = 1,
+                WidthRequest = 100,
+                HeightRequest = 100,
+                Fill = new SolidColorBrush(Color.FromHex("F4570B")),
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start,
+                TranslationX = translationXEllipse,
+                TranslationY = _likeContainerPosition.Y + GetTopHeightSpacing() - ellipseRadius
+            };
+
             var grid = new Grid
             {
                 Children =
                 {
                     heartEllipse,
+                    pulseEllipse,
                     new BoxView { BackgroundColor = Color.Transparent }
                 }
             };
@@ -173,13 +188,14 @@ namespace SoundCloudClone.Views
             var tap = new TapGestureRecognizer();
             tap.Tapped += async (object sender, System.EventArgs e) =>
             {
+                _animationCanBeExecuted = false;
                 await Navigation.PopModalAsync(false);
             };
             grid.GestureRecognizers.Add(tap);
 
             Content = grid;
 
-            Task.WhenAny(StartAndroidAnimationAsync(heartEllipse)).SafeFireAndForget(AnimationException);
+            Task.WhenAny(StartAndroidAnimationAsync(heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
         }
 
         private void AnimationException(Exception exception)
@@ -187,10 +203,31 @@ namespace SoundCloudClone.Views
             System.Diagnostics.Debug.WriteLine(exception.Message);
         }
 
-        private async Task StartAndroidAnimationAsync(View heartEllipse)
+        private bool _animationCanBeExecuted = true;
+
+        private async Task StartAndroidAnimationAsync(View heartEllipse, View pulseEllipse)
         {
-            heartEllipse.ScaleTo(1, 100);
-            heartEllipse.FadeTo(1, 100);
+            await Task.WhenAll(
+                heartEllipse.ScaleTo(1, 100),
+                heartEllipse.FadeTo(1, 100)
+            );
+
+            pulseEllipse.IsVisible = true;
+
+            while (_animationCanBeExecuted)
+            {
+                await heartEllipse.ScaleTo(1.1, 600, Easing.CubicInOut);
+                pulseEllipse.Scale = 1.1;
+
+                await Task.WhenAll(
+                    heartEllipse.ScaleTo(1.0, 600, Easing.CubicInOut),
+                    pulseEllipse.ScaleTo(2, 600, Easing.CubicInOut),
+                    pulseEllipse.FadeTo(0, 600, Easing.CubicInOut)
+                );
+
+                pulseEllipse.Scale = 1;
+                pulseEllipse.Opacity = 1;
+            }
         }
     }
 }
