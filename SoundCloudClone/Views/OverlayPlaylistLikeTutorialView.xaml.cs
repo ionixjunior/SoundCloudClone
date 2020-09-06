@@ -190,10 +190,19 @@ namespace SoundCloudClone.Views
                 TranslationY = (Height / 2) - (ellipseBackgroundWidth / 2) + 40
             };
 
+            var mainLayer = new BoxView
+            {
+                WidthRequest = Width,
+                Opacity = 0,
+                HeightRequest = Height,
+                BackgroundColor = Color.Black
+            };
+
             var grid = new Grid
             {
                 Children =
                 {
+                    mainLayer,
                     ellipseBackground,
                     heartEllipse,
                     pulseEllipse,
@@ -211,7 +220,7 @@ namespace SoundCloudClone.Views
 
             Content = grid;
 
-            Task.WhenAny(StartAndroidAnimationAsync(ellipseBackground, heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
+            Task.WhenAny(StartAndroidAnimationAsync(mainLayer, ellipseBackground, heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
         }
 
         private void AnimationException(Exception exception)
@@ -221,8 +230,11 @@ namespace SoundCloudClone.Views
 
         private bool _animationCanBeExecuted = true;
 
-        private async Task StartAndroidAnimationAsync(View ellipseBackground, View heartEllipse, View pulseEllipse)
+        private async Task StartAndroidAnimationAsync(
+            View mainLayer, View ellipseBackground, View heartEllipse, View pulseEllipse)
         {
+            await mainLayer.FadeTo(0.4, 500, easing: Easing.CubicInOut);
+
             await Task.WhenAll(
                 ellipseBackground.ScaleTo(1.4, 100),
                 ellipseBackground.FadeTo(0.97, 100),
