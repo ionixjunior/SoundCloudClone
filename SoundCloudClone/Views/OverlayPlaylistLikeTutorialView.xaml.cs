@@ -213,13 +213,13 @@ namespace SoundCloudClone.Views
             var tap = new TapGestureRecognizer();
             tap.Tapped += async (object sender, System.EventArgs e) =>
             {
-                _animationCanBeExecuted = false;
+                this.AbortAnimation(ParentAnimationName);
                 /// TODO
-                /// - garantir que as animações atuais sejam paradas
+                /// - ✅ garantir que as animações atuais sejam paradas
                 /// - animar views para desaparecem quando as animações estiverem pausadas
                 /// - fazer fade no layer principal
                 /// - encerrar fazendo a navegação para a tela anterior
-                await Navigation.PopModalAsync(false);
+                //await Navigation.PopModalAsync(false);
             };
             grid.GestureRecognizers.Add(tap);
 
@@ -233,7 +233,8 @@ namespace SoundCloudClone.Views
             System.Diagnostics.Debug.WriteLine(exception.Message);
         }
 
-        private bool _animationCanBeExecuted = true;
+        private Animation _parentAnimation;
+        private const string ParentAnimationName = "ParentAnimation";
 
         private async Task StartAndroidAnimationAsync(
             View mainLayer, View ellipseBackground, View heartEllipse, View pulseEllipse)
@@ -249,20 +250,29 @@ namespace SoundCloudClone.Views
 
             pulseEllipse.IsVisible = true;
 
-            while (_animationCanBeExecuted)
-            {
-                await heartEllipse.ScaleTo(1.1, 600, Easing.CubicInOut);
-                pulseEllipse.Scale = 1.1;
+            _parentAnimation = new Animation();
+            var heartEllipseStartAnimation = new Animation(x => heartEllipse.ScaleTo(x), 1, 1.1, Easing.CubicInOut, () => pulseEllipse.Scale = 1.1);
+            var heartEllipseEndAnimation = new Animation(x => heartEllipse.ScaleTo(x), 1.1, 1, Easing.CubicInOut);
+            var pulseEllipseScaleStartAnimation = new Animation(x => pulseEllipse.ScaleTo(x), 1.1, 2, Easing.CubicInOut);
+            var pulseEllipseFadeStartAnimation = new Animation(x => pulseEllipse.FadeTo(x), 1, 0, Easing.CubicInOut);
 
-                await Task.WhenAll(
-                    heartEllipse.ScaleTo(1.0, 600, Easing.CubicInOut),
-                    pulseEllipse.ScaleTo(2, 600, Easing.CubicInOut),
-                    pulseEllipse.FadeTo(0, 600, Easing.CubicInOut)
-                );
+            _parentAnimation.Add(0, 0.2, heartEllipseStartAnimation);
+            _parentAnimation.Add(0.3, 1, heartEllipseEndAnimation);
+            _parentAnimation.Add(0.3, 0.7, pulseEllipseScaleStartAnimation);
+            _parentAnimation.Add(0.3, 0.7, pulseEllipseFadeStartAnimation);
 
-                pulseEllipse.Scale = 1;
-                pulseEllipse.Opacity = 1;
-            }
+            _parentAnimation.Commit(
+                this,
+                ParentAnimationName,
+                100,
+                1000,
+                finished: (_, __) =>
+                {
+                    pulseEllipse.Scale = 1;
+                    pulseEllipse.Opacity = 1;
+                },
+                repeat: () => true
+            );
         }
     }
 }
