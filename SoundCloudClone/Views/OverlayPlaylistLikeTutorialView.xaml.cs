@@ -227,12 +227,7 @@ namespace SoundCloudClone.Views
 
                 await mainLayer.FadeTo(0, 100, easing: Easing.CubicInOut);
 
-                /// TODO
-                /// - ✅ garantir que as animações atuais sejam paradas
-                /// - ✅animar views para desaparecem quando as animações estiverem pausadas
-                /// - ✅fazer fade no layer principal
-                /// - encerrar fazendo a navegação para a tela anterior
-                //await Navigation.PopModalAsync(false);
+                await Navigation.PopModalAsync(false);
             };
             grid.GestureRecognizers.Add(tap);
 
