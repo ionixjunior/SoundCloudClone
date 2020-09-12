@@ -214,6 +214,10 @@ namespace SoundCloudClone.Views
             tap.Tapped += async (object sender, System.EventArgs e) =>
             {
                 this.AbortAnimation(ParentAnimationName);
+                pulseEllipse.IsVisible = false;
+                heartEllipse.Scale = 1;
+                heartEllipse.Opacity = 1;
+
                 /// TODO
                 /// - ✅ garantir que as animações atuais sejam paradas
                 /// - animar views para desaparecem quando as animações estiverem pausadas
