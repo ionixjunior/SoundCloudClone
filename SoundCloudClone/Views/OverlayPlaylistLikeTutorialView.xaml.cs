@@ -218,10 +218,19 @@ namespace SoundCloudClone.Views
                 heartEllipse.Scale = 1;
                 heartEllipse.Opacity = 1;
 
+                await Task.WhenAll(
+                    ellipseBackground.ScaleTo(0, 300),
+                    ellipseBackground.FadeTo(0, 300),
+                    heartEllipse.ScaleTo(0, 300),
+                    heartEllipse.FadeTo(0, 300)
+                );
+
+                await mainLayer.FadeTo(0, 100, easing: Easing.CubicInOut);
+
                 /// TODO
                 /// - ✅ garantir que as animações atuais sejam paradas
-                /// - animar views para desaparecem quando as animações estiverem pausadas
-                /// - fazer fade no layer principal
+                /// - ✅animar views para desaparecem quando as animações estiverem pausadas
+                /// - ✅fazer fade no layer principal
                 /// - encerrar fazendo a navegação para a tela anterior
                 //await Navigation.PopModalAsync(false);
             };
