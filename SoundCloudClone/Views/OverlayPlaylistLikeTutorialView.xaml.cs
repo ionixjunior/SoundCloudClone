@@ -198,12 +198,35 @@ namespace SoundCloudClone.Views
                 BackgroundColor = Color.Black
             };
 
+            var stackLayoutDescription = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.Start,
+                Margin = new Thickness(60, 0),
+                TranslationY = (Height / 2),
+                Children =
+                {
+                    new Label
+                    {
+                        Text = "Like this playlist?",
+                        TextColor = (Color)App.Current.Resources["TextPrimaryColor"],
+                        FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label))
+                    },
+                    new Label
+                    {
+                        Text = "Tap the heart to save it to your library.",
+                        TextColor = (Color)App.Current.Resources["TextSecondaryColor"],
+                        FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                    }
+                }
+            };
+
             var grid = new Grid
             {
                 Children =
                 {
                     mainLayer,
                     ellipseBackground,
+                    stackLayoutDescription,
                     heartEllipse,
                     pulseEllipse,
                     new BoxView { BackgroundColor = Color.Transparent }
