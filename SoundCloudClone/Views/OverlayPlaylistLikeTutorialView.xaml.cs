@@ -11,7 +11,7 @@ namespace SoundCloudClone.Views
     {
         private readonly Xamarin.Forms.Rectangle _likeContainerPosition;
 
-        public OverlayPlaylistLikeTutorialView(Xamarin.Forms.Rectangle likeContainerPosition)
+        public OverlayPlaylistLikeTutorialView(Xamarin.Forms.Rectangle likeContainerPosition, View likeContainer)
         {
             InitializeComponent();
             _likeContainerPosition = likeContainerPosition;
