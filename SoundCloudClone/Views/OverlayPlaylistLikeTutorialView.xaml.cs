@@ -200,6 +200,7 @@ namespace SoundCloudClone.Views
 
             var stackLayoutDescription = new StackLayout
             {
+                Opacity = 0,
                 VerticalOptions = LayoutOptions.Start,
                 Margin = new Thickness(60, 0),
                 TranslationY = (Height / 2),
@@ -244,6 +245,7 @@ namespace SoundCloudClone.Views
                 await Task.WhenAll(
                     ellipseBackground.ScaleTo(0, 300),
                     ellipseBackground.FadeTo(0, 300),
+                    stackLayoutDescription.FadeTo(0, 300, Easing.CubicOut),
                     heartEllipse.ScaleTo(0, 300),
                     heartEllipse.FadeTo(0, 300)
                 );
@@ -256,7 +258,7 @@ namespace SoundCloudClone.Views
 
             Content = grid;
 
-            Task.WhenAny(StartAndroidAnimationAsync(mainLayer, ellipseBackground, heartEllipse, pulseEllipse)).SafeFireAndForget(AnimationException);
+            Task.WhenAny(StartAndroidAnimationAsync(mainLayer, ellipseBackground, heartEllipse, pulseEllipse, stackLayoutDescription)).SafeFireAndForget(AnimationException);
         }
 
         private void AnimationException(Exception exception)
@@ -268,13 +270,14 @@ namespace SoundCloudClone.Views
         private const string ParentAnimationName = "ParentAnimation";
 
         private async Task StartAndroidAnimationAsync(
-            View mainLayer, View ellipseBackground, View heartEllipse, View pulseEllipse)
+            View mainLayer, View ellipseBackground, View heartEllipse, View pulseEllipse, View stackLayoutDescription)
         {
             await mainLayer.FadeTo(0.4, 500, easing: Easing.CubicInOut);
 
             await Task.WhenAll(
                 ellipseBackground.ScaleTo(1.4, 100),
                 ellipseBackground.FadeTo(0.97, 100),
+                stackLayoutDescription.FadeTo(1, 100, Easing.CubicIn),
                 heartEllipse.ScaleTo(1, 100),
                 heartEllipse.FadeTo(1, 100)
             );
