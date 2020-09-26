@@ -228,6 +228,7 @@ namespace SoundCloudClone.Views
             {
                 Total = _totalLikes,
                 TextColor = Color.White,
+                Source = "playlist_like_overlay",
                 Opacity = 0,
                 TranslationX = heartEllipse.TranslationX,
                 TranslationY = heartEllipse.TranslationY,

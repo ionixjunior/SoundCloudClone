@@ -52,6 +52,26 @@ namespace SoundCloudClone.Controls
                     totalLabel.TextColor = (Color)newValue;
         }
 
+        public static readonly BindableProperty SourceProperty = BindableProperty.Create(
+            nameof(Source),
+            typeof(ImageSource),
+            typeof(IImageElement),
+            default(ImageSource),
+            propertyChanged: OnImageSourceChanged);
+
+        public ImageSource Source
+        {
+            get => (ImageSource)GetValue(SourceProperty);
+            set => SetValue(SourceProperty, value);
+        }
+
+        private static void OnImageSourceChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is PlaylistLikeControl control)
+                if (control.FindByName("Icon") is Image icon)
+                    icon.Source = (ImageSource)newValue;
+        }
+
         public PlaylistLikeControl()
         {
             InitializeComponent();

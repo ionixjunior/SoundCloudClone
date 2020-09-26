@@ -6,8 +6,8 @@
     AlignItems="Center"
     JustifyContent="Center">
     <Image
+        x:Name="Icon"
         HeightRequest="20"
-        Source="{DynamicResource playlist_like}"
         WidthRequest="20" />
     <Label x:Name="TotalLabel" Margin="5,0,0,0" />
 </FlexLayout>

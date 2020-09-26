@@ -103,6 +103,7 @@
                         <controls:PlaylistLikeControl
                             x:Name="LikeContainer"
                             FlexLayout.Basis="60"
+                            Source="{DynamicResource playlist_like}"
                             TextColor="{DynamicResource TextPrimaryColor}"
                             Total="{Binding Playlist.LikesCount}" />
 
