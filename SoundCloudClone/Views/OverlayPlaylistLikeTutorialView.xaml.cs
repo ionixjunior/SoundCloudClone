@@ -226,8 +226,9 @@ namespace SoundCloudClone.Views
 
             var playlistLikeControl = new PlaylistLikeControl
             {
-                Opacity = 0,
                 Total = _totalLikes,
+                TextColor = Color.White,
+                Opacity = 0,
                 TranslationX = heartEllipse.TranslationX,
                 TranslationY = heartEllipse.TranslationY,
                 HorizontalOptions = heartEllipse.HorizontalOptions,

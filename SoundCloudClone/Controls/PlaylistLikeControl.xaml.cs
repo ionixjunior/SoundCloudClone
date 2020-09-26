@@ -31,6 +31,27 @@ namespace SoundCloudClone.Controls
             }
         }
 
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
+            nameof(TextColor),
+            typeof(Color),
+            typeof(PlaylistLikeControl),
+            Color.Black,
+            BindingMode.OneWay,
+            propertyChanged: OnTextColorChanged);
+
+        public Color TextColor
+        {
+            get => (Color)GetValue(TextColorProperty);
+            set => SetValue(TextColorProperty, value);
+        }
+
+        private static void OnTextColorChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is PlaylistLikeControl control)
+                if (control.FindByName("TotalLabel") is Label totalLabel)
+                    totalLabel.TextColor = (Color)newValue;
+        }
+
         public PlaylistLikeControl()
         {
             InitializeComponent();
