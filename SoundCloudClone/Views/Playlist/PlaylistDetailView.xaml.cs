@@ -32,7 +32,7 @@ namespace SoundCloudClone.Views.Playlist
             {
                 await viewModel.InitializeAsync();
                 var likeContainerPosition = GetLikeContainerPosition();
-                await Navigation.PushModalAsync(new OverlayPlaylistLikeTutorialView(likeContainerPosition, LikeContainer), false);
+                await Navigation.PushModalAsync(new OverlayPlaylistLikeTutorialView(likeContainerPosition), false);
             }
 
             _dataAlreadyLoaded = true;
