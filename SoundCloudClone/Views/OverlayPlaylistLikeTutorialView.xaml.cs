@@ -11,11 +11,13 @@ namespace SoundCloudClone.Views
     public partial class OverlayPlaylistLikeTutorialView : ContentPage
     {
         private readonly Xamarin.Forms.Rectangle _likeContainerPosition;
+        private readonly int _totalLikes;
 
-        public OverlayPlaylistLikeTutorialView(Xamarin.Forms.Rectangle likeContainerPosition)
+        public OverlayPlaylistLikeTutorialView(Xamarin.Forms.Rectangle likeContainerPosition, int totalLikes)
         {
             InitializeComponent();
             _likeContainerPosition = likeContainerPosition;
+            _totalLikes = totalLikes;
         }
 
         protected override async void OnAppearing()
@@ -225,7 +227,7 @@ namespace SoundCloudClone.Views
             var playlistLikeControl = new PlaylistLikeControl
             {
                 Opacity = 0,
-                Total = 10,
+                Total = _totalLikes,
                 TranslationX = heartEllipse.TranslationX,
                 TranslationY = heartEllipse.TranslationY,
                 HorizontalOptions = heartEllipse.HorizontalOptions,
