@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MvvmHelpers;
+using SoundCloudClone.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Shapes;
@@ -221,6 +222,18 @@ namespace SoundCloudClone.Views
                 }
             };
 
+            var playlistLikeControl = new PlaylistLikeControl
+            {
+                Opacity = 0,
+                Total = 10,
+                TranslationX = heartEllipse.TranslationX,
+                TranslationY = heartEllipse.TranslationY,
+                HorizontalOptions = heartEllipse.HorizontalOptions,
+                VerticalOptions = heartEllipse.VerticalOptions,
+                WidthRequest = heartEllipse.WidthRequest,
+                HeightRequest = heartEllipse.HeightRequest
+            };
+
             var grid = new Grid
             {
                 Children =
@@ -230,6 +243,7 @@ namespace SoundCloudClone.Views
                     stackLayoutDescription,
                     heartEllipse,
                     pulseEllipse,
+                    playlistLikeControl,
                     new BoxView { BackgroundColor = Color.Transparent }
                 }
             };
@@ -247,7 +261,8 @@ namespace SoundCloudClone.Views
                     ellipseBackground.FadeTo(0, 300),
                     stackLayoutDescription.FadeTo(0, 300, Easing.CubicOut),
                     heartEllipse.ScaleTo(0, 300),
-                    heartEllipse.FadeTo(0, 300)
+                    heartEllipse.FadeTo(0, 300),
+                    playlistLikeControl.FadeTo(0, 300)
                 );
 
                 await mainLayer.FadeTo(0, 100, easing: Easing.CubicInOut);
@@ -258,7 +273,16 @@ namespace SoundCloudClone.Views
 
             Content = grid;
 
-            Task.WhenAny(StartAndroidAnimationAsync(mainLayer, ellipseBackground, heartEllipse, pulseEllipse, stackLayoutDescription)).SafeFireAndForget(AnimationException);
+            Task.WhenAny(
+                StartAndroidAnimationAsync(
+                    mainLayer,
+                    ellipseBackground,
+                    heartEllipse,
+                    pulseEllipse,
+                    stackLayoutDescription,
+                    playlistLikeControl
+                )
+            ).SafeFireAndForget(AnimationException);
         }
 
         private void AnimationException(Exception exception)
@@ -270,7 +294,8 @@ namespace SoundCloudClone.Views
         private const string ParentAnimationName = "ParentAnimation";
 
         private async Task StartAndroidAnimationAsync(
-            View mainLayer, View ellipseBackground, View heartEllipse, View pulseEllipse, View stackLayoutDescription)
+            View mainLayer, View ellipseBackground, View heartEllipse,
+            View pulseEllipse, View stackLayoutDescription, View playlistLikeControl)
         {
             await mainLayer.FadeTo(0.4, 500, easing: Easing.CubicInOut);
 
@@ -279,7 +304,8 @@ namespace SoundCloudClone.Views
                 ellipseBackground.FadeTo(0.97, 100),
                 stackLayoutDescription.FadeTo(1, 100, Easing.CubicIn),
                 heartEllipse.ScaleTo(1, 100),
-                heartEllipse.FadeTo(1, 100)
+                heartEllipse.FadeTo(1, 100),
+                playlistLikeControl.FadeTo(1, 100)
             );
 
             pulseEllipse.IsVisible = true;
