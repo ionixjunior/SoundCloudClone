@@ -100,7 +100,10 @@
                             </Label.FormattedText>
                         </Label>
 
-                        <controls:PlaylistLikeControl x:Name="LikeContainer" FlexLayout.Basis="60" />
+                        <controls:PlaylistLikeControl
+                            x:Name="LikeContainer"
+                            FlexLayout.Basis="60"
+                            Total="{Binding Playlist.LikesCount}" />
 
                         <Image
                             Margin="25,0,0,0"

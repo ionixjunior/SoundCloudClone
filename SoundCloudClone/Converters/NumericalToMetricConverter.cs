@@ -7,6 +7,11 @@ namespace SoundCloudClone.Converters
 {
     public class NumericalToMetricConverter : IValueConverter
     {
+        public string Convert(object value)
+        {
+            return (string)Convert(value, null, null, null);
+        }
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is int numeric)

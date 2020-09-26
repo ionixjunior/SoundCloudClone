@@ -3,18 +3,11 @@
     x:Class="SoundCloudClone.Controls.PlaylistLikeControl"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
     AlignItems="Center"
     JustifyContent="Center">
-    <FlexLayout.Resources>
-        <ResourceDictionary>
-            <converters:NumericalToMetricConverter x:Key="NumericalToMetricConverter" />
-        </ResourceDictionary>
-    </FlexLayout.Resources>
-
     <Image
         HeightRequest="20"
         Source="{DynamicResource playlist_like}"
         WidthRequest="20" />
-    <Label Margin="5,0,0,0" Text="{Binding Playlist.LikesCount, Converter={StaticResource NumericalToMetricConverter}}" />
+    <Label x:Name="TotalLabel" Margin="5,0,0,0" />
 </FlexLayout>
