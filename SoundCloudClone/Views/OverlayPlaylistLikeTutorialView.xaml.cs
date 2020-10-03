@@ -186,7 +186,7 @@ namespace SoundCloudClone.Views
                 Opacity = 0,
                 WidthRequest = ellipseBackgroundWidth,
                 HeightRequest = ellipseBackgroundWidth,
-                Fill = new SolidColorBrush(Color.FromHex("ffffff")),
+                Fill = new SolidColorBrush((Color)App.Current.Resources["ContentItemBackground"]),
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Start,
                 TranslationX = (Width / 2) - (ellipseBackgroundWidth / 2) + 20,
