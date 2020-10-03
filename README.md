@@ -4,12 +4,27 @@ Um clone do SoundCloud feito com Xamarin.Forms. Este app está sendo desenvolvid
 
 Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do SoundCloud com Xamarin.Forms](https://www.youtube.com/playlist?list=PL6M6J_6V_um8IzRN4lgRUEWrPWC6iQfiq).
 
+## Gifs
+
+O app tem uma animação na tela de detalhes da playlist, confira:
+
+### Android
+<kbd><img width="250" src="art/android_playlist_detail_animation_light.gif" /></kbd><kbd><img width="250" src="art/android_playlist_detail_animation_dark.gif" /></kbd>
+
+### iOS
+<kbd><img width="250" src="art/ios_playlist_detail_animation_light.gif" /></kbd><kbd><img width="250" src="art/ios_playlist_detail_animation_dark.gif" /></kbd>
+
 ## Screenshots
 
 ### Android
 
-#### Tela dos álbuns
+#### Tela das playlists
 <kbd><img width="250" src="art/android_home_1_light.png" /></kbd><kbd><img width="250" src="art/android_home_1_dark.png" /></kbd>
+
+#### Tela dos detalhes de uma playlist
+<kbd><img width="250" src="art/android_playlist_detail_1_light.png" /></kbd><kbd><img width="250" src="art/android_playlist_detail_1_dark.png" /></kbd>
+
+<kbd><img width="250" src="art/android_playlist_detail_2_light.png" /></kbd><kbd><img width="250" src="art/android_playlist_detail_2_dark.png" /></kbd>
 
 #### Tela dos streamings
 <kbd><img width="250" src="art/android_stream_1_light.png" /></kbd><kbd><img width="250" src="art/android_stream_1_dark.png" /></kbd>
@@ -39,8 +54,13 @@ Para quem prefere Youtube, criei uma [playlist com todas as lives do clone do So
 
 ### iOS
 
-#### Tela dos álbuns
+#### Tela das playlists
 <kbd><img width="250" src="art/ios_home_1_light.png" /></kbd><kbd><img width="250" src="art/ios_home_1_dark.png" /></kbd>
+
+#### Tela dos detalhes de uma playlist
+<kbd><img width="250" src="art/ios_playlist_detail_1_light.png" /></kbd><kbd><img width="250" src="art/ios_playlist_detail_1_dark.png" /></kbd>
+
+<kbd><img width="250" src="art/ios_playlist_detail_2_light.png" /></kbd><kbd><img width="250" src="art/ios_playlist_detail_2_dark.png" /></kbd>
 
 #### Tela dos streamings
 <kbd><img width="250" src="art/ios_stream_1_light.png" /></kbd><kbd><img width="250" src="art/ios_stream_1_dark.png" /></kbd>
