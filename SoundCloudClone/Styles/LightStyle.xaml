@@ -32,6 +32,7 @@
     <FileImageSource x:Key="play">play_light</FileImageSource>
     <FileImageSource x:Key="playlist_like">playlist_like_light</FileImageSource>
     <FileImageSource x:Key="playlist_liked">playlist_liked_light</FileImageSource>
+    <FileImageSource x:Key="playlist_control_source">playlist_like_overlay_light</FileImageSource>
 
     <OnPlatform
         x:Key="SocialFrameBorderColor"
