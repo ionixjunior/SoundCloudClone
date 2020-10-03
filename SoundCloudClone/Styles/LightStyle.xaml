@@ -10,6 +10,7 @@
     <Color x:Key="TextPrimaryColor">#000000</Color>
     <Color x:Key="DetailPrimaryColor">#8F8E8F</Color>
     <Color x:Key="TextSecondaryColor">#8F8E8F</Color>
+    <Color x:Key="PlaylistControlTextColor">#FFFFFF</Color>
     <Color x:Key="SeparatorItemBackground">#E1E1E1</Color>
     <Color x:Key="ContentItemBackground">#FFFFFF</Color>
     <Color x:Key="ContentPageBackground">#F2F2F2</Color>
