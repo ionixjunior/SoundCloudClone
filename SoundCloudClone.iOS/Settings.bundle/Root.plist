@@ -46,13 +46,15 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
+			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Troubleshooting ID</string>
 			<key>Key</key>
 			<string>troubleshooting_id_preference</string>
 			<key>DefaultValue</key>
 			<string></string>
+			<key>File</key>
+			<string>TroubleshootingId</string>
 		</dict>
 		<dict>
 			<key>Type</key>

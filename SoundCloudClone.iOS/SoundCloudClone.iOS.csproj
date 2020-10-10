@@ -290,6 +290,7 @@
     <BundleResource Include="Resources\playlist_play%402x.png" />
     <BundleResource Include="Resources\playlist_play%403x.png" />
     <BundleResource Include="Settings.bundle\Root.plist" />
+    <BundleResource Include="Settings.bundle\TroubleshootingId.plist" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

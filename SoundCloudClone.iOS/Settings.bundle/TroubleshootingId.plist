@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>TroubleshootingId</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Troubleshooting ID</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string> </string>
+			<key>DefaultValue</key>
+			<string>troubleshooting_id</string>
+			<key>Titles</key>
+			<array>
+				<string>67658DA9-8899777DA-9887D87D7-786798-96F996A8987</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>troubleshooting_id</string>
+			</array>
+			<key>Key</key>
+			<string>troubleshooting_id_value_preference</string>
+		</dict>
+	</array>
+</dict>
+</plist>
