@@ -12,13 +12,15 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
+			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Acknowledgements</string>
 			<key>Key</key>
 			<string>acknowledgements_preference</string>
 			<key>DefaultValue</key>
 			<string></string>
+			<key>File</key>
+			<string>Acknowledgements</string>
 		</dict>
 		<dict>
 			<key>Type</key>

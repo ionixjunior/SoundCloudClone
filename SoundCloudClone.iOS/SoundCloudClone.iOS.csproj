@@ -291,6 +291,7 @@
     <BundleResource Include="Resources\playlist_play%403x.png" />
     <BundleResource Include="Settings.bundle\Root.plist" />
     <BundleResource Include="Settings.bundle\TroubleshootingId.plist" />
+    <BundleResource Include="Settings.bundle\Acknowledgements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
