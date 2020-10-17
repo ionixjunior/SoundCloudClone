@@ -85,3 +85,6 @@ O app tem uma animação na tela de detalhes da playlist, confira:
 
 #### Tela de seleção do tema
 <kbd><img width="250" src="art/ios_library_theme_1_light.png" /></kbd><kbd><img width="250" src="art/ios_library_theme_1_dark.png" /></kbd>
+
+#### Tela de ajustes do sistema operacional
+<kbd><img width="250" src="art/ios_settings_bundle.png" /></kbd>
