@@ -53,11 +53,11 @@ namespace SoundCloudClone
         {
             if (DependencyService.Get<ISettingsBundle>() is { } settingsBundleServide)
             {
-                var cleanImageCache = settingsBundleServide.GetBoolValue("clean_image_cache_preference");
+                var cleanImageCache = settingsBundleServide.GetBoolValue(Constants.CleanImageCachePreference);
 
                 if (cleanImageCache)
                 {
-                    settingsBundleServide.SetBoolValue(false, "clean_image_cache_preference");
+                    settingsBundleServide.SetBoolValue(false, Constants.CleanImageCachePreference);
                     await ImageService.Instance.InvalidateCacheAsync(CacheType.All);
                 }
             }
