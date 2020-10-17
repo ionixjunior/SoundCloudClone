@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
+using FFImageLoading;
+using FFImageLoading.Cache;
 using Foundation;
 using UIKit;
 
@@ -32,6 +34,7 @@ namespace SoundCloudClone.iOS
                 // TODO APAGAR O CACHE DA IMAGEM
                 System.Diagnostics.Debug.WriteLine("### DEVE APAGAR O CACHE DA IMAGEM ###");
                 NSUserDefaults.StandardUserDefaults.SetBool(false, "clean_image_cache_preference");
+                Task.Run(() => ImageService.Instance.InvalidateCacheAsync(CacheType.All));
             }
 
             LoadApplication(new App());
