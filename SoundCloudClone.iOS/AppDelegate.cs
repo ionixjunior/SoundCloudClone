@@ -31,6 +31,7 @@ namespace SoundCloudClone.iOS
             {
                 // TODO APAGAR O CACHE DA IMAGEM
                 System.Diagnostics.Debug.WriteLine("### DEVE APAGAR O CACHE DA IMAGEM ###");
+                NSUserDefaults.StandardUserDefaults.SetBool(false, "clean_image_cache_preference");
             }
 
             LoadApplication(new App());
