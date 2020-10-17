@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FFImageLoading;
-using FFImageLoading.Cache;
-using Foundation;
+﻿using Foundation;
+using SoundCloudClone.Interfaces;
+using SoundCloudClone.iOS.Services;
 using UIKit;
+using Xamarin.Forms;
 
 namespace SoundCloudClone.iOS
 {
@@ -26,20 +23,16 @@ namespace SoundCloudClone.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-
-            var cleanImageCache = NSUserDefaults.StandardUserDefaults.BoolForKey("clean_image_cache_preference");
-
-            if (cleanImageCache)
-            {
-                // TODO APAGAR O CACHE DA IMAGEM
-                System.Diagnostics.Debug.WriteLine("### DEVE APAGAR O CACHE DA IMAGEM ###");
-                NSUserDefaults.StandardUserDefaults.SetBool(false, "clean_image_cache_preference");
-                Task.Run(() => ImageService.Instance.InvalidateCacheAsync(CacheType.All));
-            }
+            RegisterDependencies();
 
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void RegisterDependencies()
+        {
+            DependencyService.Register<ISettingsBundle, SettingsBundleService>();
         }
     }
 }

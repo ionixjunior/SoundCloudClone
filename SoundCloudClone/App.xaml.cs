@@ -5,6 +5,9 @@ using SoundCloudClone.Views;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Services;
 using SoundCloudClone.Enums;
+using FFImageLoading;
+using FFImageLoading.Cache;
+using System.Threading.Tasks;
 
 namespace SoundCloudClone
 {
@@ -40,9 +43,24 @@ namespace SoundCloudClone
             _theme.Change(themeEnum);
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             ChangeTheme();
+            await LoadSettingsAsync();
+        }
+
+        private async Task LoadSettingsAsync()
+        {
+            if (DependencyService.Get<ISettingsBundle>() is { } settingsBundleServide)
+            {
+                var cleanImageCache = settingsBundleServide.GetBoolValue("clean_image_cache_preference");
+
+                if (cleanImageCache)
+                {
+                    settingsBundleServide.SetBoolValue(false, "clean_image_cache_preference");
+                    await ImageService.Instance.InvalidateCacheAsync(CacheType.All);
+                }
+            }
         }
 
         protected override void OnSleep()
