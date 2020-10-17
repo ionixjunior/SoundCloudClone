@@ -24,6 +24,15 @@ namespace SoundCloudClone.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
+            var cleanImageCache = NSUserDefaults.StandardUserDefaults.BoolForKey("clean_image_cache_preference");
+
+            if (cleanImageCache)
+            {
+                // TODO APAGAR O CACHE DA IMAGEM
+                System.Diagnostics.Debug.WriteLine("### DEVE APAGAR O CACHE DA IMAGEM ###");
+            }
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
