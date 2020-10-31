@@ -9,7 +9,7 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <CollectionView IsGrouped="True" ItemsSource="{Binding AlbumGroups}">
+        <CollectionView IsGrouped="True" ItemsSource="{Binding AlbumGroups}" AutomationProperties.IsInAccessibleTree="False">
             <CollectionView.GroupHeaderTemplate>
                 <DataTemplate>
                     <StackLayout Padding="15" BackgroundColor="{DynamicResource ContentItemBackground}">

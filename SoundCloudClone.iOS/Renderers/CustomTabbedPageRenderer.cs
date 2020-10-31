@@ -1,8 +1,8 @@
-﻿using System;
+﻿using SoundCloudClone.Interfaces;
+using SoundCloudClone.iOS.Renderers;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using SoundCloudClone.Interfaces;
-using SoundCloudClone.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -16,9 +16,16 @@ namespace SoundCloudClone.iOS.Renderers
         {
             base.ViewDidLayoutSubviews();
 
+            int x = 0;
             foreach (var item in TabBar.Items)
             {
                 item.ImageInsets = new UIEdgeInsets(6, 0, -6, 0);
+                if (Element is TabbedPage tabs)
+                {
+                    var page = tabs.Children[x].Navigation.NavigationStack.First();
+                    item.AccessibilityLabel = page.Title ?? "Untitled";
+                }
+                x++;
             }
         }
 
