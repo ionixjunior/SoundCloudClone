@@ -13,7 +13,7 @@
     <TabbedPage.Children>
         <NavigationPage>
             <x:Arguments>
-                <views:HomeView />
+                <views:HomeView Title="Home" />
             </x:Arguments>
         </NavigationPage>
 

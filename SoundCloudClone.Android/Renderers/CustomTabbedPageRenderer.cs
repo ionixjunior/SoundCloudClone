@@ -54,6 +54,10 @@ namespace SoundCloudClone.Droid.Renderers
         {
             for (var index = 0; index < _formsTabs.Children.Count; index++)
             {
+                var page = _formsTabs.Children[index].Navigation.NavigationStack.First();
+
+                ((Android.Views.ViewGroup)((Android.Views.ViewGroup)_bottomNavigationView.GetChildAt(0)).GetChildAt(index)).GetChildAt(0).ContentDescription = page.Title ?? "Untitled";
+
                 var androidTab = _bottomNavigationView.Menu.GetItem(index);
                 int iconId;
 

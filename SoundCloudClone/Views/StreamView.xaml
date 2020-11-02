@@ -72,7 +72,7 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Streams}">
+        <CollectionView ItemsSource="{Binding Streams}" AutomationProperties.IsInAccessibleTree="false">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="20" Orientation="Vertical" />
             </CollectionView.ItemsLayout>

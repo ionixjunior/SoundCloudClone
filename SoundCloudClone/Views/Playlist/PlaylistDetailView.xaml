@@ -54,7 +54,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <CollectionView ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Tracks}">
+        <CollectionView ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Tracks}" AutomationProperties.IsInAccessibleTree="false">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" />
             </CollectionView.ItemsLayout>
