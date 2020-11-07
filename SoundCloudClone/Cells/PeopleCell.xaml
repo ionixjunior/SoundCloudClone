@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SoundCloudClone.Cells.PeopleCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:styles="clr-namespace:SoundCloudClone.Styles"
+    mc:Ignorable="d">
+
+    <d:ContentView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:LightStyle />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </d:ContentView.Resources>
+
+    <ContentView.Content>
+        <Grid
+            Padding="15"
+            BackgroundColor="Aquamarine"
+            ColumnDefinitions="70,*,60"
+            ColumnSpacing="10">
+            <ffimageloading:CachedImage
+                Grid.Column="0"
+                d:BackgroundColor="Yellow"
+                HeightRequest="70"
+                VerticalOptions="Center"
+                WidthRequest="70">
+                <ffimageloading:CachedImage.Clip>
+                    <EllipseGeometry
+                        Center="35,35"
+                        RadiusX="35"
+                        RadiusY="35" />
+                </ffimageloading:CachedImage.Clip>
+            </ffimageloading:CachedImage>
+
+            <FlexLayout
+                Grid.Column="1"
+                BackgroundColor="Green"
+                Direction="Column"
+                JustifyContent="Center">
+                <Label d:Text="Ione Souza Junior" TextColor="{DynamicResource TextPrimaryColor}" />
+                <Label d:Text="Joinville, Brazil" TextColor="{DynamicResource TextSecondaryColor}" />
+
+                <FlexLayout
+                    AlignItems="End"
+                    BackgroundColor="Azure"
+                    FlexLayout.Basis="32">
+                    <Image
+                        d:BackgroundColor="Yellow"
+                        HeightRequest="16"
+                        VerticalOptions="End"
+                        WidthRequest="16" />
+                    <Label
+                        Margin="5,0,0,0"
+                        d:Text="142"
+                        TextColor="{DynamicResource TextSecondaryColor}"
+                        VerticalTextAlignment="End" />
+                </FlexLayout>
+            </FlexLayout>
+
+            <ImageButton
+                Grid.Column="2"
+                Padding="10"
+                BackgroundColor="{DynamicResource Accent}"
+                HeightRequest="44"
+                Source="play"
+                VerticalOptions="Center"
+                WidthRequest="44" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
