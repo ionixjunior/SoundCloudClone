@@ -22,6 +22,10 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource ContentPageBackground}" />
     </Style>
 
+    <Style TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource ContentPageBackground}" />
+    </Style>
+
     <Style x:Key="TitleNavigationPage" TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
         <Setter Property="TextColor" Value="{DynamicResource NavigationBarTextColor}" />

@@ -39,5 +39,6 @@
     <Folder Include="Controls\" />
     <Folder Include="Views\Playlist\" />
     <Folder Include="ViewModels\Playlist\" />
+    <Folder Include="Cells\" />
   </ItemGroup>
 </Project>
