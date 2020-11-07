@@ -20,7 +20,6 @@
     <ContentView.Content>
         <Grid
             Padding="15"
-            BackgroundColor="Aquamarine"
             ColumnDefinitions="70,*,60"
             ColumnSpacing="10">
             <ffimageloading:CachedImage
@@ -39,24 +38,21 @@
 
             <FlexLayout
                 Grid.Column="1"
-                BackgroundColor="Green"
                 Direction="Column"
                 JustifyContent="Center">
                 <Label d:Text="Ione Souza Junior" TextColor="{DynamicResource TextPrimaryColor}" />
                 <Label d:Text="Joinville, Brazil" TextColor="{DynamicResource TextSecondaryColor}" />
 
-                <FlexLayout
-                    AlignItems="End"
-                    BackgroundColor="Azure"
-                    FlexLayout.Basis="32">
+                <FlexLayout AlignItems="End" FlexLayout.Basis="32">
                     <Image
-                        d:BackgroundColor="Yellow"
-                        HeightRequest="16"
+                        HeightRequest="14"
+                        Source="friends"
                         VerticalOptions="End"
-                        WidthRequest="16" />
+                        WidthRequest="14" />
                     <Label
                         Margin="5,0,0,0"
                         d:Text="142"
+                        FontSize="Small"
                         TextColor="{DynamicResource TextSecondaryColor}"
                         VerticalTextAlignment="End" />
                 </FlexLayout>
@@ -67,7 +63,7 @@
                 Padding="10"
                 BackgroundColor="{DynamicResource Accent}"
                 HeightRequest="44"
-                Source="play"
+                Source="add_friend"
                 VerticalOptions="Center"
                 WidthRequest="44" />
         </Grid>
