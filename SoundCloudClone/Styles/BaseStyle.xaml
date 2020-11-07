@@ -9,6 +9,9 @@
         Android="Fonts/interstate-light-cond.ttf#Interstate Light Cond"
         iOS="Interstate Light Cond" />
 
+    <FileImageSource x:Key="friends">friends</FileImageSource>
+    <FileImageSource x:Key="add_friend">add_friend</FileImageSource>
+
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationPrimary}" />
     </Style>
