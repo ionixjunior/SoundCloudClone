@@ -19,74 +19,70 @@
     </d:ContentView.Resources>
 
     <ContentView.Content>
-        <FlexLayout Margin="0,20" Direction="Column">
+        <FlexLayout
+            Margin="20,0"
+            AlignItems="Center"
+            FlexLayout.Grow="1"
+            HeightRequest="70">
+            <ffimageloading:CachedImage
+                d:BackgroundColor="Red"
+                HeightRequest="70"
+                Source="{Binding ArtworkUrl}"
+                WidthRequest="70" />
+
             <FlexLayout
-                Margin="20,0"
-                AlignItems="Center"
+                Margin="20,0,0,0"
+                Direction="Column"
                 FlexLayout.Grow="1"
                 HeightRequest="70">
-                <ffimageloading:CachedImage
-                    d:BackgroundColor="Red"
-                    HeightRequest="70"
-                    Source="{Binding ArtworkUrl}"
-                    WidthRequest="70" />
+                <FlexLayout
+                    AlignItems="Center"
+                    FlexLayout.Grow="1"
+                    JustifyContent="SpaceBetween">
+                    <Label
+                        d:Text="@ionixjunior"
+                        Text="{Binding Username}"
+                        TextColor="{DynamicResource TextSecondaryColor}" />
+                    <Label
+                        d:Text="5:31"
+                        Text="{Binding FullDurationTimeSpan, StringFormat='{0:mm}:{0:ss}'}"
+                        TextColor="{DynamicResource TextSecondaryColor}" />
+                </FlexLayout>
+
+                <Label
+                    d:Text="Título da música"
+                    FlexLayout.Grow="1"
+                    LineBreakMode="TailTruncation"
+                    Text="{Binding Title}"
+                    VerticalTextAlignment="Center" />
 
                 <FlexLayout
-                    Margin="20,0,0,0"
-                    Direction="Column"
-                    FlexLayout.Grow="1"
-                    HeightRequest="70">
-                    <FlexLayout
-                        AlignItems="Center"
-                        FlexLayout.Grow="1"
-                        JustifyContent="SpaceBetween">
+                    Margin="0,10,0,0"
+                    AlignItems="Center"
+                    FlexLayout.Grow="1">
+                    <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
+                        <Image
+                            HeightRequest="16"
+                            Source="{DynamicResource play}"
+                            WidthRequest="16" />
                         <Label
-                            d:Text="@ionixjunior"
-                            Text="{Binding Username}"
-                            TextColor="{DynamicResource TextSecondaryColor}" />
-                        <Label
-                            d:Text="5:31"
-                            Text="{Binding FullDurationTimeSpan, StringFormat='{0:mm}:{0:ss}'}"
+                            Margin="5,0,0,0"
+                            d:Text="10"
+                            Text="{Binding PlaybackCount, Converter={converters:NumericalToMetricConverter}}"
                             TextColor="{DynamicResource TextSecondaryColor}" />
                     </FlexLayout>
 
-                    <Label
-                        d:Text="Título da música"
-                        FlexLayout.Grow="1"
-                        LineBreakMode="TailTruncation"
-                        Text="{Binding Title}"
-                        VerticalTextAlignment="Center" />
-
                     <FlexLayout
-                        Margin="0,10,0,0"
                         AlignItems="Center"
-                        FlexLayout.Grow="1">
-                        <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
-                            <Image
-                                HeightRequest="16"
-                                Source="{DynamicResource play}"
-                                WidthRequest="16" />
-                            <Label
-                                Margin="5,0,0,0"
-                                d:Text="10"
-                                Text="{Binding PlaybackCount, Converter={converters:NumericalToMetricConverter}}"
-                                TextColor="{DynamicResource TextSecondaryColor}" />
-                        </FlexLayout>
-
-                        <FlexLayout
-                            AlignItems="Center"
-                            FlexLayout.Grow="1"
-                            JustifyContent="End">
-                            <Image
-                                HeightRequest="16"
-                                Source="{DynamicResource more}"
-                                WidthRequest="16" />
-                        </FlexLayout>
+                        FlexLayout.Grow="1"
+                        JustifyContent="End">
+                        <Image
+                            HeightRequest="16"
+                            Source="{DynamicResource more}"
+                            WidthRequest="16" />
                     </FlexLayout>
                 </FlexLayout>
             </FlexLayout>
-
-            <BoxView BackgroundColor="{DynamicResource SeparatorItemBackground}" HeightRequest="1" />
         </FlexLayout>
     </ContentView.Content>
 </ContentView>
