@@ -296,6 +296,12 @@
     <BundleResource Include="Settings.bundle\Root.plist" />
     <BundleResource Include="Settings.bundle\TroubleshootingId.plist" />
     <BundleResource Include="Settings.bundle\Acknowledgements.plist" />
+    <BundleResource Include="Resources\add_friend.png" />
+    <BundleResource Include="Resources\add_friend%402x.png" />
+    <BundleResource Include="Resources\add_friend%403x.png" />
+    <BundleResource Include="Resources\friends.png" />
+    <BundleResource Include="Resources\friends%402x.png" />
+    <BundleResource Include="Resources\friends%403x.png" />
   </ItemGroup>
   <ItemGroup />
   <ProjectExtensions>
