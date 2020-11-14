@@ -22,6 +22,7 @@
     <PackageReference Include="refit" Version="5.2.1" />
     <PackageReference Include="Humanizer.Core" Version="2.8.26" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
+    <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.1.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
