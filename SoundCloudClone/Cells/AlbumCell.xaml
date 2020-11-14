@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SoundCloudClone.Cells.AlbumCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:styles="clr-namespace:SoundCloudClone.Styles"
+    rainbows:DebugRainbow.ShowColors="false"
+    mc:Ignorable="d">
+
+    <d:ContentView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:LightStyle />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </d:ContentView.Resources>
+
+    <ContentView.Content>
+        <FlexLayout
+            Margin="20,0"
+            AlignItems="Center"
+            FlexLayout.Grow="1"
+            HeightRequest="70">
+            <ffimageloading:CachedImage
+                d:BackgroundColor="Red"
+                HeightRequest="70"
+                WidthRequest="70" />
+
+            <FlexLayout
+                Margin="20,0,0,0"
+                Direction="Column"
+                FlexLayout.Grow="1"
+                HeightRequest="70">
+                <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
+                    <Label
+                        d:Text="@ionixjunior"
+                        FlexLayout.Grow="1"
+                        TextColor="{DynamicResource TextSecondaryColor}" />
+
+                    <FlexLayout
+                        AlignItems="Center"
+                        FlexLayout.Grow="1"
+                        JustifyContent="End">
+                        <Label d:Text="12 tracks" TextColor="{DynamicResource TextSecondaryColor}" />
+                        <Image
+                            Margin="5,0,0,0"
+                            HeightRequest="12"
+                            Source="{DynamicResource library_arrow}"
+                            WidthRequest="12" />
+                    </FlexLayout>
+                </FlexLayout>
+
+                <Label
+                    d:Text="Nome do álbum"
+                    FlexLayout.Grow="1"
+                    LineBreakMode="TailTruncation"
+                    VerticalTextAlignment="Center" />
+
+                <FlexLayout
+                    Margin="0,10,0,0"
+                    AlignItems="Center"
+                    FlexLayout.Grow="1">
+                    <OnPlatform x:TypeArguments="View">
+                        <On Platform="Android">
+                            <Label Text="Album" TextColor="{DynamicResource TextSecondaryColor}" />
+                        </On>
+
+                        <On Platform="iOS">
+                            <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
+                                <Image
+                                    HeightRequest="16"
+                                    Source="{DynamicResource playlist_liked}"
+                                    WidthRequest="16" />
+                                <Label
+                                    Margin="5,0,0,0"
+                                    d:Text="10"
+                                    TextColor="{DynamicResource TextSecondaryColor}" />
+                            </FlexLayout>
+                        </On>
+                    </OnPlatform>
+
+                    <FlexLayout
+                        AlignItems="Center"
+                        FlexLayout.Grow="1"
+                        JustifyContent="End">
+                        <Image
+                            HeightRequest="16"
+                            IsVisible="{OnPlatform Android=true,
+                                                   iOS=false}"
+                            Source="{DynamicResource more}"
+                            WidthRequest="16" />
+                    </FlexLayout>
+                </FlexLayout>
+            </FlexLayout>
+        </FlexLayout>
+    </ContentView.Content>
+</ContentView>
