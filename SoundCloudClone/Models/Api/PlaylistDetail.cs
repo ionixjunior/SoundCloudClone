@@ -3,15 +3,6 @@ using Newtonsoft.Json;
 
 namespace SoundCloudClone.Models.Api
 {
-    public class PlaylistEmbedded
-    {
-        [JsonProperty("stats")]
-        public Stats Stats { get; set; }
-
-        [JsonProperty("user")]
-        public User User { get; set; }
-    }
-
     public class Playlist
     {
         [JsonProperty("description")]
@@ -27,31 +18,10 @@ namespace SoundCloudClone.Models.Api
         public long Duration { get; set; }
 
         [JsonProperty("_embedded")]
-        public PlaylistEmbedded Embedded { get; set; }
+        public Embedded Embedded { get; set; }
 
         [JsonProperty("artwork_url_template")]
         public string ArtworkUrlTemplate { get; set; }
-    }
-
-    public class CollectionTrackEmbeddedStats
-    {
-        [JsonProperty("playback_count")]
-        public int PlaybackCount { get; set; }
-    }
-
-    public class CollectionTrackEmbeddedUser
-    {
-        [JsonProperty("username")]
-        public string Username { get; set; }
-    }
-
-    public class CollectionTrackEmbedded
-    {
-        [JsonProperty("stats")]
-        public CollectionTrackEmbeddedStats Stats { get; set; }
-
-        [JsonProperty("user")]
-        public CollectionTrackEmbeddedUser User { get; set; }
     }
 
     public class CollectionTrack
@@ -63,7 +33,7 @@ namespace SoundCloudClone.Models.Api
         public string Title { get; set; }
 
         [JsonProperty("_embedded")]
-        public CollectionTrackEmbedded Embedded { get; set; }
+        public Embedded Embedded { get; set; }
 
         [JsonProperty("artwork_url_template")]
         public string ArtworkUrlTemplate { get; set; }

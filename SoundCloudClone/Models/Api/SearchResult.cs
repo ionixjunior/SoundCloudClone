@@ -4,15 +4,6 @@ using Newtonsoft.Json;
 
 namespace SoundCloudClone.Models.Api
 {
-    public class EmbeddedSearch
-    {
-        [JsonProperty("stats")]
-        public Stats Stats { get; set; }
-
-        [JsonProperty("user")]
-        public User User { get; set; }
-    }
-
     public class PlaylistSearch
     {
         [JsonProperty("title")]
@@ -22,7 +13,7 @@ namespace SoundCloudClone.Models.Api
         public int TrackCount { get; set; }
 
         [JsonProperty("_embedded")]
-        public EmbeddedSearch Embedded { get; set; }
+        public Embedded Embedded { get; set; }
 
         [JsonProperty("is_album")]
         public bool IsAlbum { get; set; }
@@ -94,7 +85,7 @@ namespace SoundCloudClone.Models.Api
         public bool DisplayStats { get; set; }
 
         [JsonProperty("_embedded")]
-        public EmbeddedSearch Embedded { get; set; }
+        public Embedded Embedded { get; set; }
     }
 
     public class CollectionSearchResult
