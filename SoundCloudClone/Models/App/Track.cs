@@ -9,6 +9,9 @@ namespace SoundCloudClone.Models.App
         public int PlaybackCount { get; }
         public string Username { get; }
         public string ArtworkUrlTemplate { get; }
+        public DateTime CreatedAt { get; }
+        public string Genre { get; }
+        public bool DisplayStats { get; }
 
         public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t50x50");
         public TimeSpan FullDurationTimeSpan => TimeSpan.FromMilliseconds(FullDuration);
@@ -20,6 +23,9 @@ namespace SoundCloudClone.Models.App
             PlaybackCount = trackApi.Embedded.Stats.PlaybackCount;
             Username = trackApi.Embedded.User.Username;
             ArtworkUrlTemplate = trackApi.ArtworkUrlTemplate;
+            CreatedAt = trackApi.CreatedAt;
+            Genre = trackApi.Genre;
+            DisplayStats = trackApi.DisplayStats;
         }
     }
 }
