@@ -4,22 +4,10 @@ using Newtonsoft.Json;
 
 namespace SoundCloudClone.Models.Api
 {
-    public class StatsSearch
-    {
-        [JsonProperty("likes_count")]
-        public int LikesCount { get; set; }
-
-        [JsonProperty("reposts_count")]
-        public int RepostsCount { get; set; }
-
-        [JsonProperty("playback_count")]
-        public int PlaybackCount { get; set; }
-    }
-
     public class EmbeddedSearch
     {
         [JsonProperty("stats")]
-        public StatsSearch Stats { get; set; }
+        public Stats Stats { get; set; }
 
         [JsonProperty("user")]
         public User User { get; set; }
