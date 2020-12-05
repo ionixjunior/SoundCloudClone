@@ -39,7 +39,7 @@ namespace SoundCloudClone.Views
         {
             if (args.SelectedItem is SearchSuggestion suggestion)
                 if (BindingContext is SearchViewModel viewModel)
-                    viewModel.SelectSuggestion(suggestion);
+                    viewModel.SelectSuggestionAsync(suggestion);
         }
     }
 }

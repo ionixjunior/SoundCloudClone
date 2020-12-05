@@ -103,7 +103,7 @@ namespace SoundCloudClone.iOS.Renderers
         private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
         {
             if (Element.BindingContext is SearchViewModel viewModel)
-                viewModel.SelectSuggestion(suggestion);
+                viewModel.SelectSuggestionAsync(suggestion);
         }
 
         public override void WillMoveToParentViewController(UIViewController parent)

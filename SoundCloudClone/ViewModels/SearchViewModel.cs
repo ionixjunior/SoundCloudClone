@@ -57,7 +57,7 @@ namespace SoundCloudClone.ViewModels
 
         public void SearchBy(string text) => SearchTextChanged.Invoke(this, text);
 
-        public void SelectSuggestion(SearchSuggestion suggestion)
+        public void SelectSuggestionAsync(SearchSuggestion suggestion)
         {
             // TODO FAZER A BUSCA BASEADO NO ITEM SELECIONADO
             System.Diagnostics.Debug.WriteLine($"Item selecionado na viewmodel: {suggestion.Description}");
