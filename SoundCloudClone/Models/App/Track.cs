@@ -23,5 +23,14 @@ namespace SoundCloudClone.Models.App
             Username = username;
             ArtworkUrlTemplate = artworkUrlTemplate;
         }
+
+        public Track(SoundCloudClone.Models.Api.Track trackApi)
+        {
+            FullDuration = trackApi.FullDuration;
+            Title = trackApi.Title;
+            PlaybackCount = trackApi.Embedded.Stats.PlaybackCount;
+            Username = trackApi.Embedded.User.Username;
+            ArtworkUrlTemplate = trackApi.ArtworkUrlTemplate;
+        }
     }
 }
