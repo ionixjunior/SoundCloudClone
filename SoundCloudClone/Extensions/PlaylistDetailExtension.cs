@@ -15,17 +15,7 @@ namespace SoundCloudClone.Extensions
             var tracks = new List<Track>();
 
             foreach (var trackApi in playlistDetailApi.Tracks.Collection)
-            {
-                tracks.Add(
-                    new Track(
-                        trackApi.FullDuration,
-                        trackApi.Title,
-                        trackApi.Embedded.Stats.PlaybackCount,
-                        trackApi.Embedded.User.Username,
-                        trackApi.ArtworkUrlTemplate
-                    )
-                );
-            }
+                tracks.Add(new Track(trackApi));
 
             return tracks;
         }
