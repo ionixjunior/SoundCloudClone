@@ -11,6 +11,7 @@ namespace SoundCloudClone.Models.App
         public int LikesCount { get; }
         public string Username { get; }
         public string ArtworkUrlTemplate { get; }
+        public bool IsAlbum { get; }
 
         public string ArtworkUrl => ArtworkUrlTemplate?.Replace("{size}", "t500x500");
         public TimeSpan DurationTimeSpan => TimeSpan.FromMilliseconds(Duration);
@@ -24,6 +25,7 @@ namespace SoundCloudClone.Models.App
             LikesCount = playlistApi.Embedded.Stats.LikesCount;
             Username = playlistApi.Embedded.User.Username;
             ArtworkUrlTemplate = playlistApi.ArtworkUrlTemplate;
+            IsAlbum = playlistApi.IsAlbum;
         }
     }
 }
