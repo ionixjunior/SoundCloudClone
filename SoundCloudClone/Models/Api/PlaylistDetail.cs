@@ -9,19 +9,13 @@ namespace SoundCloudClone.Models.Api
         public int LikesCount { get; set; }
     }
 
-    public class PlaylistEmbeddedUser
-    {
-        [JsonProperty("username")]
-        public string Username { get; set; }
-    }
-
     public class PlaylistEmbedded
     {
         [JsonProperty("stats")]
         public PlaylistEmbeddedStats Stats { get; set; }
 
         [JsonProperty("user")]
-        public PlaylistEmbeddedUser User { get; set; }
+        public User User { get; set; }
     }
 
     public class Playlist

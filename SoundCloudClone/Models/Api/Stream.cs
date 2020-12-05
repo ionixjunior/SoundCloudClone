@@ -19,15 +19,6 @@ namespace SoundCloudClone.Models.Api
         public int LikesCount { get; set; }
     }
 
-    public class User
-    {
-        [JsonProperty("username")]
-        public string Username { get; set; }
-
-        [JsonProperty("avatar_url")]
-        public string AvatarUrl { get; set; }
-    }
-
     public class Embedded
     {
         [JsonProperty("stats")]

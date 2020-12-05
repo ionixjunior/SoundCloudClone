@@ -16,34 +16,13 @@ namespace SoundCloudClone.Models.Api
         public int PlaybackCount { get; set; }
     }
 
-    public class UserSearch
-    {
-        [JsonProperty("username")]
-        public string Username { get; set; }
-
-        [JsonProperty("avatar_url")]
-        public string AvatarUrl { get; set; }
-
-        [JsonProperty("followers_count")]
-        public int FollowersCount { get; set; }
-
-        [JsonProperty("avatar_url_template")]
-        public string AvatarUrlTemplate { get; set; }
-
-        [JsonProperty("city")]
-        public string City { get; set; }
-
-        [JsonProperty("country")]
-        public string Country { get; set; }
-    }
-
     public class EmbeddedSearch
     {
         [JsonProperty("stats")]
         public StatsSearch Stats { get; set; }
 
         [JsonProperty("user")]
-        public UserSearch User { get; set; }
+        public User User { get; set; }
     }
 
     public class PlaylistSearch
@@ -139,7 +118,7 @@ namespace SoundCloudClone.Models.Api
         public TrackSearch Track { get; set; }
 
         [JsonProperty("user")]
-        public UserSearch User { get; set; }
+        public User User { get; set; }
     }
 
     public class SearchResult
