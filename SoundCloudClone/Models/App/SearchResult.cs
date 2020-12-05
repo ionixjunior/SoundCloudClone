@@ -15,5 +15,10 @@ namespace SoundCloudClone.Models.App
         {
             Data = track;
         }
+
+        public SearchResult(User user)
+        {
+            Data = user;
+        }
     }
 }
