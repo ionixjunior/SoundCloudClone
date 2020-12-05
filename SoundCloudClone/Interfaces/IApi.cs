@@ -16,6 +16,9 @@ namespace SoundCloudClone.Interfaces
         [Get("/search_suggestion")]
         Task<SearchSuggestion> GetSearchSuggestions();
 
+        [Get("/search")]
+        Task<SearchResult> GetSearchResults();
+
         [Get("/playlist/id")]
         Task<PlaylistDetail> GetPlaylistDetail();
     }
