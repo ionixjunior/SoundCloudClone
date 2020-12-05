@@ -100,10 +100,10 @@ namespace SoundCloudClone.iOS.Renderers
                 textField.Font = Constants.DefaultFont;
         }
 
-        private void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
+        private async void OnSuggestionSelected(object sender, SearchSuggestion suggestion)
         {
             if (Element.BindingContext is SearchViewModel viewModel)
-                viewModel.SelectSuggestionAsync(suggestion);
+                await viewModel.SelectSuggestionAsync(suggestion);
         }
 
         public override void WillMoveToParentViewController(UIViewController parent)
