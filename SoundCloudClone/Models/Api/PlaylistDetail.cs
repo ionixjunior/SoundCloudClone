@@ -24,25 +24,10 @@ namespace SoundCloudClone.Models.Api
         public string ArtworkUrlTemplate { get; set; }
     }
 
-    public class CollectionTrack
-    {
-        [JsonProperty("full_duration")]
-        public long FullDuration { get; set; }
-
-        [JsonProperty("title")]
-        public string Title { get; set; }
-
-        [JsonProperty("_embedded")]
-        public Embedded Embedded { get; set; }
-
-        [JsonProperty("artwork_url_template")]
-        public string ArtworkUrlTemplate { get; set; }
-    }
-
     public class Tracks
     {
         [JsonProperty("collection")]
-        public IList<CollectionTrack> Collection { get; set; }
+        public IList<Track> Collection { get; set; }
     }
 
     public class PlaylistDetail

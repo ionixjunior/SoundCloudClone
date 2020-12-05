@@ -70,31 +70,13 @@ namespace SoundCloudClone.Models.Api
         public IList<Transcoding> Transcodings { get; set; }
     }
 
-    public class TrackSearch
-    {
-        [JsonProperty("title")]
-        public string Title { get; set; }
-
-        [JsonProperty("full_duration")]
-        public int FullDuration { get; set; }
-        
-        [JsonProperty("artwork_url_template")]
-        public string ArtworkUrlTemplate { get; set; }
-
-        [JsonProperty("display_stats")]
-        public bool DisplayStats { get; set; }
-
-        [JsonProperty("_embedded")]
-        public Embedded Embedded { get; set; }
-    }
-
     public class CollectionSearchResult
     {
         [JsonProperty("playlist")]
         public PlaylistSearch Playlist { get; set; }
 
         [JsonProperty("track")]
-        public TrackSearch Track { get; set; }
+        public Track Track { get; set; }
 
         [JsonProperty("user")]
         public User User { get; set; }
