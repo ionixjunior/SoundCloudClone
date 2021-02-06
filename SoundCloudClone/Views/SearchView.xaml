@@ -4,6 +4,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:SoundCloudClone.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:CounterToVisibilityConverter x:Key="CounterToVisibilityConverter" />
+            <converters:CounterToVisibilityInverterConverter x:Key="CounterToVisibilityInverterConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <NavigationPage.TitleView>
         <OnPlatform x:TypeArguments="View">
             <OnPlatform.Android>
@@ -29,6 +36,7 @@
             <FlexLayout
                 AlignItems="Center"
                 Direction="Column"
+                IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityInverterConverter}}"
                 JustifyContent="Center">
                 <Image
                     Margin="0,0,0,50"
@@ -53,7 +61,7 @@
                     <ListView
                         BackgroundColor="{DynamicResource ContentPageBackground}"
                         HasUnevenRows="True"
-                        IsVisible="{Binding Suggestions.Count, Converter={converters:CounterToVisibilityConverter}}"
+                        IsVisible="{Binding Suggestions.Count, Converter={StaticResource CounterToVisibilityConverter}}"
                         ItemSelected="OnItemSelected"
                         ItemsSource="{Binding Suggestions}"
                         SeparatorVisibility="None">
@@ -82,7 +90,7 @@
                 </OnPlatform.Android>
 
                 <OnPlatform.iOS>
-                    <ContentView />
+                    <ContentView IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}" />
                 </OnPlatform.iOS>
             </OnPlatform>
         </Grid>

@@ -15,6 +15,7 @@ namespace SoundCloudClone.ViewModels
     {
         public event EventHandler<string> SearchTextChanged;
         public ObservableRangeCollection<SearchSuggestion> Suggestions { get; private set; }
+        public ObservableRangeCollection<SearchResult> Results { get; private set; }
 
         private readonly IApi _api;
 
@@ -22,6 +23,7 @@ namespace SoundCloudClone.ViewModels
         {
             _api = api;
             Suggestions = new ObservableRangeCollection<SearchSuggestion>();
+            Results = new ObservableRangeCollection<SearchResult>();
 
             Observable
                 .FromEventPattern<string>(
@@ -64,7 +66,9 @@ namespace SoundCloudClone.ViewModels
             Suggestions.Clear();
 
             var resultsApi = await _api.GetSearchResults();
-            var resultsApp = resultsApi.ToSearchResultListApp();
+
+            Results.Clear();
+            Results.AddRange(resultsApi.ToSearchResultListApp());
         }
     }
 }
