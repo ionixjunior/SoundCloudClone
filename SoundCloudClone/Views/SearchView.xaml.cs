@@ -41,5 +41,11 @@ namespace SoundCloudClone.Views
                 if (BindingContext is SearchViewModel viewModel)
                     await viewModel.SelectSuggestionAsync(suggestion);
         }
+
+        private void OnTextFocused(object _, FocusEventArgs __)
+        {
+            if (BindingContext is SearchViewModel viewModel)
+                viewModel.ClearResults();
+        }
     }
 }

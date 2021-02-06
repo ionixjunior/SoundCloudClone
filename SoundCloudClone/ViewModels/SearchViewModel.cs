@@ -70,5 +70,10 @@ namespace SoundCloudClone.ViewModels
             Results.Clear();
             Results.AddRange(resultsApi.ToSearchResultListApp());
         }
+
+        internal void ClearResults()
+        {
+            Results.Clear();
+        }
     }
 }
