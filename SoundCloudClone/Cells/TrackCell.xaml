@@ -3,7 +3,6 @@
     x:Class="SoundCloudClone.Cells.TrackCell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
