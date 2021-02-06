@@ -26,6 +26,7 @@
             FlexLayout.Grow="1"
             HeightRequest="70">
             <ffimageloading:CachedImage
+                x:Name="ArtworkUrlImage"
                 d:BackgroundColor="Red"
                 HeightRequest="70"
                 WidthRequest="70" />
@@ -37,6 +38,7 @@
                 HeightRequest="70">
                 <FlexLayout AlignItems="Center" FlexLayout.Grow="1">
                     <Label
+                        x:Name="UsernameLabel"
                         d:Text="@ionixjunior"
                         FlexLayout.Grow="1"
                         TextColor="{DynamicResource TextSecondaryColor}" />
@@ -45,7 +47,10 @@
                         AlignItems="Center"
                         FlexLayout.Grow="1"
                         JustifyContent="End">
-                        <Label d:Text="12 tracks" TextColor="{DynamicResource TextSecondaryColor}" />
+                        <Label
+                            x:Name="TrackCountLabel"
+                            d:Text="12 tracks"
+                            TextColor="{DynamicResource TextSecondaryColor}" />
                         <Image
                             Margin="5,0,0,0"
                             HeightRequest="12"
@@ -55,6 +60,7 @@
                 </FlexLayout>
 
                 <Label
+                    x:Name="TitleLabel"
                     d:Text="Nome da playlist"
                     FlexLayout.Grow="1"
                     LineBreakMode="TailTruncation"
@@ -70,6 +76,7 @@
                             Source="{DynamicResource playlist_liked}"
                             WidthRequest="16" />
                         <Label
+                            x:Name="LikesCountLabel"
                             Margin="5,0,0,0"
                             d:Text="10"
                             TextColor="{DynamicResource TextSecondaryColor}" />
