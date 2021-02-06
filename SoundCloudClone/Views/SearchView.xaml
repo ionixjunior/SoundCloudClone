@@ -97,7 +97,7 @@
                         ItemTemplate="{StaticResource SearchResultDataTemplate}"
                         ItemsSource="{Binding Results}">
                         <CollectionView.ItemsLayout>
-                            <LinearItemsLayout ItemSpacing="0" Orientation="Vertical" />
+                            <LinearItemsLayout ItemSpacing="1" Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
                     </CollectionView>
                 </OnPlatform.iOS>
