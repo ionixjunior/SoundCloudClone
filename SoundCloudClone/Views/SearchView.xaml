@@ -90,7 +90,7 @@
                 </OnPlatform.Android>
 
                 <OnPlatform.iOS>
-                    <ContentView IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}" />
+                    <CollectionView IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}" ItemsSource="{Binding Results}" />
                 </OnPlatform.iOS>
             </OnPlatform>
         </Grid>
