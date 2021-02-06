@@ -3,11 +3,13 @@
     x:Class="SoundCloudClone.Views.SearchView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
+    xmlns:templates="clr-namespace:SoundCloudClone.DataTemplates">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:CounterToVisibilityConverter x:Key="CounterToVisibilityConverter" />
             <converters:CounterToVisibilityInverterConverter x:Key="CounterToVisibilityInverterConverter" />
+            <templates:SearchResultDataTemplate x:Key="SearchResultDataTemplate" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -90,7 +92,10 @@
                 </OnPlatform.Android>
 
                 <OnPlatform.iOS>
-                    <CollectionView IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}" ItemsSource="{Binding Results}" />
+                    <CollectionView
+                        IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}"
+                        ItemTemplate="{StaticResource SearchResultDataTemplate}"
+                        ItemsSource="{Binding Results}" />
                 </OnPlatform.iOS>
             </OnPlatform>
         </Grid>

@@ -41,5 +41,6 @@
     <Folder Include="Views\Playlist\" />
     <Folder Include="ViewModels\Playlist\" />
     <Folder Include="Cells\" />
+    <Folder Include="DataTemplates\" />
   </ItemGroup>
 </Project>
