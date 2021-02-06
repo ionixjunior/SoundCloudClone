@@ -23,6 +23,7 @@
             ColumnDefinitions="70,*,60"
             ColumnSpacing="10">
             <ffimageloading:CachedImage
+                x:Name="AvatarUrlImage"
                 Grid.Column="0"
                 d:BackgroundColor="Yellow"
                 HeightRequest="70"
@@ -40,8 +41,14 @@
                 Grid.Column="1"
                 Direction="Column"
                 JustifyContent="Center">
-                <Label d:Text="Ione Souza Junior" TextColor="{DynamicResource TextPrimaryColor}" />
-                <Label d:Text="Joinville, Brazil" TextColor="{DynamicResource TextSecondaryColor}" />
+                <Label
+                    x:Name="UsernameLabel"
+                    d:Text="Ione Souza Junior"
+                    TextColor="{DynamicResource TextPrimaryColor}" />
+                <Label
+                    x:Name="CityLabel"
+                    d:Text="Joinville, Brazil"
+                    TextColor="{DynamicResource TextSecondaryColor}" />
 
                 <FlexLayout AlignItems="End" FlexLayout.Basis="32">
                     <Image
@@ -50,6 +57,7 @@
                         VerticalOptions="End"
                         WidthRequest="14" />
                     <Label
+                        x:Name="FollowersCountLabel"
                         Margin="5,0,0,0"
                         d:Text="142"
                         FontSize="Small"
