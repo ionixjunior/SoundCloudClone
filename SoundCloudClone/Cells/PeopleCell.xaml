@@ -7,6 +7,7 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:styles="clr-namespace:SoundCloudClone.Styles"
+    HeightRequest="110"
     mc:Ignorable="d">
 
     <d:ContentView.Resources>

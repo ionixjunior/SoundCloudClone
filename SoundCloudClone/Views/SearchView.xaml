@@ -95,7 +95,11 @@
                     <CollectionView
                         IsVisible="{Binding Results.Count, Converter={StaticResource CounterToVisibilityConverter}}"
                         ItemTemplate="{StaticResource SearchResultDataTemplate}"
-                        ItemsSource="{Binding Results}" />
+                        ItemsSource="{Binding Results}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="0" Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                    </CollectionView>
                 </OnPlatform.iOS>
             </OnPlatform>
         </Grid>
