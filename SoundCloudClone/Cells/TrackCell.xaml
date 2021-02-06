@@ -25,9 +25,9 @@
             FlexLayout.Grow="1"
             HeightRequest="70">
             <ffimageloading:CachedImage
+                x:Name="ArtworkUrlImage"
                 d:BackgroundColor="Red"
                 HeightRequest="70"
-                Source="{Binding ArtworkUrl}"
                 WidthRequest="70" />
 
             <FlexLayout
@@ -40,20 +40,20 @@
                     FlexLayout.Grow="1"
                     JustifyContent="SpaceBetween">
                     <Label
+                        x:Name="UsernameLabel"
                         d:Text="@ionixjunior"
-                        Text="{Binding Username}"
                         TextColor="{DynamicResource TextSecondaryColor}" />
                     <Label
+                        x:Name="FullDurationTimeSpanLabel"
                         d:Text="5:31"
-                        Text="{Binding FullDurationTimeSpan, StringFormat='{0:mm}:{0:ss}'}"
                         TextColor="{DynamicResource TextSecondaryColor}" />
                 </FlexLayout>
 
                 <Label
+                    x:Name="TitleLabel"
                     d:Text="Título da música"
                     FlexLayout.Grow="1"
                     LineBreakMode="TailTruncation"
-                    Text="{Binding Title}"
                     VerticalTextAlignment="Center" />
 
                 <FlexLayout
@@ -66,9 +66,9 @@
                             Source="{DynamicResource play}"
                             WidthRequest="16" />
                         <Label
+                            x:Name="PlaybackCountLabel"
                             Margin="5,0,0,0"
                             d:Text="10"
-                            Text="{Binding PlaybackCount, Converter={converters:NumericalToMetricConverter}}"
                             TextColor="{DynamicResource TextSecondaryColor}" />
                     </FlexLayout>
 
