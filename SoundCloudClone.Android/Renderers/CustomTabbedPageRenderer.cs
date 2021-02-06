@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Android.Content;
-using Android.Support.Design.BottomNavigation;
-using Android.Support.Design.Widget;
+using Google.Android.Material.BottomNavigation;
 using SoundCloudClone.Droid.Renderers;
 using SoundCloudClone.Droid.Utils;
 using SoundCloudClone.Interfaces;
