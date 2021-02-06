@@ -34,7 +34,7 @@ namespace SoundCloudClone.DataTemplates
                     return _track;
             }
 
-            return null;
+            return new DataTemplate(typeof(ContentView));
         }
     }
 }
