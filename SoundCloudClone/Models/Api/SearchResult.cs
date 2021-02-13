@@ -1,23 +1,23 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class CollectionSearchResult
     {
-        [JsonProperty("playlist")]
+        [JsonPropertyName("playlist")]
         public Playlist Playlist { get; set; }
 
-        [JsonProperty("track")]
+        [JsonPropertyName("track")]
         public Track Track { get; set; }
 
-        [JsonProperty("user")]
+        [JsonPropertyName("user")]
         public User User { get; set; }
     }
 
     public class SearchResult
     {
-        [JsonProperty("collection")]
+        [JsonPropertyName("collection")]
         public IList<CollectionSearchResult> Collection { get; set; }
     }
 }

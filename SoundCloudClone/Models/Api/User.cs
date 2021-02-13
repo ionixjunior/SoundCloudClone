@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class User
     {
-        [JsonProperty("username")]
+        [JsonPropertyName("username")]
         public string Username { get; set; }
 
-        [JsonProperty("avatar_url")]
+        [JsonPropertyName("avatar_url")]
         public string AvatarUrl { get; set; }
 
-        [JsonProperty("followers_count")]
+        [JsonPropertyName("followers_count")]
         public int FollowersCount { get; set; }
 
-        [JsonProperty("avatar_url_template")]
+        [JsonPropertyName("avatar_url_template")]
         public string AvatarUrlTemplate { get; set; }
 
-        [JsonProperty("city")]
+        [JsonPropertyName("city")]
         public string City { get; set; }
 
-        [JsonProperty("country")]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
     }
 }

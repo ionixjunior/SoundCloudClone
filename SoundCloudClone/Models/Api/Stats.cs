@@ -1,19 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class Stats
     {
-        [JsonProperty("playback_count")]
+        [JsonPropertyName("playback_count")]
         public int PlaybackCount { get; set; }
 
-        [JsonProperty("comments_count")]
+        [JsonPropertyName("comments_count")]
         public int CommentsCount { get; set; }
 
-        [JsonProperty("reposts_count")]
+        [JsonPropertyName("reposts_count")]
         public int RepostsCount { get; set; }
 
-        [JsonProperty("likes_count")]
+        [JsonPropertyName("likes_count")]
         public int LikesCount { get; set; }
     }
 }
