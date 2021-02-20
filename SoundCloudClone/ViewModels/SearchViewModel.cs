@@ -68,7 +68,11 @@ namespace SoundCloudClone.ViewModels
             var resultsApi = await _api.GetSearchResults();
 
             Results.Clear();
-            Results.AddRange(resultsApi.ToSearchResultListApp());
+
+            foreach (var item in resultsApi.ToSearchResultListApp())
+                Results.Add(item);
+
+            //Results.AddRange(resultsApi.ToSearchResultListApp());
         }
 
         internal void ClearResults()
