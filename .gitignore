@@ -1,5 +1,7 @@
 # custom
 SoundCloudClone.Android/Resources/Resource.designer.cs
+SoundCloudClone.Android/SoundCloudClone.Android.GeneratedMSBuildEditorConfig.editorconfig
+SoundCloudClone.iOS/SoundCloudClone.iOS.GeneratedMSBuildEditorConfig.editorconfig
 
 # globs
 Makefile.in
