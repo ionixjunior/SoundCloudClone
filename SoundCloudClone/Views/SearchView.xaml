@@ -4,7 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:SoundCloudClone.Controls"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
+    xmlns:debug="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    debug:DebugRainbow.IsDebug="True"
+    debug:DebugRainbow.ShowColors="false">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:CounterToVisibilityConverter x:Key="CounterToVisibilityConverter" />
@@ -70,7 +74,46 @@
             </OnPlatform.Android>
 
             <OnPlatform.iOS>
-                <controls:SearchCollectionView ItemsSource="{Binding Results}" />
+                <xct:TabView
+                    IsSwipeEnabled="false"
+                    TabIndicatorColor="{StaticResource Accent}"
+                    TabIndicatorPlacement="Bottom">
+                    <xct:TabView.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="xct:TabViewItem">
+                                <Setter Property="TextColor" Value="#464644" />
+                                <Setter Property="TextColorSelected" Value="{StaticResource Accent}" />
+                                <Setter Property="TabWidth" Value="100" />
+                            </Style>
+                        </ResourceDictionary>
+                    </xct:TabView.Resources>
+
+                    <xct:TabViewItem Text="ALL">
+                        <ContentView>
+                            <controls:SearchCollectionView Grid.Row="1" ItemsSource="{Binding Results}" />
+                        </ContentView>
+                    </xct:TabViewItem>
+                    <xct:TabViewItem Text="TRACKS">
+                        <ContentView>
+                            <Label Text="Tracks" />
+                        </ContentView>
+                    </xct:TabViewItem>
+                    <xct:TabViewItem Text="PEOPLE">
+                        <ContentView>
+                            <Label Text="People" />
+                        </ContentView>
+                    </xct:TabViewItem>
+                    <xct:TabViewItem Text="ALBUMS">
+                        <ContentView>
+                            <Label Text="Albums" />
+                        </ContentView>
+                    </xct:TabViewItem>
+                    <xct:TabViewItem Text="PLAYLISTS">
+                        <ContentView>
+                            <Label Text="Playlists" />
+                        </ContentView>
+                    </xct:TabViewItem>
+                </xct:TabView>
             </OnPlatform.iOS>
         </OnPlatform>
     </ContentPage.Content>
