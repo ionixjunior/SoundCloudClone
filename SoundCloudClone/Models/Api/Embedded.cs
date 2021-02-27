@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class Embedded
     {
-        [JsonProperty("stats")]
+        [JsonPropertyName("stats")]
         public Stats Stats { get; set; }
 
-        [JsonProperty("user")]
+        [JsonPropertyName("user")]
         public User User { get; set; }
     }
 }

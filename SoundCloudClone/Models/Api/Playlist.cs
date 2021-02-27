@@ -1,28 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class Playlist
     {
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("track_count")]
+        [JsonPropertyName("track_count")]
         public int TrackCount { get; set; }
 
-        [JsonProperty("duration")]
+        [JsonPropertyName("duration")]
         public long Duration { get; set; }
 
-        [JsonProperty("_embedded")]
+        [JsonPropertyName("_embedded")]
         public Embedded Embedded { get; set; }
 
-        [JsonProperty("artwork_url_template")]
+        [JsonPropertyName("artwork_url_template")]
         public string ArtworkUrlTemplate { get; set; }
 
-        [JsonProperty("is_album")]
+        [JsonPropertyName("is_album")]
         public bool IsAlbum { get; set; }
     }
 }

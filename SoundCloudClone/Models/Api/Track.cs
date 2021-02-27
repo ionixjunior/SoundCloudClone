@@ -1,29 +1,44 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Globalization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class Track
     {
-        [JsonProperty("full_duration")]
+        [JsonPropertyName("full_duration")]
         public long FullDuration { get; set; }
 
-        [JsonProperty("created_at")]
+        [JsonPropertyName("created_at"), JsonConverter(typeof(DateTimeConverter))]
         public DateTime CreatedAt { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("_embedded")]
+        [JsonPropertyName("_embedded")]
         public Embedded Embedded { get; set; }
 
-        [JsonProperty("genre")]
+        [JsonPropertyName("genre")]
         public string Genre { get; set; }
 
-        [JsonProperty("artwork_url_template")]
+        [JsonPropertyName("artwork_url_template")]
         public string ArtworkUrlTemplate { get; set; }
 
-        [JsonProperty("display_stats")]
+        [JsonPropertyName("display_stats")]
         public bool DisplayStats { get; set; }
+    }
+
+    public class DateTimeConverter : JsonConverter<DateTime>
+    {
+        public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return DateTime.ParseExact(reader.GetString(), "yyyy/MM/dd HH:mm:ss K", CultureInfo.InvariantCulture);
+        }
+
+        public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

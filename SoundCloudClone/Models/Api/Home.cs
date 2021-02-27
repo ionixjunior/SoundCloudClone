@@ -1,57 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace SoundCloudClone.Models.Api
 {
     public class Album
     {
-        [JsonProperty("artwork_url_template")]
+        [JsonPropertyName("artwork_url_template")]
         public string ArtworkUrlTemplate { get; set; }
 
-        [JsonProperty("artwork_style")]
+        [JsonPropertyName("artwork_style")]
         public string ArtworkStyle { get; set; }
 
-        [JsonProperty("count")]
+        [JsonPropertyName("count")]
         public int Count { get; set; }
 
-        [JsonProperty("short_title")]
+        [JsonPropertyName("short_title")]
         public string ShortTitle { get; set; }
 
-        [JsonProperty("short_subtitle")]
+        [JsonPropertyName("short_subtitle")]
         public string ShortSubtitle { get; set; }
     }
 
     public class AlbumCollection
     {
-        [JsonProperty("collection")]
+        [JsonPropertyName("collection")]
         public IList<Album> Albums { get; set; }
     }
 
     public class AlgumGroup
     {
-        [JsonProperty("style")]
+        [JsonPropertyName("style")]
         public string Style { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [JsonProperty("selection_items")]
+        [JsonPropertyName("selection_items")]
         public AlbumCollection AlbumCollection { get; set; }
     }
 
     public class AlbumGroupCollection
     {
-        [JsonProperty("multiple_content_selection_card")]
+        [JsonPropertyName("multiple_content_selection_card")]
         public AlgumGroup AlbumGroup { get; set; }
     }
 
     public class Home
     {
-        [JsonProperty("collection")]
+        [JsonPropertyName("collection")]
         public IList<AlbumGroupCollection> AlgumGroupsCollection { get; set; }
     }
 }
