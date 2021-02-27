@@ -24,20 +24,20 @@
             Padding="15"
             ColumnDefinitions="70,*,60"
             ColumnSpacing="10">
-            <Image
+            <ffimageloading:CachedImage
                 x:Name="AvatarUrlImage"
                 Grid.Column="0"
                 d:BackgroundColor="Yellow"
                 HeightRequest="70"
                 VerticalOptions="Center"
                 WidthRequest="70">
-                <Image.Clip>
+                <ffimageloading:CachedImage.Clip>
                     <EllipseGeometry
                         Center="35,35"
                         RadiusX="35"
                         RadiusY="35" />
-                </Image.Clip>
-            </Image>
+                </ffimageloading:CachedImage.Clip>
+            </ffimageloading:CachedImage>
 
             <FlexLayout
                 Grid.Column="1"

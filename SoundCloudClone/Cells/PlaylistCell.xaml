@@ -27,7 +27,7 @@
             AlignItems="Center"
             FlexLayout.Grow="1"
             HeightRequest="70">
-            <Image
+            <ffimageloading:CachedImage
                 x:Name="ArtworkUrlImage"
                 d:BackgroundColor="Red"
                 HeightRequest="70"
