@@ -12,10 +12,10 @@ namespace SoundCloudClone.Views
 {
     public partial class OverlayPlaylistLikeTutorialView : ContentPage
     {
-        private readonly Microsoft.Maui.Controls.Shapes.Rectangle _likeContainerPosition;
+        private readonly Microsoft.Maui.Graphics.Rectangle _likeContainerPosition;
         private readonly int _totalLikes;
 
-        public OverlayPlaylistLikeTutorialView(Microsoft.Maui.Controls.Shapes.Rectangle likeContainerPosition, int totalLikes)
+        public OverlayPlaylistLikeTutorialView(Microsoft.Maui.Graphics.Rectangle likeContainerPosition, int totalLikes)
         {
             InitializeComponent();
             _likeContainerPosition = likeContainerPosition;

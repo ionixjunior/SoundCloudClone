@@ -41,7 +41,7 @@ namespace SoundCloudClone.Views.Playlist
 
         }
 
-        private Rectangle GetLikeContainerPosition()
+        private Microsoft.Maui.Graphics.Rectangle GetLikeContainerPosition()
         {
             var parent = LikeContainer.Parent;
             var likeY = LikeContainer.Bounds.Y;
@@ -52,7 +52,7 @@ namespace SoundCloudClone.Views.Playlist
                 parent = parentView.Parent;
             }
 
-            return new Rectangle(
+            return new Microsoft.Maui.Graphics.Rectangle(
                 LikeContainer.Bounds.X + (LikeContainer.Bounds.Width / 2),
                 likeY + (LikeContainer.Bounds.Height / 2),
                 LikeContainer.Bounds.Width,
