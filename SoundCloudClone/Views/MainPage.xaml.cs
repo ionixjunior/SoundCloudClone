@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 namespace SoundCloudClone.Views
 {
