@@ -6,6 +6,9 @@
     xmlns:converters="clr-namespace:SoundCloudClone.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <converters:SocialCounterToTextConverter x:Key="SocialCounterToTextConverter" />
+            <converters:DateTimeToTextConverter x:Key="DateTimeToTextConverter" />
+
             <OnPlatform
                 x:Key="MarginItem"
                 x:TypeArguments="Thickness"
@@ -109,7 +112,7 @@
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label Text="{Binding CreatedAt, Converter={converters:DateTimeToTextConverter}}" TextColor="{StaticResource TextSecondaryColor}" />
+                                <Label Text="{Binding CreatedAt, Converter={StaticResource DateTimeToTextConverter}}" TextColor="{StaticResource TextSecondaryColor}" />
                             </StackLayout>
                         </FlexLayout>
 
@@ -154,7 +157,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{DynamicResource stream_playback_count}" />
                                     <Label
-                                        Text="{Binding PlaybackCount, Converter={converters:SocialCounterToTextConverter}}"
+                                        Text="{Binding PlaybackCount, Converter={StaticResource SocialCounterToTextConverter}}"
                                         TextColor="{StaticResource TextSecondaryColor}"
                                         VerticalTextAlignment="Center" />
                                 </StackLayout>
@@ -167,14 +170,14 @@
                                 <Frame Style="{StaticResource SocialFrame}">
                                     <StackLayout Orientation="Horizontal" Spacing="0">
                                         <Image Margin="5,0" Source="{DynamicResource stream_repost}" />
-                                        <Label Text="{Binding RepostsCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
+                                        <Label Text="{Binding RepostsCount, Converter={StaticResource SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </Frame>
 
                                 <Frame Style="{StaticResource SocialFrame}">
                                     <StackLayout Orientation="Horizontal">
                                         <Image Margin="5,0" Source="{DynamicResource stream_like}" />
-                                        <Label Text="{Binding LikesCount, Converter={converters:SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
+                                        <Label Text="{Binding LikesCount, Converter={StaticResource SocialCounterToTextConverter}}" VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </Frame>
 
