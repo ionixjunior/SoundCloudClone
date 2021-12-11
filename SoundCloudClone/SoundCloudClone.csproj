@@ -41,5 +41,6 @@
 	<ItemGroup>
 	  <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
 	  <PackageReference Include="Humanizer.Core" Version="2.8.26" />
+	  <PackageReference Include="refit" Version="6.0.15" />
 	</ItemGroup>
 </Project>
