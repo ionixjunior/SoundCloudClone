@@ -4,8 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:SoundCloudClone.Controls"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
     <NavigationPage.TitleView>
         <Label
             Margin="{OnPlatform Android='0',
@@ -142,7 +141,7 @@
                             AlignItems="Center"
                             FlexLayout.Grow="1"
                             HeightRequest="70">
-                            <ffimageloading:CachedImage
+                            <Image
                                 HeightRequest="70"
                                 Source="{Binding ArtworkUrl}"
                                 WidthRequest="70" />

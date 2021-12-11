@@ -6,8 +6,6 @@ using SoundCloudClone.Views;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Services;
 using SoundCloudClone.Enums;
-using FFImageLoading;
-using FFImageLoading.Cache;
 using System.Threading.Tasks;
 using Application = Microsoft.Maui.Controls.Application;
 
@@ -60,7 +58,7 @@ namespace SoundCloudClone
                 if (cleanImageCache)
                 {
                     settingsBundleServide.SetBoolValue(false, Constants.CleanImageCachePreference);
-                    await ImageService.Instance.InvalidateCacheAsync(CacheType.All);
+                    // TODO Invalidar cache das imagens
                 }
             }
         }

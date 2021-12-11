@@ -3,8 +3,7 @@
     x:Class="SoundCloudClone.Views.StreamView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:SoundCloudClone.Converters"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    xmlns:converters="clr-namespace:SoundCloudClone.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
             <OnPlatform
@@ -94,7 +93,7 @@
                                 HeightRequest="50"
                                 IsClippedToBounds="true"
                                 WidthRequest="50">
-                                <ffimageloading:CachedImage
+                                <Image
                                     HeightRequest="50"
                                     Source="{Binding AvatarUrl}"
                                     WidthRequest="50" />
