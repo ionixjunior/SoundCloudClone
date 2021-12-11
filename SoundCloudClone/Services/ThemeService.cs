@@ -4,7 +4,7 @@ using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
 using SoundCloudClone.Styles;
-using Xamarin.Essentials;
+using Microsoft.Maui.Essentials;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 

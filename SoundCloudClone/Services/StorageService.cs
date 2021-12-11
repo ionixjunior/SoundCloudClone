@@ -1,5 +1,5 @@
 ﻿using SoundCloudClone.Interfaces;
-using Xamarin.Essentials;
+using Microsoft.Maui.Essentials;
 
 namespace SoundCloudClone.Services
 {
