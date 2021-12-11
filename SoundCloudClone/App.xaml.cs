@@ -8,6 +8,7 @@ using SoundCloudClone.Enums;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Threading.Tasks;
+using Application = Microsoft.Maui.Controls.Application;
 
 namespace SoundCloudClone
 {
