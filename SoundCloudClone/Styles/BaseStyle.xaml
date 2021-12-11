@@ -3,12 +3,6 @@
     x:Class="SoundCloudClone.Styles.BaseStyle"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <OnPlatform
-        x:Key="FontLight"
-        x:TypeArguments="x:String"
-        Android="Fonts/interstate-light-cond.ttf#Interstate Light Cond"
-        iOS="Interstate Light Cond" />
-
     <FileImageSource x:Key="friends">friends</FileImageSource>
     <FileImageSource x:Key="add_friend">add_friend</FileImageSource>
 
