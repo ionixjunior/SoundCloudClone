@@ -1,7 +1,8 @@
 ﻿using System;
 using SoundCloudClone.Cells;
 using SoundCloudClone.Models.App;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace SoundCloudClone.DataTemplates
 {

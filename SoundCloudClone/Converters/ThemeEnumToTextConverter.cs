@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using SoundCloudClone.Enums;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace SoundCloudClone.Converters
 {

@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.ViewModels;
 using SoundCloudClone.Views.Playlist;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace SoundCloudClone.Views
 {

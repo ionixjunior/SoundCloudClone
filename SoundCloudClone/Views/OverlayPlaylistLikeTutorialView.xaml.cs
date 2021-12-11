@@ -2,7 +2,8 @@
 using System.Threading.Tasks;
 using MvvmHelpers;
 using SoundCloudClone.Controls;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Shapes;
 

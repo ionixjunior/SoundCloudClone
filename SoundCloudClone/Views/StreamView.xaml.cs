@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.ViewModels;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace SoundCloudClone.Views
 {
