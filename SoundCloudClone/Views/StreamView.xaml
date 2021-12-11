@@ -114,7 +114,7 @@
                         </FlexLayout>
 
                         <Grid Margin="{StaticResource MarginItem}" FlexLayout.Basis="180">
-                            <ffimageloading:CachedImage
+                            <Image
                                 Aspect="AspectFill"
                                 HeightRequest="180"
                                 Source="{Binding ArtworkUrl}" />
