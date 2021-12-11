@@ -3,6 +3,7 @@ using SoundCloudClone.Interfaces;
 using SoundCloudClone.ViewModels.Playlist;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Shapes;
 
 namespace SoundCloudClone.Views.Playlist
 {

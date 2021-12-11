@@ -4,17 +4,18 @@ using MvvmHelpers;
 using SoundCloudClone.Controls;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using Xamarin.Forms.Shapes;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
+using Microsoft.Maui.Controls.Shapes;
+using Microsoft.Maui.Graphics;
 
 namespace SoundCloudClone.Views
 {
     public partial class OverlayPlaylistLikeTutorialView : ContentPage
     {
-        private readonly Xamarin.Forms.Rectangle _likeContainerPosition;
+        private readonly Microsoft.Maui.Controls.Shapes.Rectangle _likeContainerPosition;
         private readonly int _totalLikes;
 
-        public OverlayPlaylistLikeTutorialView(Xamarin.Forms.Rectangle likeContainerPosition, int totalLikes)
+        public OverlayPlaylistLikeTutorialView(Microsoft.Maui.Controls.Shapes.Rectangle likeContainerPosition, int totalLikes)
         {
             InitializeComponent();
             _likeContainerPosition = likeContainerPosition;
@@ -62,7 +63,7 @@ namespace SoundCloudClone.Views
                             {
                                 new RectangleGeometry
                                 {
-                                    Rect = new Rect(0, 0, Width, Height)
+                                    Rect = new Microsoft.Maui.Graphics.Rectangle(0, 0, Width, Height)
                                 },
                                 new EllipseGeometry
                                 {
@@ -97,19 +98,19 @@ namespace SoundCloudClone.Views
                             {
                                 HorizontalTextAlignment = TextAlignment.End,
                                 Text = "Like this playlist?",
-                                TextColor = Color.White,
+                                TextColor = Colors.White,
                                 FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label))
                             },
                             new Label
                             {
                                 HorizontalTextAlignment = TextAlignment.End,
                                 Text = "Tap the heart to save it to your library.",
-                                TextColor = Color.White,
+                                TextColor = Colors.White,
                                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
                             }
                         }
                     },
-                    new BoxView { BackgroundColor = Color.Transparent }
+                    new BoxView { BackgroundColor = Colors.Transparent }
                 }
             };
 
@@ -145,7 +146,7 @@ namespace SoundCloudClone.Views
 
         private double GetSafeAreaInsetTop()
         {
-            return On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets().Top;
+            return On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SafeAreaInsets().Top;
         }
 
         private void BuildAndroid()
@@ -199,7 +200,7 @@ namespace SoundCloudClone.Views
                 WidthRequest = Width,
                 Opacity = 0,
                 HeightRequest = Height,
-                BackgroundColor = Color.Black
+                BackgroundColor = Colors.Black
             };
 
             var stackLayoutDescription = new StackLayout
@@ -249,7 +250,7 @@ namespace SoundCloudClone.Views
                     heartEllipse,
                     pulseEllipse,
                     playlistLikeControl,
-                    new BoxView { BackgroundColor = Color.Transparent }
+                    new BoxView { BackgroundColor = Colors.Transparent }
                 }
             };
 

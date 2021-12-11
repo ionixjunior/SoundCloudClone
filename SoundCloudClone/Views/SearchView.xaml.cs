@@ -36,7 +36,7 @@ namespace SoundCloudClone.Views
 
         private void OnTextChanged(object sender, TextChangedEventArgs args) => SearchBy(args.NewTextValue);
 
-        private async void OnItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs args)
+        private async void OnItemSelected(System.Object sender, Microsoft.Maui.Controls.SelectedItemChangedEventArgs args)
         {
             if (args.SelectedItem is SearchSuggestion suggestion)
                 if (BindingContext is SearchViewModel viewModel)

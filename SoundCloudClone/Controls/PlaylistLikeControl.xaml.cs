@@ -1,6 +1,7 @@
 ﻿using SoundCloudClone.Converters;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace SoundCloudClone.Controls
 {
@@ -36,7 +37,7 @@ namespace SoundCloudClone.Controls
             nameof(TextColor),
             typeof(Color),
             typeof(PlaylistLikeControl),
-            Color.Black,
+            Colors.Black,
             BindingMode.OneWay,
             propertyChanged: OnTextColorChanged);
 
