@@ -5,9 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
     xmlns:styles="clr-namespace:SoundCloudClone.Styles"
-    rainbows:DebugRainbow.ShowColors="false"
     BackgroundColor="{DynamicResource ContentItemBackground}"
     HeightRequest="110"
     mc:Ignorable="d">
