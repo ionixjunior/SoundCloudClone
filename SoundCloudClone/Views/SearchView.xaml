@@ -18,7 +18,7 @@
                 <SearchBar
                     Margin="0,0,15,0"
                     Focused="OnTextFocused"
-                    FontFamily="{StaticResource FontLight}"
+                    FontFamily="FontLight"
                     FontSize="Large"
                     Placeholder="Search SoundCloud"
                     PlaceholderColor="{StaticResource TextSecondaryColor}"

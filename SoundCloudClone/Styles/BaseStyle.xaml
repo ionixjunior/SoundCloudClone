@@ -11,7 +11,7 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+        <Setter Property="FontFamily" Value="FontLight" />
         <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}" />
     </Style>
 
@@ -24,7 +24,7 @@
     </Style>
 
     <Style x:Key="TitleNavigationPage" TargetType="Label">
-        <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+        <Setter Property="FontFamily" Value="FontLight" />
         <Setter Property="TextColor" Value="{DynamicResource NavigationBarTextColor}" />
         <Setter Property="HorizontalTextAlignment" Value="{OnPlatform iOS='Center', Android='Start'}" />
         <Setter Property="FontSize" Value="Title" />

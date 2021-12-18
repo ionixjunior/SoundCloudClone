@@ -14,7 +14,7 @@ namespace SoundCloudClone
 				.UseMauiApp<App>()
 				.ConfigureFonts(fonts =>
 				{
-					fonts.AddFont("interstate-light-cond.ttf", "Interstate Light Cond");
+					fonts.AddFont("interstate-light-cond.ttf", "FontLight");
 				});
 
 			return builder.Build();

@@ -34,14 +34,14 @@
             </Style>
 
             <Style x:Key="OverlaySpan" TargetType="Span">
-                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="FontFamily" Value="FontLight" />
                 <Setter Property="BackgroundColor" Value="Black" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
 
             <Style TargetType="Span">
-                <Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+                <Setter Property="FontFamily" Value="FontLight" />
             </Style>
 
             <Style x:Key="SocialFrame" TargetType="Frame">
