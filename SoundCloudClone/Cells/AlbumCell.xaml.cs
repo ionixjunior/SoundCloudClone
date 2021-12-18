@@ -23,7 +23,7 @@ namespace SoundCloudClone.Cells
                 UsernameLabel.Text = playlist.Username;
                 TrackCountLabel.Text = $"{playlist.TrackCount} tracks";
                 TitleLabel.Text = playlist.Title;
-                DescriptionLabel.Text = playlist.Description;
+                //DescriptionLabel.Text = playlist.Description;
                 LikesCountLabel.Text = playlist.LikesCount.ToString();
             }
         }
