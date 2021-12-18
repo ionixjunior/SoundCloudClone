@@ -34,6 +34,9 @@
     <FileImageSource x:Key="playlist_liked">playlist_liked_dark</FileImageSource>
     <FileImageSource x:Key="playlist_control_source">playlist_like_overlay_dark</FileImageSource>
 
+    <Color x:Key="SocialFrameBorderColor">#0F0E10</Color>
+    <Color x:Key="NavigationBarTextColor">#CBCBCC</Color>
+    <!--
     <OnPlatform
         x:Key="SocialFrameBorderColor"
         x:TypeArguments="Color"
@@ -45,4 +48,5 @@
         x:TypeArguments="Color"
         Android="#9D9D9D"
         iOS="#CBCBCC" />
+    -->
 </ResourceDictionary>
