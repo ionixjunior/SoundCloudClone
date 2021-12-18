@@ -76,7 +76,7 @@ namespace SoundCloudClone.Views
                     },
                     new Ellipse
                     {
-                        Stroke = new SolidColorBrush(Color.FromHex("F4570B")),
+                        Stroke = new SolidColorBrush(Color.FromArgb("F4570B")),
                         WidthRequest = ellipseRadius * 2,
                         HeightRequest = ellipseRadius * 2,
                         StrokeThickness = 5,
@@ -160,7 +160,7 @@ namespace SoundCloudClone.Views
                 Opacity = 0,
                 WidthRequest = 100,
                 HeightRequest = 100,
-                Fill = new SolidColorBrush(Color.FromHex("F4570B")),
+                Fill = new SolidColorBrush(Color.FromArgb("F4570B")),
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Start,
                 TranslationX = translationXEllipse,
@@ -174,7 +174,7 @@ namespace SoundCloudClone.Views
                 Opacity = 1,
                 WidthRequest = 100,
                 HeightRequest = 100,
-                Fill = new SolidColorBrush(Color.FromHex("F4570B")),
+                Fill = new SolidColorBrush(Color.FromArgb("F4570B")),
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Start,
                 TranslationX = translationXEllipse,
