@@ -12,6 +12,7 @@
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
+        <!--
         <OnPlatform x:TypeArguments="View">
             <OnPlatform.Android>
                 <SearchBar
@@ -30,9 +31,12 @@
                 <Label Style="{StaticResource TitleNavigationPage}" Text="Search" />
             </OnPlatform.iOS>
         </OnPlatform>
+        -->
+        <Label Style="{StaticResource TitleNavigationPage}" Text="Search" />
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
+        <!--
         <OnPlatform x:TypeArguments="View">
             <OnPlatform.Android>
                 <Grid>
@@ -73,5 +77,7 @@
                 <controls:SearchCollectionView ItemsSource="{Binding Results}" />
             </OnPlatform.iOS>
         </OnPlatform>
+        -->
+        <controls:SearchCollectionView ItemsSource="{Binding Results}" />
     </ContentPage.Content>
 </ContentPage>
