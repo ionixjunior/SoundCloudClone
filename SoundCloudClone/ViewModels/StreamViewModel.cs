@@ -12,7 +12,12 @@ namespace SoundCloudClone.ViewModels
         private readonly IApi _api;
         private bool _alreadyInitialized = false;
 
-        public ObservableRangeCollection<Stream> Streams { get; private set; }
+        private ObservableRangeCollection<Stream> _streams;
+        public ObservableRangeCollection<Stream> Streams
+        {
+            get => _streams;
+            set => SetProperty(ref _streams, value, nameof(Streams));
+        }
 
         public StreamViewModel(IApi api)
         {
@@ -32,7 +37,8 @@ namespace SoundCloudClone.ViewModels
                 var streamApi = await _api.GetStreams();
                 var streamApp = streamApi.ToStreamApp();
 
-                Streams.AddRange(streamApp);
+                //Streams.AddRange(streamApp);
+                Streams = new ObservableRangeCollection<Stream>(streamApp);
             }
             catch (Exception exception)
             {

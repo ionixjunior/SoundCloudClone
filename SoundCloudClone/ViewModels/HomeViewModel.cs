@@ -12,7 +12,12 @@ namespace SoundCloudClone.ViewModels
         private readonly IApi _api;
         private bool _alreadyInitialized = false;
 
-        public ObservableRangeCollection<AlbumGroup> AlbumGroups { get; private set; }
+        private ObservableRangeCollection<AlbumGroup> _albumGroups;
+        public ObservableRangeCollection<AlbumGroup> AlbumGroups
+        {
+            get => _albumGroups;
+            set => SetProperty(ref _albumGroups, value, nameof(AlbumGroups));
+        }
 
         public HomeViewModel(IApi api)
         {
@@ -31,7 +36,8 @@ namespace SoundCloudClone.ViewModels
                 var home = await _api.GetAlbums();
                 var albumGroups = home.ToAlbumGroups();
 
-                AlbumGroups.AddRange(albumGroups);
+                //AlbumGroups.AddRange(albumGroups);
+                AlbumGroups = new ObservableRangeCollection<AlbumGroup>(albumGroups);
             }
             catch (Exception exception)
             {

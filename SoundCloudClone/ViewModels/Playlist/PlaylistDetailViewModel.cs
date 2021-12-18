@@ -23,7 +23,12 @@ namespace SoundCloudClone.ViewModels.Playlist
             }
         }
 
-        public ObservableRangeCollection<Track> Tracks { get; private set; }
+        private ObservableRangeCollection<Track> _tracks;
+        public ObservableRangeCollection<Track> Tracks
+        {
+            get => _tracks;
+            set => SetProperty(ref _tracks, value, nameof(Tracks));
+        }
         
         public PlaylistDetailViewModel(IApi api)
         {
@@ -38,8 +43,9 @@ namespace SoundCloudClone.ViewModels.Playlist
                 var playlistDetailApi = await _api.GetPlaylistDetail();
                 Playlist = playlistDetailApi.ToPlaylistApp();
 
-                Tracks.Clear();
-                Tracks.AddRange(playlistDetailApi.ToTracksApp());
+                //Tracks.Clear();
+                //Tracks.AddRange(playlistDetailApi.ToTracksApp());
+                Tracks = new ObservableRangeCollection<Track>(playlistDetailApi.ToTracksApp());
             }
             catch (Exception exception)
             {
