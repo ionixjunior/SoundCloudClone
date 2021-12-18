@@ -15,20 +15,19 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <OnPlatform
-                x:Key="MarginItem"
-                x:TypeArguments="Thickness"
-                Default="15,0" />
+            <Thickness x:Key="MarginItem">
+                <x:Arguments>
+                    <x:Double>15</x:Double>
+                    <x:Double>0</x:Double>
+                </x:Arguments>
+            </Thickness>
 
-            <OnPlatform
-                x:Key="OverlayOpacity"
-                x:TypeArguments="x:Double"
-                Default="0.9" />
+            <Thickness x:Key="OverlayThickness">
+                <x:Arguments>
+                    <x:Double>5</x:Double>
+                </x:Arguments>
+            </Thickness>
 
-            <OnPlatform
-                x:Key="OverlayThickness"
-                x:TypeArguments="Thickness"
-                Default="5" />
 
             <Style x:Key="OverlayLabel" TargetType="Label">
                 <Setter Property="Padding" Value="{StaticResource OverlayThickness}" />
@@ -36,7 +35,7 @@
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="Opacity" Value="{StaticResource OverlayOpacity}" />
+                <Setter Property="Opacity" Value="0.9" />
             </Style>
 
             <Style x:Key="OverlaySpan" TargetType="Span">
@@ -75,7 +74,7 @@
                         <StackLayout Margin="15,25" VerticalOptions="End">
                             <Label Style="{StaticResource OverlayLabel}" Text="{Binding Playlist.Username}" />
 
-                            <Label Opacity="{StaticResource OverlayOpacity}">
+                            <Label Opacity="0.9">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Style="{StaticResource OverlaySpan}" Text="{Binding Playlist.Title}" />

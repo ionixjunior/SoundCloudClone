@@ -30,6 +30,7 @@
 
     <ContentPage.Content>
         <ScrollView>
+            <!--
             <OnPlatform x:TypeArguments="View">
                 <On Platform="Android">
                     <StackLayout Spacing="1">
@@ -106,7 +107,31 @@
                     </StackLayout>
                 </On>
             </OnPlatform>
+            -->
+            <StackLayout Spacing="0.5">
+                <controls:ItemTextView
+                    Margin="0,24,0,0"
+                    Detail="ionixjunior"
+                    HasVisibleArrow="true"
+                    Text="Your profile" />
 
+                <controls:ItemTextView HasVisibleArrow="true" Text="Settings">
+                    <controls:ItemTextView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                    </controls:ItemTextView.GestureRecognizers>
+                </controls:ItemTextView>
+
+                <controls:ItemTextView Text="Open SoundCloud Pulse app for Creators" />
+                <controls:ItemTextView Text="Restore subscription" />
+                <controls:ItemTextView Text="Tell a friend" />
+                <controls:ItemTextView
+                    Margin="0,24,0,0"
+                    HasVisibleArrow="true"
+                    Text="Troubleshooting" />
+                <controls:ItemTextView Text="Contact support" />
+                <controls:ItemTextView HasVisibleArrow="true" Text="Legal" />
+                <controls:ItemTextView Margin="0,24,0,0" Text="Sign out" />
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

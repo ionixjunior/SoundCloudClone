@@ -53,6 +53,7 @@
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
+        <!--
         <OnPlatform x:TypeArguments="View">
             <On Platform="Android">
                 <FlexLayout Padding="0,0,15,0" JustifyContent="SpaceBetween">
@@ -84,6 +85,20 @@
                 </Grid>
             </On>
         </OnPlatform>
+        -->
+        <Grid Padding="10,0">
+            <Label Style="{StaticResource TitleNavigationPage}" Text="Library" />
+            <Image
+                HeightRequest="32"
+                HorizontalOptions="End"
+                Source="library_profile"
+                VerticalOptions="Start"
+                WidthRequest="32">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
@@ -103,6 +118,7 @@
                 </FlexLayout>
                 <BoxView Style="{StaticResource SeparatorItem}" />
 
+                <!--
                 <OnPlatform x:TypeArguments="View">
                     <On Platform="Android">
                         <StackLayout Spacing="0">
@@ -120,6 +136,8 @@
                         <ContentView />
                     </On>
                 </OnPlatform>
+                -->
+                <ContentView />
 
                 <FlexLayout Style="{StaticResource FlexItem}">
                     <Image Source="{DynamicResource library_following}" Style="{StaticResource DefaultImage}" />

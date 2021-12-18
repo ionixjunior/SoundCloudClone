@@ -16,6 +16,7 @@
 
     <ContentPage.Content>
         <ScrollView>
+            <!--
             <OnPlatform x:TypeArguments="View">
                 <On Platform="Android">
                     <StackLayout Spacing="1">
@@ -55,6 +56,27 @@
                     </StackLayout>
                 </On>
             </OnPlatform>
+            -->
+            <StackLayout Spacing="0.5">
+                <controls:ItemSwitchView
+                    Margin="0,24,0,0"
+                    IsToggled="true"
+                    Text="Autoplay releted tracks" />
+
+                <controls:ItemTextView
+                    Detail="{Binding SelectedTheme, Converter={converters:ThemeEnumToTextConverter}}"
+                    HasVisibleArrow="true"
+                    Text="Interface style">
+                    <controls:ItemTextView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnThemeOptionTapped" />
+                    </controls:ItemTextView.GestureRecognizers>
+                </controls:ItemTextView>
+
+                <controls:ItemTextView HasVisibleArrow="true" Text="Notifications" />
+                <controls:ItemTextView HasVisibleArrow="true" Text="Analytics" />
+                <controls:ItemTextView HasVisibleArrow="true" Text="Communications" />
+                <controls:ItemTextView HasVisibleArrow="true" Text="Advertising" />
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
