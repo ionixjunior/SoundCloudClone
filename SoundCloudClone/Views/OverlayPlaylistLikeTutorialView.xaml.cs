@@ -100,14 +100,14 @@ namespace SoundCloudClone.Views
                                 HorizontalTextAlignment = TextAlignment.End,
                                 Text = "Like this playlist?",
                                 TextColor = Colors.White,
-                                FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label))
+                                FontSize = 28
                             },
                             new Label
                             {
                                 HorizontalTextAlignment = TextAlignment.End,
                                 Text = "Tap the heart to save it to your library.",
                                 TextColor = Colors.White,
-                                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                                FontSize = 22
                             }
                         }
                     },
@@ -216,13 +216,13 @@ namespace SoundCloudClone.Views
                     {
                         Text = "Like this playlist?",
                         TextColor = (Color)App.Current.Resources["TextPrimaryColor"],
-                        FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label))
+                        FontSize = 28
                     },
                     new Label
                     {
                         Text = "Tap the heart to save it to your library.",
                         TextColor = (Color)App.Current.Resources["TextSecondaryColor"],
-                        FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                        FontSize = 22
                     }
                 }
             };
