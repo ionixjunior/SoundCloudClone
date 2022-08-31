@@ -7,6 +7,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 using Microsoft.Maui.Controls.Shapes;
 using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Devices;
 
 namespace SoundCloudClone.Views
 {
@@ -31,13 +32,13 @@ namespace SoundCloudClone.Views
 
         private void Build()
         {
-            if (Device.RuntimePlatform == Device.iOS)
+            if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 BuildiOS();
                 return;
             }
 
-            if (Device.RuntimePlatform == Device.Android)
+            if (DeviceInfo.Platform == DevicePlatform.Android)
             {
                 BuildAndroid();
                 return;
@@ -129,13 +130,13 @@ namespace SoundCloudClone.Views
 
         private double GetTopHeightSpacing()
         {
-            if (Device.RuntimePlatform == Device.iOS)
+            if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 const double navbarHeight = 46;
                 return GetSafeAreaInsetTop() + navbarHeight;
             }
 
-            if (Device.RuntimePlatform == Device.Android)
+            if (DeviceInfo.Platform == DevicePlatform.Android)
             {
                 const double navbarHeight = 66;
                 return navbarHeight;
