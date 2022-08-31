@@ -4,7 +4,8 @@ using SoundCloudClone.Enums;
 using SoundCloudClone.Interfaces;
 using SoundCloudClone.Models.App;
 using SoundCloudClone.Styles;
-using Microsoft.Maui.Essentials;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 
