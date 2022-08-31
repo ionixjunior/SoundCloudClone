@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 
-namespace SoundCloudClone.Styles
+namespace SoundCloudClone.Resources.Styles
 {
-    public partial class BaseStyle : ResourceDictionary
+    public partial class LightStyle : ResourceDictionary
     {
-        public BaseStyle()
+        public LightStyle()
         {
             InitializeComponent();
         }

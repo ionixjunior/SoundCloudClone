@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SoundCloudClone.Interfaces;
-using SoundCloudClone.Styles;
+using SoundCloudClone.Resources.Styles;
 using SoundCloudClone.ViewModels;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
