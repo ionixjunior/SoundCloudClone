@@ -42,13 +42,13 @@ namespace SoundCloudClone
             _theme.Change(themeEnum);
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
             ChangeTheme();
-            await LoadSettingsAsync();
+            LoadSettings();
         }
 
-        private async Task LoadSettingsAsync()
+        private void LoadSettings()
         {
             if (DependencyService.Get<ISettingsBundle>() is { } settingsBundleServide)
             {
